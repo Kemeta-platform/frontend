@@ -1,0 +1,7 @@
+@import url("./global.css");
+
+@import url("./components/navbar.css");
+@import url("./components/hero.css");
+
+@import url("./components/features.css");
+@import url("./components/about.css");

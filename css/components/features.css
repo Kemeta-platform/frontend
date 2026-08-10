@@ -1,0 +1,180 @@
+
+
+.platform-features {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+  
+}
+.platform-features .container {
+    max-width: none;   
+    width: 100%;
+    padding: var(--section-padding) ; 
+    height: auto;  
+    display: grid;    
+    gap: var(--general-gap);
+}
+/* 
+   Features Header
+ */
+.first-card {
+   gap: var(--general-gap);
+   flex-direction: column;
+
+}
+.container .features-badge {
+    display: inline;
+    padding: 10px 20px;
+    border-radius: var(--general-radius);
+    width: 40%;
+    margin:auto;
+    font-family: "F37 Moon Bold";
+    color: var(--Primary-Text);
+    font-size: 24px;
+background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.715),
+    rgba(255, 255, 255, 0.20)20%
+);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+border: 1px solid var(--Light-Text);
+   
+}
+
+
+.features-title {
+    color: var(--Secondry-text);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+.features-description {
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--Dark-Text);
+font-family: "F37 Moon Regular";
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* 
+   Feature Cards
+ */
+
+.feature-card {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    padding: 20px 18px;
+    border-radius:var(--card-radius);
+   background: linear-gradient(to top, #FFFFFF33 20%, #FFFFFF33);
+    border: 0.83px solid rgba(255, 255, 255, 0.83);
+    box-shadow: 0 1px 20px 0 #0000000D;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: var(--card-gap);
+    flex-direction: column;
+    backdrop-filter: blur(1px);
+    --webkit-backdrop-filter: blur(1px);
+    display: flex;
+gap:var(--card-gap);
+
+}
+
+
+
+.feature-card {
+    min-height: 176px;
+}
+
+
+/* 
+   Card Content
+ */
+
+.feature-card-title {
+
+    color: var(--Secondry-text);
+font-family: "F37 Moon Bold";
+font-size: 20px;
+    line-height: 1.3;
+}
+
+
+.feature-card-description {
+    margin-bottom: 10px;
+font-family: "F37 Moon Regular";
+    color: var(--Dark-Text);
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+.feature-card-link {
+    display: inline-block;
+    color: var(--Primary-Text);
+    font-family: "F37 Moon Bold";
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+.feature-card-link:hover {
+    color: var(--Primary-Text);
+}
+
+
+/* 
+   Hover
+ */
+
+.feature-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+/* 
+   Responsive
+ */
+
+@media (max-width: 991.98px) {
+
+    .platform-features {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .features-title {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+
+    .platform-features {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+
+    .features-title {
+        font-size: 25px;
+    }
+
+    .features-description {
+        font-size: 13px;
+    }
+
+    .feature-card-large,
+    .feature-card:not(.feature-card-large) {
+        min-height: auto;
+    }
+}

@@ -1,0 +1,259 @@
+header {
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0px;
+}
+
+/* الكارد الكبير اللي واخد الشاشة بحواف دايرة */
+.hero {
+  position: relative;
+  flex: 1;
+  gap: var(--general-gap);
+  border-radius: var(--Containder-radius);
+  overflow: hidden;
+  height: 100vh;
+  background: url("../../assets/images/Great Pyramid.jpg") center/cover
+    no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* layer غامقة فوق الصورة عشان النص يبان */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.4),
+    rgba(242, 233, 222) 130%
+  );
+}
+
+/* المحتوى في النص */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* البادج الصغيرة فوق العنوان */
+.hero__badge {
+  font-family: "F37 Moon Demi";
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--general-radius);
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+}
+.hero__btn-secondary,
+.hero__badge {
+  background: var(--Card-Background);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--Light-Text);
+  border-bottom: 0.83px solid rgba(255, 255, 255, 0.447);
+  border-top: 0.83px solid rgba(255, 255, 255, 0.684);
+}
+
+/* العنوان */
+.hero__title {
+  font-size: 48px;
+  color: var(--Light-Text);
+  margin: 0;
+  line-height: 1.2;
+  font-family: "F37 Moon Bold";
+}
+
+.hero__title-highlight {
+  display: block;
+  background: linear-gradient(
+    TO RIGHT,
+    rgba(198, 152, 85, 1) 10%,
+    rgba(140, 97, 33, 1)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* النص اللي تحت العنوان */
+.hero__subtitle {
+  margin: auto;
+  width: 70%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 16px;
+  font-family: "F37 Moon light";
+  color: var(--Light-Text);
+}
+
+/* الأزرار */
+.hero__actions {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.hero__actions .btn {
+  border-radius: var(--general-radius);
+  padding: 10px 20px;
+font-family: "F37 Moon Demi";
+font-size: 20px;
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.hero__btn-main {
+  font-family: "F37 Moon Bold";
+  min-width: 234px;
+  background: var(--Secondry-text);
+  color: var(--Light-Text);
+}
+.hero__btn-main:hover {
+  color: var(--Background-Color);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+.hero__btn-main i {
+  font-size: 12px;
+}
+
+.hero__btn-secondary {
+  font-family: "F37 Moon Bold";
+  min-width: 191px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(20px);
+background: var(--Card-Background);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+
+  border-bottom: 0.83px solid rgba(255, 255, 255, 0.447);
+  border-top: 0.83px solid rgba(255, 255, 255, 0.684);
+  
+}
+
+.hero__btn-secondary:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  color: var(--Background-Color);
+}
+
+/* ==========================
+   Hero Responsive
+========================== */
+
+@media (max-width: 767.98px) {
+ 
+  .hero {
+
+    margin: 0;
+border-radius: 20px;
+    background-position: center center;
+    background-size: cover;
+
+    padding: 0 20px;
+  }
+  .hero_overlay {
+      min-height: 100vh;
+  }
+
+  /* Content */
+
+  .hero__content {
+    width: 100%;
+    max-width: 400px;
+
+    padding-top: 30px;
+  }
+
+  /* Badge */
+
+  .hero__badge {
+    margin-bottom: 1rem;
+
+    padding: 0.35rem 0.8rem;
+
+    font-size: 11px;
+  }
+
+  /* Title */
+
+  .hero__title {
+    font-size: 34px;
+
+    line-height: 1.15;
+  }
+
+  /* Subtitle */
+
+  .hero__subtitle {
+    width: 100%;
+    max-width: 320px;
+
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  /* Buttons Container */
+
+  .hero__actions {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 0.75rem;
+  }
+
+  /* Buttons */
+
+  .hero__btn-main,
+  .hero__btn-secondary {
+    width: 200px;
+
+    min-width: 0;
+
+    height: 45px;
+
+    padding: 0.6rem 1rem;
+
+    font-size: 12px;
+
+    border-radius: var(--general-radius);
+  }
+
+  .hero__btn-main {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+  }
+
+  .hero__btn-main i {
+    font-size: 10px;
+  }
+}

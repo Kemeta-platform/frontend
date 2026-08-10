@@ -1,0 +1,106 @@
+/* Light */
+@font-face {
+    font-family: "F37 Moon light";
+    src: url("../assets/images/fonts/f37-moon-arabic-trial-light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Regular */
+@font-face {
+    font-family: "F37 Moon Regular";
+    src: url("../assets/images/fonts/f37-moon-arabic-trial-regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Demi */
+@font-face {
+    font-family: "F37 Moon Demi";
+    src: url("../assets/images/fonts/f37-moon-arabic-trial-demi.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Bold */
+@font-face {
+    font-family: "F37 Moon Bold";
+    src: url("../assets/images/fonts/f37-moon-arabic-trial-bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Extra Bold */
+@font-face {
+    font-family: "F37 Moon ExtraBold";
+    src: url("../assets/images/fonts/f37-moon-arabic-trial-extrabold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Black */
+@font-face {
+    font-family: "F37 Moon Black";
+    src: url("../assets/images/fonts/f37-moon-arabic-trial-black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Thin */
+@font-face {
+    font-family: "F37 Moon thin";
+    src: url("../assets/images/fonts/f37-moon-arabic-trial-thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+:root {
+  --Background-Color: #F2E9DE;
+  --Navbar-Background:rgba(217, 217, 217, 0.5);
+  --Secondry-text:#1C484F;
+ --Card-Background:rgba(255, 255, 255, 0.2);
+  --Light-Text: rgba(255, 255, 255, 1);
+    --Containder-radius: 50px;
+  --general-radius:999px;
+  --border-size:1px;
+  --general-gap:24px;
+  --transition-fast: 0.2s ease-out;
+  --Primary-Text:#C69855;
+  --Dark-Text:#2E2E2D;
+  --cards-gap:20px;
+  --card-radius:20px;
+  --section-padding:80px;
+  --card-gap:5px;
+  
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0px 15px;
+    font-family: "F37 Moon", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    position: relative;
+     background-color: var(--Background-Color);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+background-image:
+    url("../assets/images/24dd4ca9f49b339d4a1547dce579eb33e108bf10 (1).png");
+
+background-repeat: repeat;
+background-position: -10 -100;
+background-size: 515px 500px; 
+    z-index: -1;
+}
+
+
