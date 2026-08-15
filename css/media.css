@@ -1,0 +1,670 @@
+/* ==========================
+   Hero Responsive
+========================== */
+
+@media (max-width: 767.98px) {
+ 
+  .hero {
+
+    margin: 0;
+border-radius: 20px;
+    background-position: center center;
+    background-size: cover;
+
+    padding: 0 20px;
+  }
+  .hero_overlay {
+      min-height: 100vh;
+  }
+
+  /* Content */
+
+  .hero__content {
+    width: 100%;
+    max-width: 400px;
+
+    padding-top: 30px;
+  }
+
+  /* Badge */
+
+  .hero__badge {
+    margin-bottom: 1rem;
+
+    padding: 0.35rem 0.8rem;
+
+    font-size: 11px;
+  }
+
+  /* Title */
+
+  .hero__title {
+    font-size: 34px;
+
+    line-height: 1.15;
+  }
+
+  /* Subtitle */
+
+  .hero__subtitle {
+    width: 100%;
+    max-width: 320px;
+
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  /* Buttons Container */
+
+  .hero__actions {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 0.75rem;
+  }
+
+  /* Buttons */
+
+  .hero__btn-main,
+  .hero__btn-secondary {
+    width: 200px;
+
+    min-width: 0;
+
+    height: 45px;
+
+    padding: 0.6rem 1rem;
+
+    font-size: 12px;
+
+    border-radius: var(--general-radius);
+  }
+
+  .hero__btn-main {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+  }
+
+  .hero__btn-main i {
+    font-size: 10px;
+  }
+}
+
+/* ==========================
+  feature Responsive
+========================== */
+
+
+@media (max-width: 991.98px) {
+
+    .platform-features .container {
+        width: 100%;
+        padding: 45px;
+display: flex;
+justify-content: center;
+align-items: center;   
+ }
+.platform-features .row{
+    margin: auto;
+    width: 100%;
+}
+    .features-title {
+        font-size: 32px;
+    }
+      .features-description {
+        font-size: 16px;
+    }
+    .feature-card{
+        width: 70vw;
+        
+    }
+
+}
+
+
+@media (max-width: 767.98px) {
+
+  
+
+    .feature-card-large,
+    .feature-card:not(.feature-card-large) {
+        min-height: auto;
+    }
+}
+/* 
+      about 
+ */
+
+@media (max-width: 768px) {
+
+    .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 45px 20px;
+    }
+
+    .about-section .container-fluid {
+        width: 100%;
+        padding: 0;
+    }
+
+  .about-section .row {
+     
+margin: auto;
+      
+        
+    }
+
+
+  .about-content {
+        width: 75vw;
+        text-align: center;
+        margin-left: -12vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .about-label {
+        font-size: 24px;
+        padding: 12px 18px;
+    }
+
+    .about-title {
+        width:350px;
+        max-width: 100%;
+
+        font-size: 32px;
+        line-height: 1.15;
+    }
+
+    .about-description {
+        width: 100%;
+        max-width: 350px;
+
+        margin: 0 auto 20px;
+
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+.about-stats {
+    display: grid !important;
+
+    grid-template-columns: 104px 104px !important;
+    grid-template-rows: 73px 73px !important;
+
+    gap: 12px;
+
+    width: max-content;
+    margin: 0 auto;
+}
+
+.stat-card {
+    width: 104px !important;
+    height: 73px !important;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.stat-card .container-card {
+    width: 104px;
+    height: 73px;
+}
+
+.stat-card span {
+    font-size: 12px;
+    font-family: "F37 Moon light";
+}
+}
+
+/* ==========================
+   Why Kemeta Responsive
+========================== */
+
+@media (max-width: 768px) {
+
+    .why-kemeta-section {
+        width: 100% ;
+    }
+
+    .why-kemeta-section .why-kemeta-container {
+        width: 100%;
+        padding: 45px 20px;
+
+        gap: 30px;
+    }
+
+
+    /* ==========================
+       Header
+    ========================== */
+
+    .why-kemeta-header {
+        gap: 15px;
+    }
+
+    .why-kemeta-badge {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    .why-kemeta-title {
+        font-size: 26px;
+    }
+
+    .why-kemeta-description {
+        width: 100%;
+        max-width: 500px;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* ==========================
+       Cards
+    ========================== */
+
+    .why-kemeta-cards {
+        width: 100% !important;
+
+        display: flex;
+
+align-items: center ;
+justify-content: center;
+flex-direction: column;
+
+        gap: 15px;
+
+        padding: 0;
+    }
+
+
+    .why-kemeta-card {
+        width: 100% !important;
+        height: auto;
+        min-height: 170px;
+
+        padding: 18px;
+
+        border-radius: var(--card-radius);
+    }
+
+
+    .why-kemeta-card-title {
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+
+    .why-kemeta-card-description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+}
+
+@media (max-width: 440px) {
+
+    .why-kemeta-section {
+        width: 100%;
+    }
+
+    .why-kemeta-section .why-kemeta-container {
+        width: 100%;
+        padding: 35px 5px;
+    }
+
+
+    /* ==========================
+       Header
+    ========================== */
+
+    .why-kemeta-header {
+        gap: 12px;
+    }
+
+    .why-kemeta-badge {
+        font-size: 16px;
+        padding: 7px 14px;
+    }
+
+    .why-kemeta-title {
+        font-size: 23px;
+        line-height: 1.3;
+    }
+
+    .why-kemeta-description {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* ==========================
+       Cards
+    ========================== */
+
+    .why-kemeta-cards {
+        width: 80vw !important;
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center ;
+        justify-content: center;
+        gap: 12px;
+margin-left: -60px;
+        padding: 10px !important;
+    }
+
+
+    .why-kemeta-card {
+        width: 100% !important;
+        height: 40vw !important;
+
+        min-height: 145px;
+        height: auto;
+     border-radius: var(--card-radius);
+    }
+
+
+    .why-kemeta-card-title {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+
+    .why-kemeta-card-description {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+}
+
+/* =========================================
+   Mobile Media Query (Max-width: 768px)
+========================================= */
+@media (max-width: 768px) {
+    /* 1. ترتيب الأقسام بشكل عمودي */
+    .how-it-works-sticky {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+    /* 2. تعديل قسم النصوص (Left Side سابقاً) */
+    .how-it-works-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        box-sizing: border-box;
+          padding: 45px 30px;
+
+    }
+
+.how-it-works-content .section-badge{
+     width: 36vw  !important;
+}
+    .how-it-works-content .content-title {
+        width: 70vw !important;
+        text-align: center;
+        margin: 0 auto 15px; 
+    }
+
+  .how-it-works-content p {
+    width: 100%;
+        margin-bottom: 30px !important;
+        text-align: center; 
+        box-sizing: border-box; 
+        padding:0px 30px ;
+        font-size: 20px !important;
+    }
+
+    /* =========================================
+       ضبط حاوية الكروت لعرض متناسق
+    ========================================= */
+   
+
+    
+      .steps-wrapper {
+        flex: 1;
+        width: 100% !important;
+    }
+    
+
+    .steps-track {
+        width: 100% !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        padding: 0 !important;
+        margin: 0;
+        gap: 25px;
+
+        align-items: center;
+    }
+
+
+    /* =========================================
+       Card
+    ========================================= */
+
+    .step-card {
+        width: 100% !important;
+
+        height: 155px;
+        min-height: 155px;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+
+        position: relative;
+        overflow: hidden;
+
+        border-radius: 18px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================================
+       Image
+    ========================================= */
+
+    .step-card .img {
+        position: absolute;
+
+        inset: 0;
+
+        width: 90% !important;
+
+        height: 90% !important;
+margin: auto;
+        border-radius: inherit;
+
+        overflow: hidden;
+
+        z-index: 1;
+    }
+
+    .step-card .img img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    /* =========================================
+       Text
+    ========================================= */
+
+    .step-text {
+        position: relative;
+
+        z-index: 10;
+
+        width: 90% !important;
+        height:90% !important ;
+margin: auto;
+
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        justify-content: flex-end !important;
+
+        gap: 10px ;
+        padding:20px !important ;
+
+        text-align: left;
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.8)
+            );
+
+        border-radius:45px;
+    }
+
+
+    .step-text h3 {
+        margin: 0 0 3px !important;
+
+        font-size: 11px;
+
+        line-height: 1.1;
+
+        text-align: left ;
+
+        color: var(--Primary-Text);
+    }
+
+
+    .step-text p {
+        width: 100%;
+
+        margin: 0 !important;
+
+        font-size: 7px;
+
+        line-height: 1.35;
+
+        text-align: left !important;
+
+        color: var(--Light-Text);
+    }
+
+}
+
+@media (max-width: 440px) {
+
+    .how-it-works-sticky {
+        height: 120vh !important;
+        gap: 5px;
+        padding: 20px !important;
+    }
+
+    .how-it-works-content {
+        padding: 30px 15px;
+    }
+
+    .how-it-works-content .section-badge {
+        width: 44vw !important;
+        padding: 8px 10px;
+        font-size: 16px;
+    }
+
+    .how-it-works-content .content-title {
+        width: 85vw !important;
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+
+    .how-it-works-content p {
+        width: 100%;
+        padding: 0 80px;
+        margin-bottom: 20px !important;
+        font-size: 16px !important;
+        line-height: 1.5;
+    }
+
+    .steps-wrapper {
+        width: 100% !important;
+    }
+
+    .steps-track {
+        gap: 18px;
+    }
+
+    .step-card {
+        width: 100% !important;
+        height: 145px;
+        min-height: 145px;
+        border-radius: 18px;
+    }
+
+    .step-card .img {
+        width: 92% !important;
+        height: 92% !important;
+        border-radius: 18px;
+    }
+
+    .step-text {
+        width: 92% !important;
+        height: 92% !important;
+        padding: 15px !important;
+        gap: 6px;
+        border-radius: 30px;
+    }
+
+    .step-text h3 {
+        font-size: 10px;
+    }
+
+    .step-text p {
+        font-size: 6.5px;
+        line-height: 1.35;
+    }
+}

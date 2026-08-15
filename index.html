@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Kemeta - Discover Egypt</title>
+  <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+  <header>
+    <!-- Navbar -->
+<nav class="navbar">
+
+    <div class="navbar__left">
+
+        <!-- Desktop Logos -->
+        <img src="./assets/images/logos/SVG/Logo.svg"
+             alt="Kemeta"
+             class="navbar-logo navbar-logo-light">
+
+        <img src="./assets/images/logos/SVG/Logo (1).svg"
+             alt="Kemeta"
+             class="navbar-logo navbar-logo-dark">
+
+        <!-- Mobile Logos -->
+        <img src="./assets/images/logos/SVG/logo (2).svg"
+             alt="Kemeta"
+             class="navbar-logo-mobile navbar-logo-mobile-light">
+
+        <img src="./assets/images/logos/SVG/Vector.svg"
+             alt="Kemeta"
+             class="navbar-logo-mobile navbar-logo-mobile-dark">
+
+    </div>
+
+
+    <ul class="navbar__center d-flex gap-4">
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">How It Works</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Why Kemeta</a>
+        </li>
+
+    </ul>
+
+
+    <div class="navbar__right">
+
+        <i class="fas fa-sun"></i>
+
+        <button class="btn btn-outline">
+            Log In
+        </button>
+
+        <button class="btn btn-sign">
+            Sign Up
+        </button>
+
+    </div>
+
+
+    <button
+        class="navbar__menu-button"
+        id="navbar-menu-button"
+        type="button"
+        aria-label="Open menu">
+
+        <i class="fas fa-bars"></i>
+
+    </button>
+
+</nav>
+
+
+<!-- ==========================
+     Mobile Menu
+========================== -->
+
+<div class="mobile-menu-overlay"></div>
+
+<div class="mobile-menu">
+
+    <!-- Header -->
+    <div class="mobile-menu-header">
+
+        <a href="#" class="mobile-logo">
+
+            <!-- استخدمي اللوجو اللي عندك -->
+            <img
+                src="./assets/images/logos/SVG/Vector.svg"
+                alt="Kemeta">
+
+        </a>
+
+        <button
+            class="mobile-menu-close"
+            type="button"
+            aria-label="Close menu">
+
+            <i class="fas fa-times"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- Links -->
+    <nav class="mobile-nav">
+
+        <a href="#" class="mobile-nav-link">
+            Home
+        </a>
+
+        <a href="#" class="mobile-nav-link">
+            Features
+        </a>
+
+        <a href="#" class="mobile-nav-link">
+            About Us
+        </a>
+
+        <a href="#" class="mobile-nav-link">
+            Why Kemeta
+        </a>
+
+        <a href="#" class="mobile-nav-link">
+            How It Works
+        </a>
+
+    </nav>
+
+
+    <!-- Bottom Actions -->
+    <div class="mobile-menu-actions">
+
+        <div class="mobile-actions-row">
+
+            <a href="login.html" class="mobile-login">
+                Log In
+            </a>
+
+            <button
+                class="mobile-settings"
+                type="button">
+
+                <i class="fas fa-cog"></i>
+
+            </button>
+
+        </div>
+
+
+        <a href="register.html" class="mobile-signup">
+            Sign Up
+        </a>
+
+    </div>
+
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <div class="hero__badge">
+          <img src="./assets/images/icons/Icon (1).svg" alt="Kemeta Logo" class="hero__badge-logo" />
+          <span>Powered by GPT-4 AI</span>
+        </div>
+
+        <h1 class="hero__title">
+          Discover Egypt
+          <span class="hero__title-highlight">Confidently</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Your AI-powered "Smart Guide" to the land of Pharaohs. Safe,
+          transparent and unforgettable.
+        </p>
+
+        <div class="hero__actions">
+          <button class="btn hero__btn-main d-flex align-items-center justify-content-center gap-2">
+            <span>Start Your Journey</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+          <button class="btn hero__btn-secondary">Explore Features</button>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <!-- 
+    Platform Features Section
+ -->
+
+  <section class="platform-features">
+    <div class="container">
+      <div class=" row justify-content-center text-center">
+        <div class="first-card col-lg-7 d-flex">
+          <span class="features-badge"> Platform Features </span>
+
+          <h2 class="features-title">Features Built Around You</h2>
+
+          <p class="features-description">
+            Everything you need to plan, customize, and experience Egypt
+            powered by AI, grounded in real local knowledge.
+          </p>
+        </div>
+      </div>
+
+      <!-- Features Cards -->
+      <div class="row g-3">
+        <!-- Large Card 1 -->
+        <div class="col-lg-6 col-md-7">
+          <div class="feature-card feature-card-large">
+            <h3 class="feature-card-title">AI Trip Generator</h3>
+
+            <p class="feature-card-description">
+              Answer a few quick questions about your interests, budget, and
+              travel style, and let our AI build a complete, personalized
+              itinerary — no research, no guesswork, just a trip made for you.
+            </p>
+
+            <a href="#" class="feature-card-link"> Learn More </a>
+          </div>
+        </div>
+
+        <!-- Large Card 2 -->
+        <div class="col-lg-6 col-md-6">
+          <div class="feature-card feature-card-large ">
+            <h3 class="feature-card-title mb-4">Ready-Made Packages</h3>
+
+            <p class="feature-card-description mb-3">
+              Prefer a simpler start? Choose from expertly curated packages designed to showcase the best experiences
+              Egypt has to offer, ready to book in minutes.
+            </p>
+
+            <a href="#" class="feature-card-link"> Learn More </a>
+          </div>
+        </div>
+
+        <!-- Small Card 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <h3 class="feature-card-title">Customize Your Trip</h3>
+
+            <p class="feature-card-description">
+              Handpick every destination you want to visit, and let our AI
+              organize them into a smooth, optimized itinerary that makes the
+              most of your time.
+            </p>
+
+            <a href="#" class="feature-card-link"> Learn More </a>
+          </div>
+        </div>
+
+        <!-- Small Card 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <h3 class="feature-card-title">Egypt Chatbot</h3>
+
+            <p class="feature-card-description">
+              Get answers about historical sites, transportation, pricing, and
+              dining through a chatbot trained on verified Egypt-focused
+              knowledge.
+            </p>
+
+            <a href="#" class="feature-card-link"> Learn More </a>
+          </div>
+        </div>
+
+        <!-- Small Card 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <h3 class="feature-card-title">Smart Map</h3>
+
+            <p class="feature-card-description">
+              Get answers about historical sites, transportation, pricing, and
+              dining through a chatbot trained on verified Egypt-focused
+              knowledge.
+            </p>
+
+            <a href="#" class="feature-card-link"> Learn More </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 
+     About Section
+ -->
+  <section class="about-section">
+    <div class="about-overlay"></div>
+
+    <div class="container-fluid h-100">
+      <div class="row h-100 align-items-center">
+
+        <div class=" col-6 col-lg-12">
+          <div class="about-content">
+            <!-- Small Button -->
+            <a href="#" class="about-label mb-4">
+              About Kemeta
+            </a>
+
+            <!-- Heading -->
+            <h2 class="about-title mb-4">
+              Reimagining how the world
+              <br>
+              experiences Egypt
+            </h2>
+
+            <!-- Description -->
+            <p class="about-description mb-4">
+              Kemeta is Egypt's AI-powered travel companion.
+              We combine local expertise with smart technology
+              to help travelers plan, customize, and experience
+              Egypt with confidence from ancient wonders to hidden
+              gems, safely and simply.
+            </p>
+            <!-- Statistics -->
+            <div class="about-stats">
+              <div class="stat-card">
+                <div class="container-card">
+                  <h3>12K</h3>
+                  <span>GUIDED TOURS</span>
+                </div>
+              </div>
+
+              <div class="stat-card ">
+                <div class="container-card">
+                  <h3>64K</h3>
+                  <span>TRAVELERS</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="container-card">
+
+                  <h3>350</h3>
+                  <span>DESTINATIONS</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="container-card">
+
+                  <h3>780</h3>
+                  <span>LOCAL EXPERTS</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="why-kemeta-section">
+
+    <div class="container why-kemeta-container">
+
+      <!-- Section Header -->
+      <div class="why-kemeta-header">
+
+        <span class="why-kemeta-badge">
+          Why Kemeta
+        </span>
+
+        <h2 class="why-kemeta-title">
+          What Make Us Different
+        </h2>
+
+        <p class="why-kemeta-description">
+          From personalized planning to real-time safety, every detail
+          is designed around one goal: a better travel experience.
+        </p>
+
+      </div>
+
+
+      <!-- Cards -->
+      <div class="why-kemeta-cards">
+
+        <div class="why-kemeta-card">
+
+
+
+          <h3 class="why-kemeta-card-title">
+            <span class="why-kemeta-card-label">
+              AI Trip Generator
+            </span>
+            Personalized Planning
+          </h3>
+
+          <p class="why-kemeta-card-description">
+            Built around your interests and budget, not a generic package.
+          </p>
+
+        </div>
+
+
+        <div class="why-kemeta-card">
+
+
+
+          <h3 class="why-kemeta-card-title">
+            <span class="why-kemeta-card-label">
+              100% Verified
+            </span>
+            Trusted Content
+          </h3>
+
+          <p class="why-kemeta-card-description">
+            Every answer comes from reviewed, Egypt-specific sources,
+            not random search results.
+          </p>
+
+        </div>
+
+
+        <div class="why-kemeta-card">
+
+
+
+          <h3 class="why-kemeta-card-title">
+            <span class="why-kemeta-card-label">
+              3 Ways to Plan
+            </span>
+            Total Flexibility
+          </h3>
+
+          <p class="why-kemeta-card-description">
+            Automated, ready-made, or fully customized the choice is
+            always yours.
+          </p>
+
+        </div>
+
+
+        <div class="why-kemeta-card">
+
+
+
+          <h3 class="why-kemeta-card-title">
+            <span class="why-kemeta-card-label">
+              Real-Time Alerts
+            </span>
+            Built-in Safety
+          </h3>
+
+          <p class="why-kemeta-card-description">
+            Get notified near high-risk areas, with nearby hospitals
+            and tourist police always in view.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="how-it-works-section">
+
+    <div class="how-it-works-sticky">
+
+      <!-- Left ثابت -->
+      <div class="how-it-works-content">
+
+        <span class="section-badge">
+          How It Works
+        </span>
+
+        <div class="content-title">
+          Simple Steps, Unforgettable Journey
+      </div>
+
+        <p>
+          From personalized planning to real-time safety,
+          every detail is designed around one goal:
+          a better travel experience.
+        </p>
+
+      </div>
+
+
+      <!-- Right بيتحرك -->
+      <div class="steps-wrapper">
+
+        <div class="steps-track">
+
+          <div class="step-card">
+            <div class="step-text">
+              <h3>Share Preferences</h3>
+              <p>
+               Answer a few questions, and our AI builds your itinerary.
+              </p>
+            </div>
+
+            <div class="img"> <img src="assets/images/(1).jpg" alt=""></div>
+          </div>
+
+
+          <div class="step-card">
+            <div class="step-text">
+              <h3>Choose Your Path</h3>
+              <p>
+                Pick a ready-made package or customize your own stops.
+              </p>
+            </div>
+
+            <div class="img"> <img src="assets/images/(2).jpg" alt="">
+            </div>
+          </div>
+
+
+          <div class="step-card">
+            <div class="step-text">
+              <h3>Ask Anything</h3>
+              <p>
+                Ask our chatbot anything about Egypt, anytime, day or night.
+              </p>
+            </div>
+
+            <div class="img"><img src="assets/images/(3).jpg" alt=""></div>
+          </div>
+
+
+          <div class="step-card">
+            <div class="step-text">
+              <h3>Stay Safe</h3>
+              <p>
+                Smart Map keeps you safe with nearby help and risk alerts.
+              </p>
+            </div>
+
+            <div class="img"><img src="assets/images/(4).jpg" alt=""></div>
+          </div>
+
+
+          <div class="step-card">
+            <div class="step-text">
+              <h3>Enjoy Trip</h3>
+              <p>
+                Everything's set, just relax and enjoy Egypt to the fullest.
+              </p>
+            </div>
+
+            <div class="img"><img src="assets/images/(5).jpg" alt=""></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
