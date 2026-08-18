@@ -30,7 +30,7 @@ body {
 
     overflow: hidden;
 
-    z-index: 99999;
+    z-index: 99999999;
 
     opacity: 1;
     visibility: visible;
@@ -1402,8 +1402,8 @@ padding: 19px;
 }
 
 
-.footer-links a:hover {
-    color: #d3a04a;
+.footer-links .links-container a:hover {
+    color: var(--Primary-Text);
 }
 .links-container{
   display: flex;
