@@ -54,6 +54,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Kitami W01';
+    src: url('../assets/images/fonts/LogoFont/Kitami\ W01\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
   --Background-Color: #F2E9DE;
   --Navbar-Background:rgba(217, 217, 217, 0.5);

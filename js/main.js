@@ -1,3 +1,38 @@
+
+    const splash = document.getElementById("splash");
+    const kMarkGroup = document.getElementById("kMarkGroup");
+    const emetaGroup = document.getElementById("emetaGroup");
+
+    window.addEventListener("load", () => {
+
+        /* حركة K */
+        setTimeout(() => {
+            kMarkGroup.classList.add("shift-left");
+        }, 300);
+
+        /* ظهور emeta */
+        setTimeout(() => {
+            emetaGroup.classList.add("show");
+        }, 1000);
+
+        /* إخفاء الـ Splash */
+        setTimeout(() => {
+            splash.style.opacity = "0";
+            splash.style.transition = "opacity 600ms ease";
+        }, 2300);
+
+        /* إزالة الـ Splash من الصفحة */
+        setTimeout(() => {
+            splash.remove();
+        }, 2900);
+
+    });
+
+
+
+
+
+
 const navbar = document.querySelector(".navbar");
 const menuButton = document.querySelector("#navbar-menu-button");
 const navbarCenter = document.querySelector(".navbar__center");
