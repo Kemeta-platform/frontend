@@ -55,6 +55,7 @@ const navbarCenter = document.querySelector(".navbar__center");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileOverlay = document.querySelector(".mobile-menu-overlay");
 const mobileClose = document.querySelector(".mobile-menu-close");
+const mobileLogin = document.querySelector(".mobile-login");
 
 const menuToggle = document.querySelector("#navbar-menu-button");
 
@@ -77,6 +78,10 @@ menuToggle?.addEventListener("click", openMobileMenu);
 mobileClose?.addEventListener("click", closeMobileMenu);
 
 mobileOverlay?.addEventListener("click", closeMobileMenu);
+
+mobileLogin?.addEventListener("click", function () {
+    window.location.href = "./login/index.html";
+});
 
 const howItWorks = document.querySelector(".how-it-works-section");
 const sticky = document.querySelector(".how-it-works-sticky");
