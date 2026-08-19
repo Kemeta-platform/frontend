@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kemeta - Get Started</title>
+
+  <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components/auth.css">
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-wrapper">
+      
+      <!-- Left Teal Card (الأكبر حجماً) -->
+      <div class="left-card">
+        <div class="teal-panel">
+          <a href="#" class="btn-back" id="globalBackBtn">
+            <i class="fa-solid fa-angle-left"></i> Back
+          </a>
+
+          <section class="card-container">
+            <div class="brand-section">
+              <div class="logo-container">
+                <img src="../assets/images/logos/SVG/Logo (3).svg" alt="Kemeta Logo">
+              </div>
+              <h1>Get Started With Us</h1>
+              <p>Complete these easy steps to register your account</p>
+            </div>
+
+            <!-- Steps Indicators -->
+            <div class="steps-container">
+              <div class="step-item active" id="indicator-1">
+                <div class="step-badge" id="badge-1">1</div>
+                <span>Sign up your account</span>
+              </div>
+              <div class="step-item" id="indicator-2">
+                <div class="step-badge" id="badge-2">2</div>
+                <span>Verify your account</span>
+              </div>
+              <div class="step-item" id="indicator-3">
+                <div class="step-badge" id="badge-3">3</div>
+                <span>Complete your profile</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Right Form Card -->
+      <div class="right-card">
+        <div class="form-panel">
+          
+          <!-- STEP 1 -->
+          <div class="step-content" id="step-1">
+            <div class="form-header">
+              <h2>Create an Account</h2>
+              <p>Enter your personal data to create your account</p>
+            </div>
+
+            <button type="button" class="btn-google">
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              Google
+            </button>
+
+            <div class="divider">
+              <span>or</span>
+            </div>
+
+            <form id="formStep1">
+              <div class="row g-2 mb-2">
+                <div class="col-6">
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-control-custom" id="firstName" placeholder="e.g. Osama" required>
+                </div>
+                <div class="col-6">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-control-custom" id="lastName" placeholder="e.g. Gharba" required>
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control-custom" id="email" placeholder="e.g. osamagharba@gmail.com" required>
+              </div>
+
+              <div class="mb-2">
+                <label class="form-label">Password</label>
+                <div class="custom-input-group">
+                  <input type="password" id="password" class="form-control-custom" placeholder="Enter your password" required>
+                  <button type="button" class="btn-toggle-password" onclick="togglePass('password', this)">
+                    <i class="fa-regular fa-eye-slash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <div class="custom-input-group">
+                  <input type="password" id="confirmPassword" class="form-control-custom" placeholder="Confirm your password" required>
+                  <button type="button" class="btn-toggle-password" onclick="togglePass('confirmPassword', this)">
+                    <i class="fa-regular fa-eye-slash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+
+            <div class="signup-text">
+              Already have an account? <a href="../login/index.html">Log in</a>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step-content d-none" id="step-2">
+            <div class="form-header">
+              <h2 class="pb-2">Verify Your Account</h2>
+              <p class="fw-bold mb-1">Enter the 6-digit code we sent to</p>
+              <p  id="displayEmail">osamagharba@gmail.com</p>
+            </div>
+
+            <div class="otp-container mb-4">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+            </div>
+
+            <div class="text-center mb-4">
+              <span class="otd-p fon ">Didn't receive the code?</span>
+              <a href="#" class="forgot-link d-inline" id="resendBtn">Resend in <span id="timer">00:45</span></a>
+            </div>
+
+            <button type="button" class="btn-submit" id="btnVerify">Verify</button>
+
+            <div class="signup-text fw-bold">
+              Wrong email? <a href="#" id="btnGoBackEmail">Go back</a>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <!-- ================= STEP 3: Complete Profile ================= -->
+<div class="step-content d-none" id="step-3">
+  <div class="form-header">
+    <h2 class="avatar-header">Complete Your Profile</h2>
+    <p >Tell us a little more about yourself</p>
+  </div>
+
+  <!-- Avatar Picture -->
+  <div class="text-center mb-4">
+    <div class="avatar-wrapper">
+      <div class="avatar-placeholder" id="avatarPreviewContainer">
+        <img src="../assets/images/img.svg" alt="">
+      </div>
+      <label for="avatarInput" class="camera-btn" title="Upload profile picture">
+        <i class="fa-solid fa-camera"></i>
+      </label>
+      <input type="file" id="avatarInput" accept="image/*" class="d-none">
+    </div>
+    <div class="avatar-label mt-2">Profile picture <span class="text-muted">(optional)</span></div>
+  </div>
+
+  <form id="formStep3">
+    <!-- 1. Preferred Language Custom Dropdown -->
+    <div class="mb-3">
+      <label class="form-label">Preferred language</label>
+      <div class="custom-select-wrapper" id="languageWrapper">
+        <div class="custom-select-trigger form-control-custom">
+          <input type="text" id="languageInput" placeholder="Choose your language" readonly required>
+          <i class="fa-solid fa-chevron-down select-chevron"></i>
+        </div>
+        <div class="custom-dropdown-menu">
+          <div class="custom-option" data-value="English"><span class="option-code">EN</span><span class="option-text">English</span></div>
+          <div class="custom-option" data-value="Arabic"><span class="option-code">AR</span><span class="option-text">Arabic</span></div>
+          <div class="custom-option" data-value="French"><span class="option-code">FR</span><span class="option-text">French</span></div>
+          <div class="custom-option" data-value="German"><span class="option-code">DE</span><span class="option-text">German</span></div>
+          <div class="custom-option" data-value="Spanish"><span class="option-code">ES</span><span class="option-text">Spanish</span></div>
+          <div class="custom-option" data-value="Italian"><span class="option-code">IT</span><span class="option-text">Italian</span></div>
+          <div class="custom-option" data-value="Russian"><span class="option-code">RU</span><span class="option-text">Russian</span></div>
+          <div class="custom-option" data-value="Chinese"><span class="option-code">ZH</span><span class="option-text">Chinese</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Nationality Custom Dropdown with Live Search -->
+    <div class="mb-4">
+      <label class="form-label">Nationality</label>
+      <div class="custom-select-wrapper" id="nationalityWrapper">
+        <div class="custom-select-trigger form-control-custom">
+          <input type="text" id="nationalityInput" placeholder="Choose your nationality" autocomplete="off" required>
+          <i class="fa-solid fa-chevron-down select-chevron"></i>
+        </div>
+        <div class="custom-dropdown-menu" id="nationalityList">
+          <div class="custom-option" data-value="Egypt"><span class="option-flag">🇪🇬</span><span class="option-text">Egypt</span></div>
+          <div class="custom-option" data-value="Afghanistan"><span class="option-flag">🇦🇫</span><span class="option-text">Afghanistan</span></div>
+          <div class="custom-option" data-value="Albania"><span class="option-flag">🇦🇱</span><span class="option-text">Albania</span></div>
+          <div class="custom-option" data-value="Algeria"><span class="option-flag">🇩🇿</span><span class="option-text">Algeria</span></div>
+          <div class="custom-option" data-value="Andorra"><span class="option-flag">🇦🇩</span><span class="option-text">Andorra</span></div>
+          <div class="custom-option" data-value="Angola"><span class="option-flag">🇦🇴</span><span class="option-text">Angola</span></div>
+          <div class="custom-option" data-value="Saudi Arabia"><span class="option-flag">🇸🇦</span><span class="option-text">Saudi Arabia</span></div>
+          <div class="custom-option" data-value="United States"><span class="option-flag">🇺🇸</span><span class="option-text">United States</span></div>
+          <div class="custom-option" data-value="United Kingdom"><span class="option-flag">🇬🇧</span><span class="option-text">United Kingdom</span></div>
+          <div class="custom-option" data-value="Germany"><span class="option-flag">🇩🇪</span><span class="option-text">Germany</span></div>
+          <div class="custom-option" data-value="France"><span class="option-flag">🇫🇷</span><span class="option-text">France</span></div>
+          <div class="custom-option" data-value="Italy"><span class="option-flag">🇮🇹</span><span class="option-text">Italy</span></div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Finish Setup</button>
+  </form>
+</div>
+
+          <!-- STEP 4 -->
+          <div class="step-content d-none text-center py-4" id="step-4">
+            <div class="success-icon mb-4">
+              <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div class="form-header">
+              <h2>You're all set, <span id="successName">Osama</span></h2>
+              <p >Your account is ready. Start building your first trip to Egypt.</p>
+            </div>
+
+            <a href="../dashboard/index.html" class="btn-submit text-decoration-none d-block text-center mt-4">
+              Start Planning Your Trip
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

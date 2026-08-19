@@ -1,0 +1,368 @@
+:root {
+  --primary-teal: rgba(28, 72, 79, 1);
+  --primary-teal-hover: #13343a;
+  --text-dark: rgba(0, 0, 0, 1);
+  --bg-sand: #fbf8f2;
+  --badge-gold: rgba(242, 233, 222, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+  background-size: 24px 24px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* 1. الحاوية الخارجية: توسيط كل الصفحة أفقياً ورأسياً */
+.auth-container {
+  width: 100%;
+ height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 80px; */
+}
+
+/* 2. الحاوية الداخلية (تضم الكارت الشمال والفورم وتحدد الحجم الكلي) */
+.auth-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 80px;
+}
+
+/* ================= Left Card (Teal Panel) ================= */
+/* جعل الجزء الشمال أكبر من اليمين (عرض ثابت ومريح) */
+.left-card {
+  flex: .4;
+
+}
+
+.teal-panel {
+  background: radial-gradient(
+    circle at 50% 100%,
+    rgba(11, 29, 32, 1) 0%,
+    rgba(18, 47, 52, 1) 25%,
+    rgba(28, 72, 79, 1) 50%,
+    rgba(41, 90, 97, 1) 75%,
+    rgba(70, 115, 122, 1) 100%
+  );
+  border-radius: 40px;
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  height: 90vh;
+  /* min-height: 640px; ارتفاع متناسق */
+  box-shadow: 0 20px 40px rgba(20, 56, 55, 0.2);
+  overflow: hidden;
+}
+
+.teal-panel::after {
+  border-radius: 40px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px
+  );
+  opacity: 1;
+}
+
+.teal-panel > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* زر الرجوع */
+.btn-back {
+  color: var(--badge-gold);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 30px 35px 0 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-back:hover {
+  opacity: 0.8;
+  color: var(--badge-gold);
+}
+
+.card-container {
+  padding: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* قسم اللوجو والنصوص الترحيبية */
+.brand-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.logo-container {
+  margin-bottom: 15px;
+}
+
+.brand-section h1 {
+  font-size: 28px;
+  font-family: "F37 Moon Bold", 'Poppins', sans-serif;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.brand-section p {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-family:"F37 Moon light" ;
+}
+
+/* ================= Right Side (Form Panel) ================= */
+.right-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  width: 100%;
+}
+
+.form-panel {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.form-header h2 {
+  font-size: 26px;
+  font-family: "F37 Moon Bold", 'Poppins', sans-serif;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.form-header p {
+  color: var(--text-dark);
+  font-size: 14.5px;
+}
+
+/* زر جوجل */
+.btn-google {
+  width: 100%;
+  border: 1.5px solid var(--primary-teal);
+  border-radius: 30px;
+  padding: 11px 20px;
+  background: transparent;
+  font-family: "F37 Moon Bold", 'Poppins', sans-serif;
+  color: var(--primary-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15.5px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-google:hover {
+  background-color: rgba(25, 68, 67, 0.05);
+  border-color: var(--primary-teal);
+}
+
+/* الخط الفاصل Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 18px 0;
+  gap: 15px;
+}
+
+.divider::before{
+  content: '';
+  width: 90vw;
+margin-right: 50px;
+  border-bottom: 1.5px solid var(--primary-teal);
+}
+
+.divider::after {
+  content: '';
+width: 90vw;
+margin-left: 50px;
+  border-bottom: 1.5px solid var(--primary-teal);
+
+}
+
+.divider span {
+  color: rgba(74, 74, 74, 1);
+  font-weight: 500;
+  font-size: 14.5px;
+}
+
+/* الحقول والنصوص */
+.form-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  margin-left: 6px;
+  display: block;
+}
+
+.custom-input-group {
+  position: relative;
+}
+
+/* الحقول العادية */
+.form-control-custom {
+  width: 100%;
+  background: transparent;
+  border: 1.5px solid var(--primary-teal);
+  border-radius: 30px;
+  padding: 12px 22px;
+  font-size: 0.92rem;
+  color: #222;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+/* تأثير الـ Focus المطابق للصورة تماماً */
+.form-control-custom:focus,
+.custom-select-wrapper.active .custom-select-trigger {
+  border-color: var(--primary-teal);
+  background-color: rgba(234, 229, 220, 0.4);
+  box-shadow: 0 4px 14px rgba(28, 72, 79, 0.12);
+}
+
+.form-control-custom::placeholder {
+  color: rgba(74, 74, 74, 1);
+}
+
+.btn-toggle-password {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--primary-teal);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.forgot-link {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* زر الـ Submit الرئيسي */
+.btn-submit {
+  width: 100%;
+  background-color: var(--primary-teal);
+  border: none;
+  border-radius: 30px;
+  padding: 13px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 15px;
+  transition: background-color 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-teal-hover);
+  color: white;
+}
+
+.btn-submit:active {
+  transform: scale(0.99);
+}
+
+/* الفوتر */
+.signup-text {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.92rem;
+  color: #444;
+}
+
+.signup-text a {
+  color: var(--primary-teal);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+/* إخفاء أيقونة العين الافتراضية في متصفح Edge و Chrome */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
+}
+
+/* إخفاء أيقونة الاقتراحات التلقائية إذا ظهرت */
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden !important;
+  display: none !important;
+  pointer-events: none !important;
+}
+/* ================= الشاشات الصغيرة Responsive ================= */
+@media (max-width: 991.98px) {
+  .auth-container {
+    padding: 20px 15px;
+  }
+  .auth-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .left-card, .right-card {
+    max-width: 100%;
+    flex: none;
+  }
+  .teal-panel {
+    min-height: auto;
+    border-radius: 30px;
+  }
+  .card-container {
+    padding: 15px 25px 30px 25px;
+  }
+}

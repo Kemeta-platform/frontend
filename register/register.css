@@ -1,0 +1,293 @@
+/* ==============================================
+   REGISTER SPECIFIC STYLES (Multi-Step Form)
+   ============================================== */
+
+/* Steps Progress on Left Panel */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.step-item.active,
+.step-item.completed {
+  background-color:rgba(242, 233, 222, 1);
+  color: var(--text-dark);
+  font-weight: 400;
+}
+
+.step-badge {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(74, 74, 74, 1);
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.step-item.active .step-badge,
+.step-item.completed .step-badge {
+  background: var(--text-dark);
+  color: #fff;
+}
+.step-item{
+    background-color: rgba(58, 58, 58, 1);
+}
+
+/* Select Dropdown Arrow */
+.select-custom {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%231c484f' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  cursor: pointer;
+}
+
+/* OTP Inputs (Step 2) */
+.otp-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.otp-box {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1.5px solid var(--primary-teal);
+  background-color: transparent;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.otp-box:focus {
+  border-color: var(--primary-teal);
+  box-shadow: 0 0 0 3px rgba(25, 68, 67, 0.15);
+}
+#displayEmail{
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(74, 74, 74, 1);
+}
+.otd-p,#timer{
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(74, 74, 74, 1);
+}
+.forgot-link{
+    color: var(--primary-teal);
+    font-size: 16px;
+        font-weight: 700;
+margin: 0;
+}
+.avatar-header{
+    font-size: 24px;
+}
+
+/* Profile Avatar Upload (Step 3) */
+.avatar-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #d1dede;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-placeholder .user-icon {
+  font-size: 55px;
+  color: var(--primary-teal);
+  margin-top: 15px;
+}
+
+.avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: gray;
+  transition: background 0.2s;
+}
+
+.camera-btn:hover {
+  background: #f0f0f0;
+}
+
+.avatar-label {
+  font-size:16px;
+  font-weight: 400;
+  color:rgb(65, 65, 65);
+}
+.avatar-label span{
+    color: rgba(129, 129, 129, 0.422);
+    opacity: .6;
+}
+/* Success Icon (Step 4) */
+.success-icon {
+  width: 80px;
+  height: 80px;
+background: radial-gradient(
+    circle at 50% 50%,
+ rgba(11, 29, 32, 1) 30%,rgba(28, 72, 79, 1)
+  );  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+/* ========================================================
+   CUSTOM DROPDOWN (Preferred Language & Nationality)
+   ======================================================== */
+
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0 20px 0 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.custom-select-trigger input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 12px 22px;
+  font-size: 0.92rem;
+  color: #222;
+  cursor: pointer;
+}
+
+.custom-select-trigger input::placeholder {
+  color:rgba(74, 74, 74, 1);
+}
+
+.select-chevron {
+  color: var(--primary-teal);
+  font-size: 0.9rem;
+  transition: transform 0.25s ease;
+  pointer-events: none;
+}
+
+/* تدوير السهم لأعلى عند فتح القائمة */
+.custom-select-wrapper.active .select-chevron {
+  transform: rotate(180deg);
+}
+
+/* القائمة المنسدلة */
+.custom-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: #eae5db; /* لون الخلفية الرملي المطابق للصورة */
+  border: 1px solid rgba(28, 72, 79, 0.3);
+  border-radius: 22px;
+  padding: 8px 0;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: none;
+}
+
+.custom-select-wrapper.active .custom-dropdown-menu {
+  display: block;
+}
+
+/* عناصر القائمة */
+.custom-option {
+  display: flex;
+  align-items: center;
+  padding: 9px 24px;
+  cursor: pointer;
+  font-size: 14.5px;
+  color: #222;
+  transition: background-color 0.15s ease;
+}
+
+.custom-option:hover {
+  background-color: rgba(28, 72, 79, 0.08);
+}
+
+/* كود اللغة (EN, AR, FR...) */
+.option-code {
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  min-width: 32px;
+  color: #111;
+}
+
+.option-text {
+  font-weight: 500;
+}
+
+/* علم الدولة */
+.option-flag {
+  font-size: 1.25rem;
+  margin-right: 12px;
+  line-height: 1;
+}
+
+/* تخصيص شريط التمرير Scrollbar */
+.custom-dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(28, 72, 79, 0.25);
+  border-radius: 10px;
+}

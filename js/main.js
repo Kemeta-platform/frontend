@@ -79,9 +79,7 @@ mobileClose?.addEventListener("click", closeMobileMenu);
 
 mobileOverlay?.addEventListener("click", closeMobileMenu);
 
-mobileLogin?.addEventListener("click", function () {
-    window.location.href = "./login/index.html";
-});
+
 
 const howItWorks = document.querySelector(".how-it-works-section");
 const sticky = document.querySelector(".how-it-works-sticky");

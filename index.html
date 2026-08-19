@@ -91,19 +91,19 @@
 </ul>
 
 
-    <div class="navbar__right">
+ <div class="navbar__right">
+    <i class="fas fa-sun"></i>
 
-        <i class="fas fa-sun"></i>
+    <!-- زر تسجيل الدخول -->
+    <a href="./login/index.html" class="btn btn-outline text-decoration-none">
+        Log In
+    </a>
 
-        <button class="btn btn-outline">
-            Log In
-        </button>
-
-        <button class="btn btn-sign">
-            Sign Up
-        </button>
-
-    </div>
+    <!-- زر إنشاء حساب جديد -->
+    <a href="./register/index.html" class="btn btn-sign text-decoration-none">
+        Sign Up
+    </a>
+</div>
 
 
     <button
@@ -178,30 +178,24 @@
 
 
     <!-- Bottom Actions -->
-    <div class="mobile-menu-actions">
-
-        <div class="mobile-actions-row">
-
-            <a href="./login/index.html" class="mobile-login">
-                Log In
-            </a>
-
-            <button
-                class="mobile-settings"
-                type="button">
-
-                <i class="fas fa-cog"></i>
-
-            </button>
-
-        </div>
-
-
-        <a href="register.html" class="mobile-signup">
-            Sign Up
+  <div class="mobile-menu-actions">
+    <div class="mobile-actions-row">
+        <!-- Log In -->
+        <a href="./login/index.html" class="mobile-login">
+            Log In
         </a>
 
+        <button class="mobile-settings" type="button">
+            <i class="fas fa-cog"></i>
+        </button>
     </div>
+
+    <!-- Sign Up تم تعديل المسار هنا إلى مجلد register -->
+    <a href="./register/index.html" class="mobile-signup">
+        Sign Up
+    </a>
+</div>
+
 
 </div>
 
@@ -226,10 +220,10 @@
         </p>
 
         <div class="hero__actions">
-          <button class="btn hero__btn-main d-flex align-items-center justify-content-center gap-2">
-            <span>Start Your Journey</span>
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </button>
+          <a href="./register/index.html" class="btn hero__btn-main d-flex align-items-center justify-content-center gap-2 text-decoration-none">
+    <span>Start Your Journey</span>
+    <i class="fa-solid fa-arrow-right-long"></i>
+</a>
           <button class="btn hero__btn-secondary">Explore Features</button>
         </div>
       </div>
@@ -625,9 +619,9 @@
             personalized, and unforgettable.
         </p>
 
-        <a href="#" class="story-btn">
-            Join Kemeta
-        </a>
+        <a href="./register/index.html" class="story-btn text-decoration-none">
+    Join Kemeta
+</a>
 
     </div>
 </section>
