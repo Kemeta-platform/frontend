@@ -1,11 +1,8 @@
 
      :root {
       --primary-teal: rgba(28, 72, 79, 1);
-      --bg-sand: #f0e9dc;
-      --card-sand: #dfd7c9;
       --text-dark:rgba(0, 0, 0, 1);
-      --text-muted: #5e6d6b;
-      --input-border: #758a87;
+      
     }
 
     * {
