@@ -8,128 +8,95 @@
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
 }
 
+body.is-loading {
+  overflow: hidden;
+  height: 100vh;
+}
 
 .splash {
-    position: fixed;
-    inset: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #083540;
-
-    overflow: hidden;
-
-    z-index: 99999999;
-
-    opacity: 1;
-    visibility: visible;
-
-    transition:
-        opacity 600ms ease,
-        visibility 600ms ease;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--Secondry-text);
+  overflow: hidden;
+  z-index: 99999999999;
 }
-
 
 .splash svg {
-    width: 580px;
-    max-width: 85vw;
-    height: auto;
-
-    overflow: visible;
+  width: 580px;
+  max-width: 85vw;
+  height: auto;
+  overflow: visible;
 }
-
 
 #kMarkGroup {
-    transform: translateX(787px) scale(1.5);
-
-    transform-origin: 713px 748px;
-
-    transition:
-        transform 950ms cubic-bezier(0.65, 0, 0.35, 1);
+  transform: translateX(787px) scale(1.5);
+  transform-origin: 713px 748px;
+  transition: transform 950ms ease;
 }
+
 #kMarkGroup.shift-left {
-    transform: translateX(0) scale(1);
+  transform: translateX(0) scale(1);
 }
 
 #kmark {
-    fill: none;
-
-    stroke: #c1ad95;
-
-    stroke-width: 3;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
+  fill: none;
+  stroke: var(--Background-Color);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-
 
 #kfill {
-    fill: #c1ad95;
-
-    fill-rule: evenodd;
-
-    opacity: 0;
+  fill: var(--Background-Color);
+  fill-rule: evenodd;
+  opacity: 0;
 }
-
- */
 
 #emetaGroup {
-    fill: #c1ad95;
-
-    fill-rule: evenodd;
-
-    opacity: 0;
-
-    transform: translateX(900px);
-
-    transition:
-        opacity 950ms ease,
-        transform 950ms cubic-bezier(0.65, 0, 0.35, 1);
+  fill: var(--Background-Color);
+  fill-rule: evenodd;
+  opacity: 0;
+  transform: translateX(900px);
+  transition: opacity 950ms ease, transform 950ms ease;
 }
-
 
 /* EMETA يظهر */
 
 #emetaGroup.show {
-    opacity: 1;
-
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
-
-
-
 
 /* hero */
 
 header {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 16px 0px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* الكارد الكبير اللي واخد الشاشة بحواف دايرة */
 .hero {
   position: relative;
-  flex: 1;
   gap: var(--general-gap);
   border-radius: var(--Containder-radius);
   overflow: hidden;
-  height: 100vh;
+  height: calc(100vh - 30px);
+  width: calc(100vw - 30px);
   background: url("../../assets/images/Great Pyramid.jpg") center/cover
     no-repeat;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,9 +107,9 @@ header {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.4),
-    rgba(242, 233, 222) 130%
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(242, 233, 222, 0.8) 100%
   );
 }
 
@@ -159,26 +126,18 @@ header {
 .hero__badge {
   position: relative;
   isolation: isolate;
-
   font-family: "F37 Moon Demi";
   width: fit-content;
   margin: 0 auto 1.5rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-
   padding: 0.4rem 1.1rem;
   border-radius: var(--general-radius);
-
   font-size: 14px;
   color: var(--Light-Text);
-
-  cursor: pointer;
-
-border: 1px solid var(--Light-Text);
-
+  border: 1px solid var(--Light-Text);
 }
 
 /* Liquid Glass surface */
@@ -186,16 +145,11 @@ border: 1px solid var(--Light-Text);
   content: "";
   position: absolute;
   inset: 0;
-
   z-index: 0;
-
   border-radius: inherit;
-
   /* box-shadow:
     inset 0 0 6px -3px rgba(255, 255, 255, 0.7); */
-
   background-color: var(--Card-Background);
-
   pointer-events: none;
 }
 
@@ -204,19 +158,13 @@ border: 1px solid var(--Light-Text);
   content: "";
   position: absolute;
   inset: 0;
-
   z-index: -1;
-
   border-radius: inherit;
-
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-
   filter: url(#glass-distortion);
   -webkit-filter: url(#glass-distortion);
-
   isolation: isolate;
-
   pointer-events: none;
 }
 
@@ -225,6 +173,7 @@ border: 1px solid var(--Light-Text);
   position: relative;
   z-index: 2;
 }
+
 .hero__btn-secondary {
   background: var(--Card-Background);
   backdrop-filter: blur(1px);
@@ -276,8 +225,8 @@ border: 1px solid var(--Light-Text);
 .hero__actions .btn {
   border-radius: var(--general-radius);
   padding: 10px 20px;
-font-family: "F37 Moon Demi";
-font-size: 20px;
+  font-family: "F37 Moon Demi";
+  font-size: 20px;
   cursor: pointer;
 
   transition:
@@ -293,14 +242,14 @@ font-size: 20px;
   background: var(--Secondry-text);
   color: var(--Light-Text);
 }
-.hero__btn-main:hover {
-    
-    background: var(--Secondry-text);
-    color: var(--Background-Color);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-    transform: translateY(-3px);
 
+.hero__btn-main:hover {
+  background: var(--Secondry-text);
+  color: var(--Background-Color);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
 }
+
 .hero__btn-main i {
   font-size: 12px;
 }
@@ -308,186 +257,176 @@ font-size: 20px;
 .hero__btn-secondary {
   font-family: "F37 Moon Bold";
   min-width: 191px;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(20px);
-background: var(--Card-Background);
-    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(20px);
+  background: var(--Card-Background);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
 
   border-bottom: 0.83px solid rgba(255, 255, 255, 0.447);
   border-top: 0.83px solid rgba(255, 255, 255, 0.684);
-  
 }
 
 .hero__btn-secondary:hover {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
   color: var(--Background-Color);
-      transform: translateY(-3px);
-
+  transform: translateY(-3px);
 }
-
-
-
 
 .platform-features {
-    position: relative;
-    z-index: 5;
-    width: 100%;
-  
+  position: relative;
+  z-index: 5;
+  width: 100%;
 }
+
 .platform-features .container {
-    max-width: none;   
-    width: 100%;
-    padding: var(--section-padding) ; 
-    height: auto;  
-    display: grid;    
-    gap: var(--general-gap);
+  max-width: none;
+  width: 100%;
+  padding: var(--section-padding);
+  height: auto;
+  display: grid;
+  gap: var(--general-gap);
 }
+
 /* 
    Features Header
  */
 .first-card {
-   gap: var(--general-gap);
-   flex-direction: column;
-
+  gap: var(--general-gap);
+  flex-direction: column;
 }
+
 .container .features-badge {
-    display: inline;
-    padding: 10px 20px;
-    border-radius: var(--general-radius);
-    margin:auto;
-    font-family: "F37 Moon Bold";
-    color: var(--Primary-Text);
-    font-size: 24px;
+  display: inline;
+  padding: 10px 20px;
+  border-radius: var(--general-radius);
+  margin: auto;
+  font-family: "F37 Moon Bold";
+  color: var(--Primary-Text);
+  font-size: 24px;
   background: linear-gradient(
     to top right,
     rgba(255, 255, 255, 0.715),
     rgba(236, 232, 232, 0.134) 42%
   );
-backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
-border: 1px solid var(--Light-Text);
-   
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--Light-Text);
 }
-
 
 .features-title {
-    color: var(--Secondry-text);
-    font-size: 32px;
-    font-weight: 700;
+  color: var(--Secondry-text);
+  font-size: 32px;
+  font-weight: 700;
 }
-
 
 .features-description {
-    max-width: 500px;
-    margin: 0 auto;
-    color: var(--Dark-Text);
-font-family: "F37 Moon Regular";
-    font-size: 16px;
-    line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto;
+  color: var(--Dark-Text);
+  font-family: "F37 Moon Regular";
+  font-size: 16px;
+  line-height: 1.7;
 }
-
 
 /* 
    Feature Cards
  */
 
 .feature-card {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-    padding: 20px 18px;
-    border-radius:var(--card-radius);
-    background: linear-gradient(
-    to top left ,
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  padding: 20px 18px;
+  border-radius: var(--card-radius);
+  background: linear-gradient(
+    to top left,
     rgba(255, 255, 255, 0.363),
     rgba(236, 232, 232, 0.134) 42%
   );
-    border: 0.83px solid rgba(255, 255, 255, 0.83);
-    box-shadow: 0 1px 20px 0 #0000000D;
-    transition: all 0.3s ease;
-    display: flex;
-    gap: var(--card-gap);
-    flex-direction: column;
-    backdrop-filter: blur(1px);
-    --webkit-backdrop-filter: blur(1px);
-    display: flex;
-gap:var(--card-gap);
-
+  border: 0.83px solid rgba(255, 255, 255, 0.83);
+  box-shadow: 0 1px 20px 0 #0000000d;
+  transition: all 0.3s ease;
+  display: flex;
+  gap: var(--card-gap);
+  flex-direction: column;
+  backdrop-filter: blur(1px);
+  --webkit-backdrop-filter: blur(1px);
+  display: flex;
+  gap: var(--card-gap);
+  
 }
-
-
 
 .feature-card {
-    min-height: 176px;
+  min-height: 176px;
 }
-
 
 /* 
    Card Content
  */
 
 .feature-card-title {
-
-    color: var(--Secondry-text);
-font-family: "F37 Moon Bold";
-font-size: 20px;
-    line-height: 1.3;
+  color: var(--Secondry-text);
+  font-family: "F37 Moon Bold";
+  font-size: 20px;
+  line-height: 1.3;
 }
-
 
 .feature-card-description {
-    margin-bottom: 10px;
-font-family: "F37 Moon Regular";
-    color: var(--Dark-Text);
+  margin-bottom: 10px;
+  font-family: "F37 Moon Regular";
+  color: var(--Dark-Text);
 
-    font-size: 16px;
-    line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.65;
 }
-
 
 .feature-card-link {
-    display: inline-block;
-    color: var(--Primary-Text);
-    font-family: "F37 Moon Bold";
-    font-size: 16px;
-    text-decoration: none;
+  display: inline-block;
+  color: var(--Primary-Text);
+  font-family: "F37 Moon Bold";
+  font-size: 16px;
+  text-decoration: none;
 }
-
 
 .feature-card-link:hover {
-    color: var(--Primary-Text);
+  color: var(--Primary-Text);
 }
-
 
 /* 
    Hover
  */
 
 .feature-card:hover {
-    transform: translateY(-4px);
+  transform: translateY(-4px);
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
-    background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.8);
 }
-
-
 
 /* 
    About Us Section
  */
 
+.about-section-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .about-section {
   position: relative;
 
-  width: 100%;
+  width: calc(100% - 30px);
   height: 94dvh;
 
   padding: 0 65px;
 
   background-image: url("../../assets/images/4fd41c14f753038c6293ff833b5d0f6e98950fb3.jpg");
   background-size: cover;
-  background-position: center 33%;
+  background-position: center;
 
   border-radius: var(--Containder-radius);
   overflow: hidden;
@@ -497,7 +436,7 @@ font-family: "F37 Moon Regular";
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(#00000099 60%, #00000064 );
+  background: linear-gradient(#00000099 60%, #00000064);
 
   z-index: 1;
 }
@@ -534,7 +473,7 @@ font-family: "F37 Moon Regular";
   margin-bottom: 16px;
 
   border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius:var(--Containder-radius);
+  border-radius: var(--Containder-radius);
 
   background: var(--Card-Background);
 
@@ -543,14 +482,12 @@ font-family: "F37 Moon Regular";
 
   color: var(--Light-Text);
 
-
   font-size: 24px;
   font-family: "F37 Moon Bold";
   line-height: 1;
 
   transition: 0.3s ease;
 }
-
 
 /* 
    Title
@@ -602,7 +539,7 @@ font-family: "F37 Moon Regular";
   padding: 10px;
   display: flex;
   text-align: center;
-gap: var(--card-gap);
+  gap: var(--card-gap);
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--card-radius);
   background: var(--Card-Background);
@@ -611,14 +548,14 @@ gap: var(--card-gap);
 
   color: var(--Light-Text);
 }
-.stat-card .container-card{
-    display: flex;
-    gap: 7px;
-      flex-direction:column;
+
+.stat-card .container-card {
+  display: flex;
+  gap: 7px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 
 /* Number */
 
@@ -633,12 +570,10 @@ gap: var(--card-gap);
 
 .stat-card span {
   font-size: 12px;
-font-family: "F37 Moon Regular";
+  font-family: "F37 Moon Regular";
   line-height: 1;
   white-space: nowrap;
 }
-
-
 
 /* ==========================
    Why Kemeta Section
@@ -665,7 +600,6 @@ font-family: "F37 Moon Regular";
 
   gap: var(--general-gap);
 }
-
 
 /* ==========================
    Why Kemeta Header
@@ -757,10 +691,10 @@ font-family: "F37 Moon Regular";
   gap: var(--general-gap);
 }
 
-
 .why-kemeta-card:nth-child(1) {
   width: calc(60% - (var(--general-gap) / 2));
 }
+
 .why-kemeta-card:nth-child(2) {
   width: calc(40% - (var(--general-gap) / 2));
 }
@@ -778,37 +712,37 @@ font-family: "F37 Moon Regular";
 ========================== */
 
 .why-kemeta-card {
-    position: relative;
+  position: relative;
 
-    z-index: 10;
+  z-index: 10;
 
-    height: 155px;
+  height: 155px;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    padding:20px;
+  padding: 20px;
 
-    border-radius: var(--card-radius);
+  border-radius: var(--card-radius);
 
-    background: linear-gradient(
-    to top left ,
+  background: linear-gradient(
+    to top left,
     rgba(255, 255, 255, 0.363),
     rgba(236, 232, 232, 0.134) 42%
   );
 
-    border: 0.83px solid rgba(255, 255, 255, 0.83);
+  border: 0.83px solid rgba(255, 255, 255, 0.83);
 
-    box-shadow: 0 1px 20px 0 #0000000D;
+  box-shadow: 0 1px 20px 0 #0000000d;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    /* gap: 5px; */
+  /* gap: 5px; */
 
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* ==========================
@@ -816,35 +750,30 @@ font-family: "F37 Moon Regular";
 ========================== */
 
 .why-kemeta-card-label {
-    display: block;
-    color: var(--Primary-Text);
-
+  display: block;
+  color: var(--Primary-Text);
 }
-
 
 .why-kemeta-card-title {
+  color: var(--Secondry-text);
 
-    color: var(--Secondry-text);
+  font-family: "F37 Moon Bold";
 
-    font-family: "F37 Moon Bold";
+  font-size: 20px;
 
-    font-size: 20px;
-
-    line-height: 1.5;
+  line-height: 1.5;
 }
-
 
 .why-kemeta-card-description {
-   
+  color: var(--Dark-Text);
 
-    color: var(--Dark-Text);
+  font-family: "F37 Moon Regular";
 
-    font-family: "F37 Moon Regular";
+  font-size: 16px;
 
-    font-size: 16px;
-
-    line-height: 1.5;
+  line-height: 1.5;
 }
+
 /* ==========================
    Hover
 ========================== */
@@ -862,228 +791,192 @@ font-family: "F37 Moon Regular";
 ========================================= */
 
 .how-it-works-section {
-    position: relative;
-    width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-
 
 /* =========================================
    Sticky Container
 ========================================= */
 
 .how-it-works-sticky {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 15px;
 
-    width: 100%;
-    height: 100vh;
+  width: calc(100vw - 30px);
+  height: calc(100vh - 30px);
 
-    overflow: hidden;
+  overflow: hidden;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    padding: 0 65px;
+  padding: 0 65px;
 
-    border-radius: var(--Containder-radius);
+  border-radius: var(--Containder-radius);
 
-    background:var(--light-container-background);
-
+  background: var(--light-container-background);
 }
-
 
 /* =========================================
    Left Content
 ========================================= */
 
 .how-it-works-content {
-    width: 55%;
-flex-shrink: 0;
-    position: relative;
- 
+  width: 55%;
+  flex-shrink: 0;
+  position: relative;
 }
-
 
 .how-it-works-content .section-badge {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
 
-    padding:10px 20px;
+  padding: 10px 20px;
 
-    border-radius:var(--general-radius);
+  border-radius: var(--general-radius);
 
-    color: var(--Light-Text);
+  color: var(--Light-Text);
 
-    background: var(--Card-Background);
+  background: var(--Card-Background);
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
-    box-shadow:
-        inset 0 1px 1px rgba(255, 255, 255, 0.35),
-        0 5px 15px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    0 5px 15px rgba(0, 0, 0, 0.08);
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-    margin-bottom: 25px;
-    font-size: 24px;
-    font-family: "F37 Moon Bold";
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-family: "F37 Moon Bold";
 }
-
 
 .how-it-works-content .content-title {
-  
-font-family: "F37 Moon Bold";
-    margin: 0 0 20px;
-width: 500px;
-    color: var(--Light-Text);
+  font-family: "F37 Moon Bold";
+  margin: 0 0 20px;
+  width: 500px;
+  color: var(--Light-Text);
 
-    font-size:32px;
+  font-size: 32px;
 
-    line-height: 1.05;
+  line-height: 1.05;
 }
-
 
 .how-it-works-content p {
+  width: 500px;
 
-width: 500px;
+  margin-top: 30px;
+  color: var(--Light-Text);
 
-margin-top: 30px;
-    color: var(--Light-Text);
-
-    font-size: 16px;
-    font-family:"F37 Moon Regular" ;
-
+  font-size: 16px;
+  font-family: "F37 Moon Regular";
 }
-
 
 /* =========================================
    Cards Area
 ========================================= */
 
 .steps-wrapper {
-    width: 45%;
-    height: 100%;
+  width: 45%;
+  height: 100%;
 
-    position: relative;
+  position: relative;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    flex-shrink: 0;
-
+  flex-shrink: 0;
 }
-
 
 /* =========================================
    Cards Track
 ========================================= */
 
 .steps-track {
-    position: absolute;
-margin-top: 50%;
-    top: 0;
-    right: 0;
+  position: absolute;
+  margin-top: 0;
+  top: 0;
+  right: 0;
 
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    gap: 80px;
+  gap: 80px;
 
-    padding: 0px;
+  padding: calc(100vh - (50vh + (346px / 2))) 0px;
 
-    will-change: transform;
+  will-change: transform;
 }
-
 
 /* =========================================
    Card
 ========================================= */
 
 .step-card {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    width: 100%;
-    min-height: 346px;
-
-    margin-left: auto;
-    margin-right: 5%;
-    padding: 20px;
-
-    box-sizing: border-box;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  
-
-    gap: 5px;
-    flex-shrink: 0;
-
-    border-radius: 45px;
-
-      background: rgba(255, 255, 255, 0.16);
-
-    border: none;
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.08);
-
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-height: 346px;
+  margin-left: auto;
+  margin-right: 5%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  flex-shrink: 0;
+  border-radius: 45px;
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  filter: none;
 }
-
 
 /* Glass edge */
 .step-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.804),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.216),
+    rgba(255, 255, 255, 0.65)
+  );
 
-    border-radius: inherit;
-
-    padding: 1px;
-
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.804),
-        rgba(255, 255, 255, 0.30) ,
-        rgba(255, 255, 255, 0.216) ,
-        rgba(255, 255, 255, 0.65)
-    );
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-
-    pointer-events: none;
-    z-index: 5;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 5;
 }
-
 
 /* Inner glass bevel */
 .step-card::after {
-    content: "";
-    position: absolute;
-    inset: 2px;
-
-    border-radius: 43px;
-
-    box-shadow:
-        inset 0 0 12px rgba(87, 87, 87, 0.2),
-        inset 0 0 5px rgba(224, 218, 218, 0.15);
-
-    pointer-events: none;
-    z-index: 4;
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 43px;
+  box-shadow:
+    inset 0 0 12px rgba(87, 87, 87, 0.2),
+    inset 0 0 5px rgba(224, 218, 218, 0.15);
+  pointer-events: none;
+  z-index: 4;
 }
 
 /* =========================================
@@ -1091,228 +984,182 @@ margin-top: 50%;
 ========================================= */
 
 .step-text {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
 }
-
 
 .step-text h3 {
-
-    color: var(--Primary-Text);
-    font-family: "F37 Moon Bold";
-
-    font-size: 24px;
+  color: var(--Primary-Text);
+  font-family: "F37 Moon Bold";
+  font-size: 24px;
 }
-
 
 .step-text p {
-    margin: 0;
-
-    color: var(--Light-Text);
-
-    font-size: 16px;
-    font-family: "F37 Moon light";
-text-align: center;  
+  margin: 0;
+  color: var(--Light-Text);
+  font-size: 16px;
+  font-family: "F37 Moon light";
+  text-align: center;
   line-height: 1.6;
 }
-
 
 /* =========================================
    Card Image
 ========================================= */
 
 .step-card .img {
-    width: 50%;
-    height: 40vh;
-
-
-    /* flex-shrink: 0; */
-overflow: hidden;
-    border-radius: 45px;
-}
-.step-card .img img{
-    width: 100%;
-    height: 100%;
-        object-fit: cover;
-
+  width: 50%;
+  height: 40vh;
+  /* flex-shrink: 0; */
+  overflow: hidden;
+  border-radius: 45px;
 }
 
+.step-card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ==================================================
    BEGIN YOUR STORY
 ================================================== */
 
 .begin-story-section {
-    width: 100%;
-    min-height: 70vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .begin-story-container {
-    width: 35%;
-
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 12px 10px 0;
-
+  width: 35%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 10px 0;
 }
-
 
 /* Badge */
 
 .story-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 18px;
-
-    border-radius: 50px;
-
-    color: var(--Primary-Text);
-font-size: 24px;
-font-family:  "F37 Moon Bold";
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-        box-shadow:
-        inset 0 1px 2px rgba(255, 255, 255, 0.741),
-        0 4px 12px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
-
-    transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 50px;
+  color: var(--Primary-Text);
+  font-size: 24px;
+  font-family: "F37 Moon Bold";
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.741),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .story-badge::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        to bottom right,
-        rgba(188, 182, 182, 0.22) 0%,
-        rgba(161, 161, 161, 0.1) 35%,
-        rgba(255, 255, 255, 0.04) 100%
-    );
-
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(188, 182, 182, 0.22) 0%,
+    rgba(161, 161, 161, 0.1) 35%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  pointer-events: none;
 }
-
-
-
 
 /* Heading */
 
 .begin-story-container h2 {
-    margin: 17px 0 12px;
-
-    color: var(--Secondry-text);
-
-    font-size: 32px;
-    font-family:  "F37 Moon Bold";
-
-    line-height: 1.3;
+  margin: 17px 0 12px;
+  color: var(--Secondry-text);
+  font-size: 32px;
+  font-family: "F37 Moon Bold";
+  line-height: 1.3;
 }
-
 
 /* Paragraph */
 
 .begin-story-container p {
-    max-width: 620px;
-
-    margin: 0 auto 17px;
-
-    color: var(--Dark-Text);
-
-    font-size: 16px;
-    font-family: "F37 Moon Regular";
-    line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 17px;
+  color: var(--Dark-Text);
+  font-size: 16px;
+  font-family: "F37 Moon Regular";
+  line-height: 1.6;
 }
-
 
 /* Button */
 
 .story-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 20px;
-
-    border: 1px solid var(--Secondry-text);
-    border-radius: var(--general-radius);
-
-    background: transparent;
-
-    color: var(--Secondry-text);
-
-    font-size: 20px;
-    font-family:  "F37 Moon Bold";
-
-    text-decoration: none;
-
-    transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 1px solid var(--Secondry-text);
+  border-radius: var(--general-radius);
+  background: transparent;
+  color: var(--Secondry-text);
+  font-size: 20px;
+  font-family: "F37 Moon Bold";
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-
 
 .story-btn:hover {
-    background: #123f49;
-    color: #fff;
-
-    transform: translateY(-2px);
+  background: #123f49;
+  color: #fff;
+  transform: translateY(-2px);
 }
-
 
 /* ==================================================
    FOOTER
 ================================================== */
 
-.kemeta-footer {
-    width: calc(100% - 22px);
-
-    padding: var(--section-padding) 65px 0px;
-
-    background: var(--light-container-background);
-
-    border-radius:var(--Containder-radius);
-
-
-    color:var(--Light-Text);
+.kemeta-footer-Area {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
+.kemeta-footer {
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  margin-bottom: 15px;
+  padding: var(--section-padding) 65px 0px;
+  background: var(--light-container-background);
+  border-radius: var(--Containder-radius);
+  color: var(--Light-Text);
+}
 
 /* Main Footer Container */
 
 .kemeta-footer .footer-container {
-    width: 100%;
-
-    display: flex;
-      justify-content: space-between;
-      align-content: space-between;
-
-    padding-bottom: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  padding-bottom: 48px;
 }
 
-.footer-right{
+.footer-right {
   display: flex;
   flex-direction: row;
   gap: 100px;
@@ -1321,106 +1168,85 @@ font-family:  "F37 Moon Bold";
 /* ==================================================
    BRAND
 ================================================== */
-.footer-container .footer-brand{
+.footer-container .footer-brand {
   display: flex;
-gap: var(--general-gap);
+  gap: var(--general-gap);
   flex-direction: column;
 }
+
 .footer-container .footer-brand .img {
-max-width: 130px;}
-
-
-.footer-container .footer-brand p {
-    max-width: 500px;
-    color: var(--Light-Text);
-
-    font-size: 16px;
+  max-width: 130px;
 }
 
+.footer-container .footer-brand p {
+  max-width: 500px;
+  color: var(--Light-Text);
+
+  font-size: 16px;
+}
 
 /* Social Icons */
 
 .footer-container .footer-socials {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-
 
 .footer-container .footer-socials a {
-    width: 28px;
-    height: 28px;
-padding: 19px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid var(--Background-Color);
-
-    border-radius: var( --general-radius);
-
-    color: var(--Background-Color);
-
-    font-size: 19px;
-
-    text-decoration: none;
-
-    transition: all 0.3s ease;
+  width: 28px;
+  height: 28px;
+  padding: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--Background-Color);
+  border-radius: var(--general-radius);
+  color: var(--Background-Color);
+  font-size: 19px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-
 
 .footer-container .footer-socials a:hover {
-    background: #fff;
-    color: #082e33;
-
-    transform: translateY(-2px);
+  background: #fff;
+  color: #082e33;
+  transform: translateY(-2px);
 }
-
-
-
-
 
 /* ==================================================
    FOOTER LINKS
 ================================================== */
 .footer-links h4,
 .footer-contact h4 {
-    margin: 5px 0 20px;
-
-    color: var(--Background-Color);
-
-    font-size: 24px;
-    font-family: "F37 Moon Bold";
+  margin: 5px 0 20px;
+  color: var(--Background-Color);
+  font-size: 24px;
+  font-family: "F37 Moon Bold";
 }
-
 
 .footer-links {
-    display: flex;
-    flex-direction: column;
-    
-}
-
-
-.footer-links .links-container a:hover {
-    color: var(--Primary-Text);
-}
-.links-container{
   display: flex;
   flex-direction: column;
-  
 }
-.footer-links .links-container a{
+
+.footer-links .links-container a:hover {
+  color: var(--Primary-Text);
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links .links-container a {
   color: var(--Background-Color);
-     width: fit-content;
-
-    margin-bottom: 10px;
-
-    font-size: 18px;
-font-family: "F37 Moon light";
-    text-decoration: none;
-
-    transition: color 0.3s ease;
+  width: fit-content;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: "F37 Moon light";
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 /* ==================================================
@@ -1428,68 +1254,52 @@ font-family: "F37 Moon light";
 ================================================== */
 
 .footer-contact {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .footer-contact .contact-container a {
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 12px;
-
-    color: var(--Background-Color);
-
-    font-size: 16px;
-    font-family: "F37 Moon light";
-
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: var(--Background-Color);
+  font-size: 16px;
+  font-family: "F37 Moon light";
+  text-decoration: none;
 }
-
 
 .footer-contact .contact-container i {
-    width: 14px;
-
-    color: #fff;
-
-    font-size: 16px;
-   margin-right: 5px;
+  width: 14px;
+  color: #fff;
+  font-size: 16px;
+  margin-right: 5px;
 }
-
-
 
 /* ==================================================
    COPYRIGHT
 ================================================== */
 
 .footer-bottom {
-    width: 100%;
-
-    padding:20px 0px 0px;
-
-    border-top: 1px solid var(--Background-Color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-
+  width: 100%;
+  padding: 20px 0px 0px;
+  border-top: 1px solid var(--Background-Color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
-
 
 .footer-bottom p {
-  
-    color: var(--Background-Color);
-font-family: "F37 Moon light";
-    font-size: 18px;
+  color: var(--Background-Color);
+  font-family: "F37 Moon light";
+  font-size: 18px;
 }
-.footer-bottom i{
+
+.footer-bottom i {
   font-size: 14px;
 }
 
-.footer-bottom p span{
-  font-family: 'Kitami W01';
+.footer-bottom p span {
+  font-family: "Kitami W01";
 }
-

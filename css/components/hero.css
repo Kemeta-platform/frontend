@@ -1,21 +1,20 @@
 header {
-  min-height: 120vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 16px 0px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* الكارد الكبير اللي واخد الشاشة بحواف دايرة */
 .hero {
-  position: relative;
-  flex: 1;
   gap: var(--general-gap);
   border-radius: var(--Containder-radius);
   overflow: hidden;
-  height: 100vh;
+  height: calc(100vh - 30px);
+  width: calc(100% - 30px);
   background: url("../../assets/images/Great Pyramid.jpg") center/cover
     no-repeat;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,6 +54,7 @@ header {
   font-size: 14px;
   margin-bottom: 1.5rem;
 }
+
 .hero__btn-secondary,
 .hero__badge {
   background: var(--Card-Background);
@@ -107,8 +107,8 @@ header {
 .hero__actions .btn {
   border-radius: var(--general-radius);
   padding: 10px 20px;
-font-family: "F37 Moon Demi";
-font-size: 20px;
+  font-family: "F37 Moon Demi";
+  font-size: 20px;
   cursor: pointer;
 
   transition:
@@ -124,10 +124,12 @@ font-size: 20px;
   background: var(--Secondry-text);
   color: var(--Light-Text);
 }
+
 .hero__btn-main:hover {
   color: var(--Background-Color);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
+
 .hero__btn-main i {
   font-size: 12px;
 }
@@ -135,14 +137,13 @@ font-size: 20px;
 .hero__btn-secondary {
   font-family: "F37 Moon Bold";
   min-width: 191px;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(20px);
-background: var(--Card-Background);
-    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(20px);
+  background: var(--Card-Background);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
 
   border-bottom: 0.83px solid rgba(255, 255, 255, 0.447);
   border-top: 0.83px solid rgba(255, 255, 255, 0.684);
-  
 }
 
 .hero__btn-secondary:hover {
@@ -155,18 +156,17 @@ background: var(--Card-Background);
 ========================== */
 
 @media (max-width: 767.98px) {
- 
   .hero {
-
     margin: 0;
-border-radius: 20px;
+    border-radius: 20px;
     background-position: center center;
     background-size: cover;
 
     padding: 0 20px;
   }
+
   .hero_overlay {
-      min-height: 100vh;
+    min-height: 100vh;
   }
 
   /* Content */

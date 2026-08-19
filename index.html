@@ -1,94 +1,107 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kemeta - Discover Egypt</title>
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="icon" href="assets/images/logos/SVG/logo (2).svg">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Kemeta - Discover Egypt</title>
-  <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css" />
-  <link rel="stylesheet" href="css/main.css" />
-</head>
+  <body class="is-loading">
+    <!-- Splash Screen -->
+    <div class="splash" id="splash">
+      <svg viewBox="0 0 3000 1500">
+        <!-- K Mark Group-->
+        <g id="kMarkGroup">
+          <path
+            id="kmark"
+            d="M925.3,552.19H795.87L695.25,676.05l-66.37-99.23A68.94,68.94,0,0,0,592.56,549a71.07,71.07,0,0,0-76.79,23.31A69,69,0,0,0,501,615.63V881.27a69.13,69.13,0,0,0,13.69,41.82,70.87,70.87,0,0,0,73.34,26,69.08,69.08,0,0,0,37-23.83l97.63-120.18,94,140.5,3.73,5.58h58.91L751.8,760.6Zm-83.39,39.08L722.56,734.65l-11.09-16.58,103-126.8ZM571.4,584.81c7.21,0,17.4,2.38,25,13.73l84.65,126.58,24.3,39.32L594.71,900.65c-10.1,12.42-24.26,13.1-34.15,9.59s-20.46-13-20.46-29V615.63c0-16.8,11.27-26.21,21.81-29.41A32.46,32.46,0,0,1,571.4,584.81Z"
+          />
+          <path
+            id="kfill"
+            d="M925.3,552.19H795.87L695.25,676.05l-66.37-99.23A68.94,68.94,0,0,0,592.56,549a71.07,71.07,0,0,0-76.79,23.31A69,69,0,0,0,501,615.63V881.27a69.13,69.13,0,0,0,13.69,41.82,70.87,70.87,0,0,0,73.34,26,69.08,69.08,0,0,0,37-23.83l97.63-120.18,94,140.5,3.73,5.58h58.91L751.8,760.6Zm-83.39,39.08L722.56,734.65l-11.09-16.58,103-126.8ZM571.4,584.81c7.21,0,17.4,2.38,25,13.73l84.65,126.58,24.3,39.32L594.71,900.65c-10.1,12.42-24.26,13.1-34.15,9.59s-20.46-13-20.46-29V615.63c0-16.8,11.27-26.21,21.81-29.41A32.46,32.46,0,0,1,571.4,584.81Z"
+          />
+        </g>
 
-<body>
-<div class="splash" id="splash">
-        <svg viewBox="0 0 3000 1500">
-            <g id="kMarkGroup">
-                <path id="kmark"
-                    d="M925.3,552.19H795.87L695.25,676.05l-66.37-99.23A68.94,68.94,0,0,0,592.56,549a71.07,71.07,0,0,0-76.79,23.31A69,69,0,0,0,501,615.63V881.27a69.13,69.13,0,0,0,13.69,41.82,70.87,70.87,0,0,0,73.34,26,69.08,69.08,0,0,0,37-23.83l97.63-120.18,94,140.5,3.73,5.58h58.91L751.8,760.6Zm-83.39,39.08L722.56,734.65l-11.09-16.58,103-126.8ZM571.4,584.81c7.21,0,17.4,2.38,25,13.73l84.65,126.58,24.3,39.32L594.71,900.65c-10.1,12.42-24.26,13.1-34.15,9.59s-20.46-13-20.46-29V615.63c0-16.8,11.27-26.21,21.81-29.41A32.46,32.46,0,0,1,571.4,584.81Z" />
-
-                <path id="kfill"
-                    d="M925.3,552.19H795.87L695.25,676.05l-66.37-99.23A68.94,68.94,0,0,0,592.56,549a71.07,71.07,0,0,0-76.79,23.31A69,69,0,0,0,501,615.63V881.27a69.13,69.13,0,0,0,13.69,41.82,70.87,70.87,0,0,0,73.34,26,69.08,69.08,0,0,0,37-23.83l97.63-120.18,94,140.5,3.73,5.58h58.91L751.8,760.6Zm-83.39,39.08L722.56,734.65l-11.09-16.58,103-126.8ZM571.4,584.81c7.21,0,17.4,2.38,25,13.73l84.65,126.58,24.3,39.32L594.71,900.65c-10.1,12.42-24.26,13.1-34.15,9.59s-20.46-13-20.46-29V615.63c0-16.8,11.27-26.21,21.81-29.41A32.46,32.46,0,0,1,571.4,584.81Z" />
-            </g>
-
-            <g id="emetaGroup">
-                <path
-                    d="M1060.85,632.87c-44.49,0-83.25,15.86-115.21,47.13S897.4,749.44,897.4,793.34c0,44.22,16.23,82.52,48.24,113.83s70.72,47.12,115.21,47.12,82.91-15.51,114.21-46.12l5.76-5.64L1145,866.68l-5.64,5.81c-21.54,22.18-47.22,33-78.49,33-31,0-56.75-10.8-78.81-33s-32.81-48.1-32.81-79.09S960,736.58,982,714.51s47.85-32.79,78.83-32.79c28.14,0,52.09,9,73.21,27.65,18.48,16.3,30.36,36.3,35.39,59.55H969.58L968,774.75a71.72,71.72,0,0,0-2.78,19.09A64.63,64.63,0,0,0,968,812l1.68,5.72h252.94l.66-7.26c.69-7.64,1-13.26,1-17.16,0-44.23-16.24-82.45-48.26-113.61S1105.31,632.87,1060.85,632.87Z" />
-                <path
-                    d="M1368.31,632.87c-30.61,0-56.88,10.58-78.1,31.45s-32,46.7-32,76.7V945.83H1309V741c0-16.56,5.68-30.28,17.35-42s25.39-17.34,42-17.34,30.27,5.67,41.94,17.34,17.36,25.41,17.36,42V945.83h50.83V741c0-30-10.78-55.8-32-76.7S1398.9,632.87,1368.31,632.87Z" />
-                <path
-                    d="M1537.73,632.87a107.16,107.16,0,0,0-65,21.5l-6.65,4.92,5.17,6.47a119.36,119.36,0,0,1,15.86,26.63l4.16,9.49,8.11-6.45c11.62-9.23,24.18-13.71,38.39-13.71,16.55,0,30.27,5.67,42,17.34S1597,724.47,1597,741V945.83h50.84V741c0-30-10.78-55.8-32-76.7S1568.33,632.87,1537.73,632.87Z" />
-                <path
-                    d="M1845.19,632.87c-44.49,0-83.25,15.86-115.21,47.13s-48.24,69.44-48.24,113.34c0,44.22,16.23,82.52,48.24,113.83s70.72,47.12,115.21,47.12,82.91-15.51,114.21-46.12l5.76-5.64-35.84-35.85-5.64,5.81c-21.54,22.18-47.22,33-78.49,33-31,0-56.75-10.8-78.81-33s-32.81-48.1-32.81-79.09,10.73-56.76,32.79-78.83,47.86-32.79,78.83-32.79c28.14,0,52.09,9,73.21,27.65,18.49,16.3,30.37,36.3,35.39,59.55H1753.92l-1.63,5.83a71.72,71.72,0,0,0-2.78,19.09,64.63,64.63,0,0,0,2.82,18.2l1.68,5.72H2007l.66-7.26c.69-7.64,1-13.26,1-17.16,0-44.23-16.24-82.45-48.26-113.61S1889.65,632.87,1845.19,632.87Z" />
-                <path
-                    d="M2099.24,890.86h0c-3.95-4.32-5.88-9.65-5.88-16.29V707.12h-50.83V874.56c0,20.08,7,37.16,20.81,50.78s30.75,20.49,50.45,20.49h40.37V897h-40.37C2107.67,897,2103.05,895,2099.24,890.86Z" />
-                <polygon
-                    points="2093.36 576.07 2042.52 576.07 2042.52 690.19 2154.15 690.19 2154.15 641.35 2093.36 641.35 2093.36 576.07" />
-                <path
-                    d="M2451.25,679.77c-31.64-31.12-70.24-46.9-114.72-46.9s-83.25,15.86-115.21,47.13-48.24,69.44-48.24,113.34,16.22,82.1,48.23,113.57,70.72,47.38,115.22,47.38A158.94,158.94,0,0,0,2427.74,926l3.47-2.38V856.23l-13.73,14.3c-22.56,23.5-49,34.92-80.95,34.92-31,0-56.75-10.8-78.81-33s-32.81-48.1-32.81-79.09,10.72-56.76,32.79-78.83,47.85-32.79,78.83-32.79,56.75,10.72,78.82,32.79,32.8,47.85,32.8,78.83V945.83H2499V793.34C2499,749.13,2482.92,710.92,2451.25,679.77Z" />
-            </g>
-        </svg>
-    </div>
-  <header>
-    <!-- Navbar -->
-<nav class="navbar">
-
-    <div class="navbar__left">
-
-        <!-- Desktop Logos -->
-        <img src="./assets/images/logos/SVG/Logo.svg"
-             alt="Kemeta"
-             class="navbar-logo navbar-logo-light">
-
-        <img src="./assets/images/logos/SVG/Logo (1).svg"
-             alt="Kemeta"
-             class="navbar-logo navbar-logo-dark">
-
-        <!-- Mobile Logos -->
-        <img src="./assets/images/logos/SVG/logo (2).svg"
-             alt="Kemeta"
-             class="navbar-logo-mobile navbar-logo-mobile-light">
-
-        <img src="./assets/images/logos/SVG/Vector.svg"
-             alt="Kemeta"
-             class="navbar-logo-mobile navbar-logo-mobile-dark">
-
+        <!-- emeta Group -->
+        <g id="emetaGroup">
+          <path
+            d="M1060.85,632.87c-44.49,0-83.25,15.86-115.21,47.13S897.4,749.44,897.4,793.34c0,44.22,16.23,82.52,48.24,113.83s70.72,47.12,115.21,47.12,82.91-15.51,114.21-46.12l5.76-5.64L1145,866.68l-5.64,5.81c-21.54,22.18-47.22,33-78.49,33-31,0-56.75-10.8-78.81-33s-32.81-48.1-32.81-79.09S960,736.58,982,714.51s47.85-32.79,78.83-32.79c28.14,0,52.09,9,73.21,27.65,18.48,16.3,30.36,36.3,35.39,59.55H969.58L968,774.75a71.72,71.72,0,0,0-2.78,19.09A64.63,64.63,0,0,0,968,812l1.68,5.72h252.94l.66-7.26c.69-7.64,1-13.26,1-17.16,0-44.23-16.24-82.45-48.26-113.61S1105.31,632.87,1060.85,632.87Z"
+          />
+          <path
+            d="M1368.31,632.87c-30.61,0-56.88,10.58-78.1,31.45s-32,46.7-32,76.7V945.83H1309V741c0-16.56,5.68-30.28,17.35-42s25.39-17.34,42-17.34,30.27,5.67,41.94,17.34,17.36,25.41,17.36,42V945.83h50.83V741c0-30-10.78-55.8-32-76.7S1398.9,632.87,1368.31,632.87Z"
+          />
+          <path
+            d="M1537.73,632.87a107.16,107.16,0,0,0-65,21.5l-6.65,4.92,5.17,6.47a119.36,119.36,0,0,1,15.86,26.63l4.16,9.49,8.11-6.45c11.62-9.23,24.18-13.71,38.39-13.71,16.55,0,30.27,5.67,42,17.34S1597,724.47,1597,741V945.83h50.84V741c0-30-10.78-55.8-32-76.7S1568.33,632.87,1537.73,632.87Z"
+          />
+          <path
+            d="M1845.19,632.87c-44.49,0-83.25,15.86-115.21,47.13s-48.24,69.44-48.24,113.34c0,44.22,16.23,82.52,48.24,113.83s70.72,47.12,115.21,47.12,82.91-15.51,114.21-46.12l5.76-5.64-35.84-35.85-5.64,5.81c-21.54,22.18-47.22,33-78.49,33-31,0-56.75-10.8-78.81-33s-32.81-48.1-32.81-79.09,10.73-56.76,32.79-78.83,47.86-32.79,78.83-32.79c28.14,0,52.09,9,73.21,27.65,18.49,16.3,30.37,36.3,35.39,59.55H1753.92l-1.63,5.83a71.72,71.72,0,0,0-2.78,19.09,64.63,64.63,0,0,0,2.82,18.2l1.68,5.72H2007l.66-7.26c.69-7.64,1-13.26,1-17.16,0-44.23-16.24-82.45-48.26-113.61S1889.65,632.87,1845.19,632.87Z"
+          />
+          <path
+            d="M2099.24,890.86h0c-3.95-4.32-5.88-9.65-5.88-16.29V707.12h-50.83V874.56c0,20.08,7,37.16,20.81,50.78s30.75,20.49,50.45,20.49h40.37V897h-40.37C2107.67,897,2103.05,895,2099.24,890.86Z"
+          />
+          <polygon
+            points="2093.36 576.07 2042.52 576.07 2042.52 690.19 2154.15 690.19 2154.15 641.35 2093.36 641.35 2093.36 576.07"
+          />
+          <path
+            d="M2451.25,679.77c-31.64-31.12-70.24-46.9-114.72-46.9s-83.25,15.86-115.21,47.13-48.24,69.44-48.24,113.34,16.22,82.1,48.23,113.57,70.72,47.38,115.22,47.38A158.94,158.94,0,0,0,2427.74,926l3.47-2.38V856.23l-13.73,14.3c-22.56,23.5-49,34.92-80.95,34.92-31,0-56.75-10.8-78.81-33s-32.81-48.1-32.81-79.09,10.72-56.76,32.79-78.83,47.85-32.79,78.83-32.79,56.75,10.72,78.82,32.79,32.8,47.85,32.8,78.83V945.83H2499V793.34C2499,749.13,2482.92,710.92,2451.25,679.77Z"
+          />
+        </g>
+      </svg>
     </div>
 
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar">
+        <!-- Logo -->
+        <div class="navbar__left">
+          <!-- Desktop Logos -->
+          <img
+            src="./assets/images/logos/SVG/Logo.svg"
+            alt="Kemeta"
+            class="navbar-logo navbar-logo-light"
+          />
 
-    <ul class="navbar__center d-flex gap-4">
+          <img
+            src="./assets/images/logos/SVG/Logo (1).svg"
+            alt="Kemeta"
+            class="navbar-logo navbar-logo-dark"
+          />
 
-    <li class="nav-item">
-        <a class="nav-link" href="#home">Home</a>
-    </li>
+          <!-- Mobile Logos -->
+          <img
+            src="./assets/images/logos/SVG/logo (2).svg"
+            alt="Kemeta"
+            class="navbar-logo-mobile navbar-logo-mobile-light"
+          />
 
-    <li class="nav-item">
-        <a class="nav-link" href="#features">Features</a>
-    </li>
+          <img
+            src="./assets/images/logos/SVG/Vector.svg"
+            alt="Kemeta"
+            class="navbar-logo-mobile navbar-logo-mobile-dark"
+          />
+        </div>
 
-    <li class="nav-item">
-        <a class="nav-link" href="#about">About Us</a>
-    </li>
-
-
-    <li class="nav-item">
-        <a class="nav-link" href="#why-kemeta">Why Kemeta</a>
-    </li>
-
-     <li class="nav-item">
-        <a class="nav-link" href="#how-it-works">How It Works</a>
-    </li>
-
-</ul>
+        <!-- Links -->
+        <ul class="navbar__center d-flex gap-4">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#why-kemeta">Why Kemeta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#how-it-works">How It Works</a>
+          </li>
+        </ul>
 
 
  <div class="navbar__right">
@@ -105,51 +118,34 @@
     </a>
 </div>
 
-
-    <button
-        class="navbar__menu-button"
-        id="navbar-menu-button"
-        type="button"
-        aria-label="Open menu">
-
-        <i class="fas fa-bars"></i>
-
-    </button>
-
-</nav>
-
-
-<!-- ==========================
-     Mobile Menu
-========================== -->
-
-<div class="mobile-menu-overlay"></div>
-
-<div class="mobile-menu">
-
-    <!-- Header -->
-    <div class="mobile-menu-header">
-
-        <a href="#" class="mobile-logo">
-
-            <!-- استخدمي اللوجو اللي عندك -->
-            <img
-                src="./assets/images/logos/SVG/Vector.svg"
-                alt="Kemeta">
-
-        </a>
-
+        <!-- Navbar menu (Responsiveness) -->
         <button
+          class="navbar__menu-button"
+          id="navbar-menu-button"
+          type="button"
+          aria-label="Open menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu-overlay"></div>
+      <div class="mobile-menu">
+        <!-- Header -->
+        <div class="mobile-menu-header">
+          <a href="#" class="mobile-logo">
+            <img src="./assets/images/logos/SVG/Vector.svg" alt="Kemeta" />
+          </a>
+
+          <button
             class="mobile-menu-close"
             type="button"
-            aria-label="Close menu">
-
+            aria-label="Close menu"
+          >
             <i class="fas fa-times"></i>
-
-        </button>
-
-    </div>
-
+          </button>
+        </div>
 
     <!-- Links -->
     <nav class="mobile-nav">
@@ -199,25 +195,28 @@
 
 </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero__overlay"></div>
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__badge">
+            <img
+              src="./assets/images/icons/Icon (1).svg"
+              alt="Kemeta Logo"
+              class="hero__badge-logo"
+            />
+            <span>Powered by GPT-4 AI</span>
+          </div>
 
-      <div class="hero__content">
-        <div class="hero__badge">
-          <img src="./assets/images/icons/Icon (1).svg" alt="Kemeta Logo" class="hero__badge-logo" />
-          <span>Powered by GPT-4 AI</span>
-        </div>
+          <h1 class="hero__title">
+            Discover Egypt
+            <span class="hero__title-highlight">Confidently</span>
+          </h1>
 
-        <h1 class="hero__title">
-          Discover Egypt
-          <span class="hero__title-highlight">Confidently</span>
-        </h1>
-
-        <p class="hero__subtitle">
-          Your AI-powered "Smart Guide" to the land of Pharaohs. Safe,
-          transparent and unforgettable.
-        </p>
+          <p class="hero__subtitle">
+            Your AI-powered "Smart Guide" to the land of Pharaohs. Safe,
+            transparent and unforgettable.
+          </p>
 
         <div class="hero__actions">
           <a href="./register/index.html" class="btn hero__btn-main d-flex align-items-center justify-content-center gap-2 text-decoration-none">
@@ -230,393 +229,289 @@
     </section>
   </header>
 
-  <!-- 
-    Platform Features Section
- -->
-
-  <section class="platform-features" id="features">
-    <div class="container">
-      <div class=" row justify-content-center text-center">
-        <div class="first-card col-lg-7 d-flex">
-          <span class="features-badge"> Platform Features </span>
-
-          <h2 class="features-title">Features Built Around You</h2>
-
-          <p class="features-description">
-            Everything you need to plan, customize, and experience Egypt
-            powered by AI, grounded in real local knowledge.
-          </p>
-        </div>
-      </div>
-
-      <!-- Features Cards -->
-      <div class="row g-3">
-        <!-- Large Card 1 -->
-        <div class="col-lg-6 col-md-7">
-          <div class="feature-card feature-card-large">
-            <h3 class="feature-card-title">AI Trip Generator</h3>
-
-            <p class="feature-card-description">
-              Answer a few quick questions about your interests, budget, and
-              travel style, and let our AI build a complete, personalized
-              itinerary — no research, no guesswork, just a trip made for you.
+    <!-- Platform Features Section -->
+    <section class="platform-features" id="features">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="first-card col-lg-7 d-flex">
+            <span class="features-badge"> Platform Features </span>
+            <h2 class="features-title">Features Built Around You</h2>
+            <p class="features-description">
+              Everything you need to plan, customize, and experience Egypt
+              powered by AI, grounded in real local knowledge.
             </p>
-
-            <a href="#" class="feature-card-link"> Learn More </a>
           </div>
         </div>
 
-        <!-- Large Card 2 -->
-        <div class="col-lg-6 col-md-6">
-          <div class="feature-card feature-card-large ">
-            <h3 class="feature-card-title mb-4">Ready-Made Packages</h3>
-
-            <p class="feature-card-description mb-3">
-              Prefer a simpler start? Choose from expertly curated packages designed to showcase the best experiences
-              Egypt has to offer, ready to book in minutes.
-            </p>
-
-            <a href="#" class="feature-card-link"> Learn More </a>
+        <!-- Features Cards -->
+        <div class="row g-3">
+          <!-- Large Card 1 -->
+          <div class="col-lg-6 col-md-7">
+            <div class="feature-card feature-card-large">
+              <h3 class="feature-card-title">AI Trip Generator</h3>
+              <p class="feature-card-description">
+                Answer a few quick questions about your interests, budget, and
+                travel style, and let our AI build a complete, personalized
+                itinerary no research, no guesswork, just a trip made for you.
+              </p>
+              <a href="#" class="feature-card-link"> Learn More </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Small Card 1 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="feature-card">
-            <h3 class="feature-card-title">Customize Your Trip</h3>
-
-            <p class="feature-card-description">
-              Handpick every destination you want to visit, and let our AI
-              organize them into a smooth, optimized itinerary that makes the
-              most of your time.
-            </p>
-
-            <a href="#" class="feature-card-link"> Learn More </a>
+          <!-- Large Card 2 -->
+          <div class="col-lg-6 col-md-6">
+            <div class="feature-card feature-card-large">
+              <h3 class="feature-card-title mb-4">Ready-Made Packages</h3>
+              <p class="feature-card-description mb-3">
+                Prefer a simpler start? Choose from expertly curated packages
+                designed to showcase the best experiences Egypt has to offer,
+                ready to book in minutes.
+              </p>
+              <a href="#" class="feature-card-link"> Learn More </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Small Card 2 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="feature-card">
-            <h3 class="feature-card-title">Egypt Chatbot</h3>
-
-            <p class="feature-card-description">
-              Get answers about historical sites, transportation, pricing, and
-              dining through a chatbot trained on verified Egypt-focused
-              knowledge.
-            </p>
-
-            <a href="#" class="feature-card-link"> Learn More </a>
+          <!-- Small Card 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <h3 class="feature-card-title">Customize Your Trip</h3>
+              <p class="feature-card-description">
+                Handpick every destination you want to visit, and let our AI
+                organize them into a smooth, optimized itinerary that makes the
+                most of your time.
+              </p>
+              <a href="#" class="feature-card-link"> Learn More </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Small Card 3 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="feature-card">
-            <h3 class="feature-card-title">Smart Map</h3>
+          <!-- Small Card 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <h3 class="feature-card-title">Egypt Chatbot</h3>
+              <p class="feature-card-description">
+                Get answers about historical sites, transportation, pricing, and
+                dining through a chatbot trained on verified Egypt-focused
+                knowledge.
+              </p>
+              <a href="#" class="feature-card-link"> Learn More </a>
+            </div>
+          </div>
 
-            <p class="feature-card-description">
-              Get answers about historical sites, transportation, pricing, and
-              dining through a chatbot trained on verified Egypt-focused
-              knowledge.
-            </p>
+          <!-- Small Card 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card">
+              <h3 class="feature-card-title">Smart Map</h3>
+              <p class="feature-card-description">
+                Get answers about historical sites, transportation, pricing, and
+                dining through a chatbot trained on verified Egypt-focused
+                knowledge.
+              </p>
 
-            <a href="#" class="feature-card-link"> Learn More </a>
+              <a href="#" class="feature-card-link"> Learn More </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- 
-     About Section
- -->
-  <section class="about-section" id="about">
-    <div class="about-overlay"></div>
+    </section>
 
-    <div class="container-fluid h-100">
-      <div class="row h-100 align-items-center">
+    <!-- About Section -->
+    <section class="about-section-area" id="about">
+      <div class="about-section">
+        <div class="about-overlay"></div>
 
-        <div class=" col-6 col-lg-12">
-          <div class="about-content">
-            <!-- Small Button -->
-            <p href="#" class="about-label mb-4">
-              About Kemeta
-            </p>
+        <div class="container-fluid h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-6 col-lg-12">
+              <div class="about-content">
+                <!-- Small Button -->
+                <p href="#" class="about-label mb-4">About Kemeta</p>
 
-            <!-- Heading -->
-            <h2 class="about-title mb-4">
-              Reimagining how the world
-              <br>
-              experiences Egypt
-            </h2>
+                <!-- Heading -->
+                <h2 class="about-title mb-4">
+                  Reimagining how the world
+                  <br />
+                  experiences Egypt
+                </h2>
 
-            <!-- Description -->
-            <p class="about-description mb-4">
-              Kemeta is Egypt's AI-powered travel companion.
-              We combine local expertise with smart technology
-              to help travelers plan, customize, and experience
-              Egypt with confidence from ancient wonders to hidden
-              gems, safely and simply.
-            </p>
-            <!-- Statistics -->
-            <div class="about-stats">
-              <div class="stat-card">
-                <div class="container-card">
-                  <h3>12K</h3>
-                  <span>GUIDED TOURS</span>
-                </div>
-              </div>
+                <!-- Description -->
+                <p class="about-description mb-4">
+                  Kemeta is Egypt's AI-powered travel companion. We combine
+                  local expertise with smart technology to help travelers plan,
+                  customize, and experience Egypt with confidence from ancient
+                  wonders to hidden gems, safely and simply.
+                </p>
 
-              <div class="stat-card ">
-                <div class="container-card">
-                  <h3>64K</h3>
-                  <span>TRAVELERS</span>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="container-card">
+                <!-- Statistics -->
+                <div class="about-stats">
+                  <div class="stat-card">
+                    <div class="container-card">
+                      <h3>12K</h3>
+                      <span>GUIDED TOURS</span>
+                    </div>
+                  </div>
 
-                  <h3>350</h3>
-                  <span>DESTINATIONS</span>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="container-card">
+                  <div class="stat-card">
+                    <div class="container-card">
+                      <h3>64K</h3>
+                      <span>TRAVELERS</span>
+                    </div>
+                  </div>
 
-                  <h3>780</h3>
-                  <span>LOCAL EXPERTS</span>
+                  <div class="stat-card">
+                    <div class="container-card">
+                      <h3>350</h3>
+                      <span>DESTINATIONS</span>
+                    </div>
+                  </div>
+
+                  <div class="stat-card">
+                    <div class="container-card">
+                      <h3>780</h3>
+                      <span>LOCAL EXPERTS</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="why-kemeta-section" id="why-kemeta">
-
-    <div class="container why-kemeta-container">
-
-      <!-- Section Header -->
-      <div class="why-kemeta-header">
-
-        <span class="why-kemeta-badge">
-          Why Kemeta
-        </span>
-
-        <h2 class="why-kemeta-title">
-          What Make Us Different
-        </h2>
-
-        <p class="why-kemeta-description">
-          From personalized planning to real-time safety, every detail
-          is designed around one goal: a better travel experience.
-        </p>
-
-      </div>
-
-
-      <!-- Cards -->
-      <div class="why-kemeta-cards">
-
-        <div class="why-kemeta-card">
-
-
-
-          <h3 class="why-kemeta-card-title">
-            <span class="why-kemeta-card-label">
-              AI Trip Generator
-            </span>
-            Personalized Planning
-          </h3>
-
-          <p class="why-kemeta-card-description">
-            Built around your interests and budget, not a generic package.
+    <!-- Why Kemeta Section -->
+    <section class="why-kemeta-section" id="why-kemeta">
+      <div class="container why-kemeta-container">
+        <!-- Section Header -->
+        <div class="why-kemeta-header">
+          <span class="why-kemeta-badge"> Why Kemeta </span>
+          <h2 class="why-kemeta-title">What Make Us Different</h2>
+          <p class="why-kemeta-description">
+            From personalized planning to real-time safety, every detail is
+            designed around one goal: a better travel experience.
           </p>
-
         </div>
 
+        <!-- Cards -->
+        <div class="why-kemeta-cards">
+          <div class="why-kemeta-card">
+            <h3 class="why-kemeta-card-title">
+              <span class="why-kemeta-card-label"> AI Trip Generator </span>
+              Personalized Planning
+            </h3>
+            <p class="why-kemeta-card-description">
+              Built around your interests and budget, not a generic package.
+            </p>
+          </div>
 
-        <div class="why-kemeta-card">
+          <div class="why-kemeta-card">
+            <h3 class="why-kemeta-card-title">
+              <span class="why-kemeta-card-label"> 100% Verified </span>
+              Trusted Content
+            </h3>
+            <p class="why-kemeta-card-description">
+              Every answer comes from reviewed, Egypt-specific sources, not
+              random search results.
+            </p>
+          </div>
 
+          <div class="why-kemeta-card">
+            <h3 class="why-kemeta-card-title">
+              <span class="why-kemeta-card-label"> 3 Ways to Plan </span>
+              Total Flexibility
+            </h3>
+            <p class="why-kemeta-card-description">
+              Automated, ready-made, or fully customized the choice is always
+              yours.
+            </p>
+          </div>
 
-
-          <h3 class="why-kemeta-card-title">
-            <span class="why-kemeta-card-label">
-              100% Verified
-            </span>
-            Trusted Content
-          </h3>
-
-          <p class="why-kemeta-card-description">
-            Every answer comes from reviewed, Egypt-specific sources,
-            not random search results.
-          </p>
-
+          <div class="why-kemeta-card">
+            <h3 class="why-kemeta-card-title">
+              <span class="why-kemeta-card-label"> Real-Time Alerts </span>
+              Built-in Safety
+            </h3>
+            <p class="why-kemeta-card-description">
+              Get notified near high-risk areas, with nearby hospitals and
+              tourist police always in view.
+            </p>
+          </div>
         </div>
-
-
-        <div class="why-kemeta-card">
-
-
-
-          <h3 class="why-kemeta-card-title">
-            <span class="why-kemeta-card-label">
-              3 Ways to Plan
-            </span>
-            Total Flexibility
-          </h3>
-
-          <p class="why-kemeta-card-description">
-            Automated, ready-made, or fully customized the choice is
-            always yours.
-          </p>
-
-        </div>
-
-
-        <div class="why-kemeta-card">
-
-
-
-          <h3 class="why-kemeta-card-title">
-            <span class="why-kemeta-card-label">
-              Real-Time Alerts
-            </span>
-            Built-in Safety
-          </h3>
-
-          <p class="why-kemeta-card-description">
-            Get notified near high-risk areas, with nearby hospitals
-            and tourist police always in view.
-          </p>
-
-        </div>
-
       </div>
+    </section>
 
-    </div>
+    <section class="how-it-works-section" id="how-it-works">
+      <div class="how-it-works-sticky">
+        <!-- Left ثابت -->
+        <div class="how-it-works-content">
+          <span class="section-badge"> How It Works </span>
+          <div class="content-title">Simple Steps, Unforgettable Journey</div>
+          <p>
+            From personalized planning to real-time safety, every detail is
+            designed around one goal: a better travel experience.
+          </p>
+        </div>
 
-  </section>
+        <!-- Right بيتحرك -->
+        <div class="steps-wrapper">
+          <div class="steps-track">
+            <div class="step-card">
+              <div class="step-text">
+                <h3>Share Preferences</h3>
+                <p>Answer a few questions, and our AI builds your itinerary.</p>
+              </div>
+              <div class="img"><img src="assets/images/(1).jpg" alt="" /></div>
+            </div>
 
-  <section class="how-it-works-section" id="how-it-works">
+            <div class="step-card">
+              <div class="step-text">
+                <h3>Choose Your Path</h3>
+                <p>Pick a ready-made package or customize your own stops.</p>
+              </div>
+              <div class="img"><img src="assets/images/(2).jpg" alt="" /></div>
+            </div>
 
-    <div class="how-it-works-sticky">
+            <div class="step-card">
+              <div class="step-text">
+                <h3>Ask Anything</h3>
+                <p>
+                  Ask our chatbot anything about Egypt, anytime, day or night.
+                </p>
+              </div>
+              <div class="img"><img src="assets/images/(3).jpg" alt="" /></div>
+            </div>
 
-      <!-- Left ثابت -->
-      <div class="how-it-works-content">
+            <div class="step-card">
+              <div class="step-text">
+                <h3>Stay Safe</h3>
+                <p>
+                  Smart Map keeps you safe with nearby help and risk alerts.
+                </p>
+              </div>
+              <div class="img"><img src="assets/images/(4).jpg" alt="" /></div>
+            </div>
 
-        <span class="section-badge">
-          How It Works
-        </span>
-
-        <div class="content-title">
-          Simple Steps, Unforgettable Journey
+            <div class="step-card">
+              <div class="step-text">
+                <h3>Enjoy Trip</h3>
+                <p>
+                  Everything's set, just relax and enjoy Egypt to the fullest.
+                </p>
+              </div>
+              <div class="img"><img src="assets/images/(5).jpg" alt="" /></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
+    <!-- Begin Your Story Section -->
+    <section class="begin-story-section">
+      <div class="begin-story-container">
+        <span class="story-badge"> Begin Your Story </span>
+        <h2>Your Egypt Story Starts Here</h2>
         <p>
-          From personalized planning to real-time safety,
-          every detail is designed around one goal:
-          a better travel experience.
-        </p>
-
-      </div>
-
-
-      <!-- Right بيتحرك -->
-      <div class="steps-wrapper">
-
-        <div class="steps-track">
-
-          <div class="step-card">
-            <div class="step-text">
-              <h3>Share Preferences</h3>
-              <p>
-               Answer a few questions, and our AI builds your itinerary.
-              </p>
-            </div>
-
-            <div class="img"> <img src="assets/images/(1).jpg" alt=""></div>
-          </div>
-
-
-          <div class="step-card">
-            <div class="step-text">
-              <h3>Choose Your Path</h3>
-              <p>
-                Pick a ready-made package or customize your own stops.
-              </p>
-            </div>
-
-            <div class="img"> <img src="assets/images/(2).jpg" alt="">
-            </div>
-          </div>
-
-
-          <div class="step-card">
-            <div class="step-text">
-              <h3>Ask Anything</h3>
-              <p>
-                Ask our chatbot anything about Egypt, anytime, day or night.
-              </p>
-            </div>
-
-            <div class="img"><img src="assets/images/(3).jpg" alt=""></div>
-          </div>
-
-
-          <div class="step-card">
-            <div class="step-text">
-              <h3>Stay Safe</h3>
-              <p>
-                Smart Map keeps you safe with nearby help and risk alerts.
-              </p>
-            </div>
-
-            <div class="img"><img src="assets/images/(4).jpg" alt=""></div>
-          </div>
-
-
-          <div class="step-card">
-            <div class="step-text">
-              <h3>Enjoy Trip</h3>
-              <p>
-                Everything's set, just relax and enjoy Egypt to the fullest.
-              </p>
-            </div>
-
-            <div class="img"><img src="assets/images/(5).jpg" alt=""></div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-<!-- ==========================
-     Begin Your Story Section
-========================== -->
-<section class="begin-story-section">
-    <div class="begin-story-container">
-
-        <span class="story-badge">
-            Begin Your Story
-        </span>
-
-        <h2>
-            Your Egypt Story Starts Here
-        </h2>
-
-        <p>
-            From the pyramids of Giza to the streets of Alexandria,
-            let AI craft a journey that's uniquely yours, safe,
-            personalized, and unforgettable.
+          From the pyramids of Giza to the streets of Alexandria, let AI craft a
+          journey that's uniquely yours, safe, personalized, and unforgettable.
         </p>
 
         <a href="./register/index.html" class="story-btn text-decoration-none">
@@ -626,108 +521,103 @@
     </div>
 </section>
 
-
-<!-- ==========================
-     Footer
-========================== -->
-<footer class="kemeta-footer">
-
-    <div class="footer-container">
-
-        <!-- Brand -->
-        <div class="footer-brand">
-
-            <div class="img"><img src="./assets/images/logos/SVG/Logo.svg" alt=""></div>
-
+    <!-- Footer -->
+    <footer class="kemeta-footer-Area">
+      <div class="kemeta-footer">
+        <div class="footer-container">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <div class="img">
+              <img src="./assets/images/logos/SVG/Logo.svg" alt="" />
+            </div>
             <p>
-                The intelligent tourism ecosystem that connects travelers with authentic experiences through AI-powered recommendations.
+              The intelligent tourism ecosystem that connects travelers with
+              authentic experiences through AI-powered recommendations.
             </p>
-
             <div class="footer-socials">
+              <!-- Facebook link -->
+              <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
 
-                <a href="#" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+              <!-- Instagram link -->
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
 
-                <a href="#" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
+              <!-- LinkedIn link -->
+              <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
 
-                <a href="#" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+              <!-- X link -->
+              <a href="#" aria-label="X">
+                <i class="fab fa-x-twitter"></i>
+              </a>
 
-                <a href="#" aria-label="X">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
+              <!--Whatsapp link -->
+              <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
 
-                <a href="#" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+              <!--Discord link -->
+              <a href="#" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+              </a>
+            </div>
+          </div>
 
-                <a href="#" aria-label="Discord">
-                    <i class="fab fa-discord"></i>
-                </a>
-
+          <div class="footer-right">
+            <!-- Quick Links -->
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <div class="links-container">
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="#">About Us</a>
+                <a href="#">Why Kemeta</a>
+                <a href="#">How It Works</a>
+              </div>
             </div>
 
-        </div>
+            <!-- Contact -->
+            <div class="footer-contact">
+              <h4>Contact</h4>
 
-<div class="footer-right">
-        <!-- Quick Links -->
-        <div class="footer-links">
+              <!-- Email Link -->
+              <div class="contact-container">
+                <a href="mailto:kemetaegy@gmail.com">
+                  <i class="fas fa-envelope"></i>
+                  kemetaegy@gmail.com
+                </a>
 
-            <h4>Quick Links</h4>
-<div class="links-container">
-            <a href="#">Home</a>
-            <a href="#">Features</a>
-            <a href="#">About Us</a>
-            <a href="#">Why Kemeta</a>
-            <a href="#">How It Works</a>
-</div>
-        </div>
+                <!-- Telephone link -->
+                <a href="tel:+201069786784">
+                  <i class="fas fa-phone"></i>
+                  +20 10 69786784
+                </a>
 
-
-        <!-- Contact -->
-        <div class="footer-contact">
-
-            <h4>Contact</h4>
-<div class="contact-container">
-            <a href="mailto:kemetaegy@gmail.com">
-                <i class="fas fa-envelope"></i>
-                kemetaegy@gmail.com
-            </a>
-
-            <a href="tel:+201069786784">
-                <i class="fas fa-phone"></i>
-                +20 10 69786784
-            </a>
-
-            <span>
-                <i class="fas fa-location-dot"></i>
-                Mansoura, Egypt
-            </span>
+                <!-- Location -->
+                <span>
+                  <i class="fas fa-location-dot"></i>
+                  Mansoura, Egypt
+                </span>
+              </div>
             </div>
-
+          </div>
         </div>
-       </div>
 
-    </div>
+        <!-- Copyright -->
+        <div class="footer-bottom">
+          <p>
+            <i class="fa-regular fa-copyright"></i> 2026
+            <span>Kemeta.</span> All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
 
-
-    <!-- Copyright -->
-    <div class="footer-bottom">
-
-        <p>
-            <i class="fa-regular fa-copyright"></i> 2026 <span>Kemeta.</span> All rights reserved.
-        </p>
-
-    </div>
-
-</footer>
-
-  <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="./js/main.js"></script>
-</body>
-
+    <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
 </html>

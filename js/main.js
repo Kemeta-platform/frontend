@@ -1,43 +1,66 @@
+// Splash Screen
+(function () {
+  var DRAW_DURATION = 1800;
+  var FILL_DURATION = 500;
+  var MOVE_EMETA_DURATION = 900;
+  var HOLD_AFTER = 800;
 
-    const splash = document.getElementById("splash");
-    const kMarkGroup = document.getElementById("kMarkGroup");
-    const emetaGroup = document.getElementById("emetaGroup");
+  var kMarkGroup = document.getElementById("kMarkGroup");
+  var kmark = document.getElementById("kmark");
+  var kfill = document.getElementById("kfill");
+  var emetaGroup = document.getElementById("emetaGroup");
+  var splash = document.getElementById("splash");
 
-    window.addEventListener("load", () => {
+  function onFinish() {
+    splash.style.transition = "opacity 0.5s ease";
+    splash.style.opacity = "0";
 
-        /* حركة K */
-        setTimeout(() => {
-            kMarkGroup.classList.add("shift-left");
-        }, 300);
+    setTimeout(function () {
+      splash.style.display = "none";
+      document.body.classList.remove("is-loading");
+    }, 500);
+  }
 
-        /* ظهور emeta */
-        setTimeout(() => {
-            emetaGroup.classList.add("show");
-        }, 1000);
+  function runSplashAnimation() {
+    var length = kmark.getTotalLength();
+    kmark.style.strokeDasharray = length;
+    kmark.style.strokeDashoffset = length;
 
-        /* إخفاء الـ Splash */
-        setTimeout(() => {
-            splash.style.opacity = "0";
-            splash.style.transition = "opacity 600ms ease";
-        }, 2300);
+    kmark.getBoundingClientRect();
 
-        /* إزالة الـ Splash من الصفحة */
-        setTimeout(() => {
-            splash.remove();
-        }, 2900);
-
+    kmark.style.transition =
+      "stroke-dashoffset " + DRAW_DURATION + "ms cubic-bezier(.65,0,.35,1)";
+    requestAnimationFrame(function () {
+      kmark.style.strokeDashoffset = "0";
     });
 
+    setTimeout(function () {
+      kmark.style.transition = "opacity " + FILL_DURATION + "ms ease";
+      kfill.style.transition = "opacity " + FILL_DURATION + "ms ease";
+      kmark.style.opacity = "0";
+      kfill.style.opacity = "1";
+    }, DRAW_DURATION);
 
+    setTimeout(function () {
+      kMarkGroup.classList.add("shift-left");
+      emetaGroup.classList.add("show");
+    }, DRAW_DURATION + FILL_DURATION);
 
+    setTimeout(
+      onFinish,
+      DRAW_DURATION + FILL_DURATION + MOVE_EMETA_DURATION + HOLD_AFTER,
+    );
+  }
 
-
+  window.addEventListener("load", runSplashAnimation);
+})();
 
 const navbar = document.querySelector(".navbar");
 const menuButton = document.querySelector("#navbar-menu-button");
 const navbarCenter = document.querySelector(".navbar__center");
 /* ========================== Navbar Scroll ========================== */
- window.addEventListener(
+
+window.addEventListener(
   "scroll",
   () => {
     if (window.scrollY > 0) {
@@ -45,7 +68,19 @@ const navbarCenter = document.querySelector(".navbar__center");
     } else {
       navbar.classList.remove("navbar--scrolled");
     }
+
+    if (!howItWorks || !navbar) return;
+
+    const sectionTop = howItWorks.getBoundingClientRect().top + window.scrollY;
+
+    const sectionBottom = sectionTop + howItWorks.offsetHeight;
+
+    const shouldHide =
+      window.scrollY >= sectionTop - 200 && window.scrollY < sectionBottom + 50;
+
+    navbar.classList.toggle("navbar--hidden", shouldHide);
   },
+  { passive: true },
 );
 
 /* ==========================
@@ -106,10 +141,38 @@ function calculateHowItWorks() {
   if (!lastCard) return;
 
   const lastCardRect = lastCard.getBoundingClientRect();
+  const wrapperCenter = wrapperRect.top + wrapperRect.height / 2;
+  const lastCardCenter = lastCardRect.top + lastCardRect.height / 2;
 
-  maxMove = Math.max(0, lastCardRect.bottom - wrapperRect.bottom);
+  maxMove = Math.max(0, lastCardCenter - wrapperCenter);
 
   howItWorks.style.height = `${sticky.clientHeight + maxMove}px`;
+}
+
+let currentMove = 0;
+let targetMove = 0;
+let animationFrame = null;
+
+/*
+  Adds inertia to the cards movement.
+  The cards gradually follow the scroll position instead of moving instantly,
+  making the scrolling feel smoother and heavier.
+*/
+
+function animateHowItWorks() {
+  if (!track) return;
+
+  currentMove += (targetMove - currentMove) * 0.2;
+
+  track.style.transform = `translate3d(0, -${currentMove}px, 0)`;
+
+  if (Math.abs(targetMove - currentMove) > 0.5) {
+    animationFrame = requestAnimationFrame(animateHowItWorks);
+  } else {
+    currentMove = targetMove;
+    track.style.transform = `translate3d(0, -${currentMove}px, 0)`;
+    animationFrame = null;
+  }
 }
 
 function updateHowItWorks() {
@@ -123,9 +186,11 @@ function updateHowItWorks() {
 
   const progress = Math.min(Math.max(scrollInside / maxMove, 0), 1);
 
-  const move = progress * maxMove;
+  targetMove = progress * maxMove;
 
-  track.style.transform = `translate3d(0, -${move}px, 0)`;
+  if (!animationFrame) {
+    animationFrame = requestAnimationFrame(animateHowItWorks);
+  }
 }
 
 /* =========================================

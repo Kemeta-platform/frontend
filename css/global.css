@@ -111,4 +111,15 @@ background-size: 500px 500px;
     z-index: -1;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--Secondry-text);
+  border-radius: 999px 0 0 999px;
+}
