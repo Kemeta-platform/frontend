@@ -231,17 +231,17 @@ background: radial-gradient(
 /* القائمة المنسدلة */
 .custom-dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 4px);
   left: 0;
   width: 100%;
-  background-color: #eae5db; /* لون الخلفية الرملي المطابق للصورة */
-  border: 1px solid rgba(28, 72, 79, 0.3);
-  border-radius: 22px;
-  padding: 8px 0;
-  max-height: 220px;
+  background-color: #eae5db;
+  border: 1px solid rgba(28, 72, 79, 0.25);
+  border-radius: 16px;
+  padding: 4px 0;
+  max-height: 130px; /* ارتفاع مدمج يناسب 3 دول بالضبط */
   overflow-y: auto;
-  z-index: 100;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   display: none;
 }
 
@@ -249,19 +249,74 @@ background: radial-gradient(
   display: block;
 }
 
-/* عناصر القائمة */
+/* 3. تقليل هوامش العناصر داخل الخطوة 3 ليتسع البوكس بالكامل داخل الكارد */
+#step-3 .form-header {
+  margin-bottom: 12px;
+}
+
+#step-3 .avatar-wrapper {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+#step-3 .avatar-label {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+#step-3 .mb-4 {
+  margin-bottom: 16px !important;
+}
+
+#step-3 .mb-3 {
+  margin-bottom: 12px !important;
+}
+
+/* 4. تنسيق عناصر الدول والأعلام داخل القائمة */
 .custom-option {
-  display: flex;
-  align-items: center;
-  padding: 9px 24px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 7px 14px !important;
   cursor: pointer;
-  font-size: 14.5px;
+  font-size: 14px;
   color: #222;
   transition: background-color 0.15s ease;
 }
 
 .custom-option:hover {
-  background-color: rgba(28, 72, 79, 0.08);
+  background-color: rgba(28, 72, 79, 0.08) !important;
+}
+
+.country-flag-img {
+  width: 23px !important;
+  height: 16px !important;
+  min-width: 23px !important;
+  object-fit: cover !important;
+  border-radius: 2px !important;
+  display: inline-block !important;
+}
+
+/* سكرول بار داخلي نحيف جداً وأنيق */
+.custom-dropdown-menu::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(28, 72, 79, 0.3);
+  border-radius: 10px;
+}
+
+/* أبعاد العلم المحددة بدقة (عرض 23px وارتفاع 16px) */
+.country-flag-img {
+  width: 23px !important;
+  height: 16px !important;
+  min-width: 23px !important;
+  object-fit: cover !important;
+  border-radius: 2px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18) !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
 }
 
 /* كود اللغة (EN, AR, FR...) */
@@ -290,4 +345,94 @@ background: radial-gradient(
 .custom-dropdown-menu::-webkit-scrollbar-thumb {
   background-color: rgba(28, 72, 79, 0.25);
   border-radius: 10px;
+}
+
+/* ==============================================
+   PASSWORD STRENGTH METER
+   ============================================== */
+.password-strength-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.strength-bar-track {
+  margin-left: 7px;
+  flex: 1;
+  height: 4px;
+  background-color: rgba(28, 72, 79, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.strength-bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 4px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-bar-fill.weak {
+  background-color: #e63946;
+}
+
+.strength-bar-fill.medium {
+  background-color: #f4a261;
+}
+
+.strength-bar-fill.strong {
+  background-color: #2a9d8f;
+}
+
+.strength-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--primary-teal, #1c484f);
+  min-width: 48px;
+}
+
+
+.crop-box {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#cropCanvas {
+  width: 300px;
+  height: 300px;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: grab;
+}
+
+#cropCanvas:active {
+  cursor: grabbing;
+}
+
+.crop-controls {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#zoomSlider {
+  flex: 1;
+}
+
+#saveCrop {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.profile-preview {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
 }

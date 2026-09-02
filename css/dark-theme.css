@@ -1,0 +1,279 @@
+/* تنسيق الزر نفسه */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* اختبار: تغير لون الصفحة بالكامل عند تفعيل الدارك مود */
+[data-theme="dark"] body {
+  background-color: rgba(46, 46, 45, 1) !important;
+  color: #ffffff !important;
+}
+/* ==================================================
+   1. DARK THEME VARIABLES
+================================================== */
+[data-theme="dark"] {
+  --dark-container-background: linear-gradient(to bottom, rgba(10, 8, 5, 1), rgba(58, 40, 20, 1), rgba(122, 89, 47, 1));
+  --bg-primary: rgba(198, 152, 85, 1);       /* اللون الذهبي */
+  --text-primary: rgba(193, 173, 149, 1);    /* لون النصوص الوصفية */
+--light-text:rgba(242, 233, 222, 1);
+--navbar-background: rgba(74, 74, 74, 0.5);
+}
+[data-theme="dark"] .navbar-logo-dark,
+[data-theme="dark"] .navbar-logo-mobile-light,
+[data-theme="dark"] .navbar-logo-mobile-dark,
+[data-theme="dark"] .navbar-logo-dark,
+[data-theme="dark"] .navbar-logo-mobile-dark-scroll {
+  display: none !important;
+}
+
+/* عند الاسكرول في الديسكتوب */
+[data-theme="dark"]  .navbar--scrolled .navbar-logo-light {
+  display: none !important;
+}
+[data-theme="dark"] .navbar--scrolled .navbar-logo-dark-scroll{
+  display: block !important;
+}
+[data-theme="dark"] .navbar--scrolled {
+  background: var(--navbar-background);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+[data-theme="dark"] .navbar--scrolled .navbar__center .nav-link,[data-theme="dark"] .navbar--scrolled .theme-toggle-btn{
+  color: var(--bg-primary) !important;
+  
+}
+[data-theme="dark"] .navbar--scrolled .navbar__center .nav-link::after{
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--bg-primary,);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+[data-theme="dark"] .navbar--scrolled .navbar__center .nav-link:hover::after {
+  width: 100%;
+}
+[data-theme="dark"] .navbar--scrolled .btn-sign,[data-theme="dark"] .navbar--scrolled .btn-sign:hover{
+  background: var(--bg-primary) !important;
+  color: #3C3C3C !important;
+  border:none
+}
+[data-theme="dark"] .navbar--scrolled .btn-outline,[data-theme="dark"] .navbar--scrolled .btn-outline:hover{
+  background: transparent !important;
+  color: var(--bg-primary) !important;
+  border: 1.5px solid var(--bg-primary) !important;
+
+}
+
+[data-theme="dark"] .hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 70%
+  
+  );
+}
+[data-theme="dark"] .hero__btn-main {
+   background: var(--bg-primary);
+}
+[data-theme="dark"] .hero__badge {
+    background:  rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+}
+[data-theme="dark"] .glass-badge{
+    background: linear-gradient(
+    to bottom right ,
+    rgba(0, 0, 0, 0.358),
+    rgba(0, 0, 0, 0.05) 
+  );  
+  color: var(--text-primary);
+  border: 1px solid rgba(34, 33, 33, 0.132);
+    box-shadow: inset 0 1px 1px rgba(148, 147, 147, 0.24);
+
+}
+
+/* ==================================================
+   3. سكشن PLATFORM FEATURES
+================================================== */
+/* العنوان الرئيسي */
+[data-theme="dark"] .features-title {
+  color: var(--bg-primary) !important;
+}
+
+/* النص الوصفي تحت العنوان */
+[data-theme="dark"] .features-description {
+  color: var(--text-primary) !important;
+}
+
+/* الكروت */
+[data-theme="dark"] .feature-card {
+  background: linear-gradient(
+    to bottom right ,
+    rgba(0, 0, 0, 0.396),
+    rgba(0, 0, 0, 0.05) 
+  );   
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+[data-theme="dark"] .feature-card-title {
+  color: var(--bg-primary) !important;
+}
+/* النص داخل الكارد */
+[data-theme="dark"] .feature-card-description {
+  color: var(--light-text) !important;
+}
+
+/* رابط Learn More */
+[data-theme="dark"] .feature-card-link {
+  color: var(--text-primary) !important;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .feature-card-link:hover {
+  color: var(--bg-primary) !important;
+}
+
+/* ==================================================
+   4. سكشن WHY KEMETA
+================================================== */
+/* العنوان الرئيسي */
+[data-theme="dark"] .why-kemeta-title {
+  color: var(--bg-primary) !important;
+}
+
+/* النص الوصفي تحت العنوان */
+[data-theme="dark"] .why-kemeta-description {
+  color: var(--text-primary) !important;
+}
+
+/* كروت Why Kemeta */
+[data-theme="dark"] .why-kemeta-card {
+  background: linear-gradient(
+    to bottom right ,
+    rgba(0, 0, 0, 0.396),
+    rgba(0, 0, 0, 0.05) 
+  );   
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+}
+[data-theme="dark"] .why-kemeta-card-label{
+  color: var(--text-primary) !important;
+}
+
+/* السطر الأول في العنوان (أبيض) */
+[data-theme="dark"] .why-kemeta-card-title {
+  color: var(--bg-primary) !important;
+}
+
+
+
+/* النص الوصفي للكارد */
+[data-theme="dark"] .why-kemeta-card-description {
+  color: var(--light-text) !important;
+}
+
+[data-theme="dark"] .how-it-works-sticky {
+  background:  var(--dark-container-background) !important;
+}
+[data-theme="dark"] .step-card {
+  background:rgba(0, 0, 0, 0.2);  
+}
+
+/* ==================================================
+   5. سكشن BEGIN YOUR STORY
+================================================== */
+/* العنوان الرئيسي */
+[data-theme="dark"] .begin-story-container h2 {
+  color: var(--bg-primary) !important;
+}
+
+/* النص الوصفي */
+[data-theme="dark"] .begin-story-container p {
+  color: var(--text-primary) !important;
+}
+
+/* زر Join Kemeta */
+[data-theme="dark"] .story-btn {
+  background: transparent !important;
+  border: 1.5px solid var(--bg-primary) !important;
+  color: var(--bg-primary) !important;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .story-btn:hover {
+  background: var(--bg-primary) !important;
+  color: #47443E !important;
+  box-shadow: 0 6px 10px rgba(198, 152, 85, 0.3);
+}
+
+[data-theme="dark"] .about-content span,[data-theme="dark"] .how-it-works-content span {
+  color: rgba(255, 255, 255, 1) !important;
+ 
+}
+[data-theme="dark"] .stat-card {
+  background:rgba(95, 95, 95, 0.2);
+    border: 1px solid rgba(0. 0, 0, 0.2);
+
+   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3);
+  box-shadow: inset 0 1px 1px rgba(80, 79, 79, 0.13);
+  
+  user-select: none;
+  
+}
+
+[data-theme="dark"] .kemeta-footer {
+  background: var(--dark-container-background) !important;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--bg-primary) !important;
+  
+}
+
+@media (max-width: 860px) {
+  [data-theme="dark"] .navbar-logo-light,
+  [data-theme="dark"] .navbar-logo-dark,
+  [data-theme="dark"] .navbar--scrolled .navbar-logo-dark-scroll,
+  [data-theme="dark"] .navbar--scrolled .navbar-logo-dark {
+    display: none !important;
+  }
+  [data-theme="dark"] .navbar-logo-mobile-light {
+    display: block !important;
+  }
+  [data-theme="dark"] .navbar--scrolled .navbar-logo-mobile-light{
+    display: none !important;
+  }
+
+  [data-theme="dark"] .navbar--scrolled .navbar-logo-mobile-dark-scroll {
+    display: block !important;
+  }
+  [data-theme="dark"] .navbar--scrolled .navbar__menu-button i{
+    color: var(--bg-primary) !important;
+  }
+[data-theme="dark"] .logo-light {
+  display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: block;
+}
+  
+
+}

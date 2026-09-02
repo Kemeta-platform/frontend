@@ -85,39 +85,56 @@
               <div class="row g-2 mb-2">
                 <div class="col-6">
                   <label class="form-label">First Name</label>
-                  <input type="text" class="form-control-custom" id="firstName" placeholder="e.g. Osama" required>
+                  <input type="text" class="form-control-custom" id="firstName" placeholder="e.g. Ahmed" required>
                 </div>
                 <div class="col-6">
                   <label class="form-label">Last Name</label>
-                  <input type="text" class="form-control-custom" id="lastName" placeholder="e.g. Gharba" required>
+                  <input type="text" class="form-control-custom" id="lastName" placeholder="e.g. Mohamed" required>
                 </div>
               </div>
 
               <div class="mb-2">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control-custom" id="email" placeholder="e.g. osamagharba@gmail.com" required>
+                <input type="email" class="form-control-custom" id="email" placeholder="e.g. ahmedmohamed@gmail.com" required>
               </div>
 
-              <div class="mb-2">
-                <label class="form-label">Password</label>
-                <div class="custom-input-group">
-                  <input type="password" id="password" class="form-control-custom" placeholder="Enter your password" required>
-                  <button type="button" class="btn-toggle-password" onclick="togglePass('password', this)">
-                    <i class="fa-regular fa-eye-slash"></i>
-                  </button>
-                </div>
-              </div>
 
-              <div class="mb-3">
-                <label class="form-label">Confirm Password</label>
-                <div class="custom-input-group">
-                  <input type="password" id="confirmPassword" class="form-control-custom" placeholder="Confirm your password" required>
-                  <button type="button" class="btn-toggle-password" onclick="togglePass('confirmPassword', this)">
-                    <i class="fa-regular fa-eye-slash"></i>
-                  </button>
-                </div>
-              </div>
+           <div class="mb-2">
+  <label class="form-label">Password</label>
+  <div class="custom-input-group">
+    <input type="password" id="password" class="form-control-custom" placeholder="Enter your password" required>
+    <button type="button" class="btn-toggle-password" onclick="togglePass('password', this)">
+      <i class="fa-regular fa-eye-slash"></i>
+    </button>
+  </div>
+  
+  <!-- 1. شريط قياس قوة الباسورد (Strength Meter) -->
+  <div class="password-strength-container d-none" id="strengthContainer">
+    <div class="strength-bar-track">
+      <div class="strength-bar-fill" id="strengthBar"></div>
+    </div>
+    <span class="strength-text" id="strengthText">Weak</span>
+  </div>
+  
+  <!-- 2. قائمة الشروط التفاعلية (تتحول للأخضر تلقائياً) -->
+  <div class="password-checklist mt-2" id="passwordChecklist">
+ 
+  </div>
+</div>
 
+<div class="mb-3">
+  <label class="form-label">Confirm Password</label>
+  <div class="custom-input-group">
+    <input type="password" id="confirmPassword" class="form-control-custom" placeholder="Confirm your password" required>
+    <button type="button" class="btn-toggle-password" onclick="togglePass('confirmPassword', this)">
+      <i class="fa-regular fa-eye-slash"></i>
+    </button>
+  </div>
+  <small id="confirmPassFeedback" class="text-danger d-none mt-1" style="font-size: 12px; font-weight: 500;">
+    Passwords do not match
+  </small>
+</div>
+             
               <button type="submit" class="btn-submit">Sign Up</button>
             </form>
 
@@ -179,27 +196,21 @@
 
   <form id="formStep3">
     <!-- 1. Preferred Language Custom Dropdown -->
+   <!-- 1. Preferred Language Custom Dropdown with Live Search -->
     <div class="mb-3">
       <label class="form-label">Preferred language</label>
       <div class="custom-select-wrapper" id="languageWrapper">
         <div class="custom-select-trigger form-control-custom">
-          <input type="text" id="languageInput" placeholder="Choose your language" readonly required>
+          <input type="text" id="languageInput" placeholder="Choose your language" autocomplete="off" required>
           <i class="fa-solid fa-chevron-down select-chevron"></i>
         </div>
-        <div class="custom-dropdown-menu">
-          <div class="custom-option" data-value="English"><span class="option-code">EN</span><span class="option-text">English</span></div>
-          <div class="custom-option" data-value="Arabic"><span class="option-code">AR</span><span class="option-text">Arabic</span></div>
-          <div class="custom-option" data-value="French"><span class="option-code">FR</span><span class="option-text">French</span></div>
-          <div class="custom-option" data-value="German"><span class="option-code">DE</span><span class="option-text">German</span></div>
-          <div class="custom-option" data-value="Spanish"><span class="option-code">ES</span><span class="option-text">Spanish</span></div>
-          <div class="custom-option" data-value="Italian"><span class="option-code">IT</span><span class="option-text">Italian</span></div>
-          <div class="custom-option" data-value="Russian"><span class="option-code">RU</span><span class="option-text">Russian</span></div>
-          <div class="custom-option" data-value="Chinese"><span class="option-code">ZH</span><span class="option-text">Chinese</span></div>
+        <div class="custom-dropdown-menu" id="languageList">
+          <!-- يتم توليد جميع لغات العالم تلقائياً من JS -->
         </div>
       </div>
     </div>
 
-    <!-- 2. Nationality Custom Dropdown with Live Search -->
+<!-- 2. Nationality Custom Dropdown with Live Search -->
     <div class="mb-4">
       <label class="form-label">Nationality</label>
       <div class="custom-select-wrapper" id="nationalityWrapper">
@@ -208,18 +219,7 @@
           <i class="fa-solid fa-chevron-down select-chevron"></i>
         </div>
         <div class="custom-dropdown-menu" id="nationalityList">
-          <div class="custom-option" data-value="Egypt"><span class="option-flag">🇪🇬</span><span class="option-text">Egypt</span></div>
-          <div class="custom-option" data-value="Afghanistan"><span class="option-flag">🇦🇫</span><span class="option-text">Afghanistan</span></div>
-          <div class="custom-option" data-value="Albania"><span class="option-flag">🇦🇱</span><span class="option-text">Albania</span></div>
-          <div class="custom-option" data-value="Algeria"><span class="option-flag">🇩🇿</span><span class="option-text">Algeria</span></div>
-          <div class="custom-option" data-value="Andorra"><span class="option-flag">🇦🇩</span><span class="option-text">Andorra</span></div>
-          <div class="custom-option" data-value="Angola"><span class="option-flag">🇦🇴</span><span class="option-text">Angola</span></div>
-          <div class="custom-option" data-value="Saudi Arabia"><span class="option-flag">🇸🇦</span><span class="option-text">Saudi Arabia</span></div>
-          <div class="custom-option" data-value="United States"><span class="option-flag">🇺🇸</span><span class="option-text">United States</span></div>
-          <div class="custom-option" data-value="United Kingdom"><span class="option-flag">🇬🇧</span><span class="option-text">United Kingdom</span></div>
-          <div class="custom-option" data-value="Germany"><span class="option-flag">🇩🇪</span><span class="option-text">Germany</span></div>
-          <div class="custom-option" data-value="France"><span class="option-flag">🇫🇷</span><span class="option-text">France</span></div>
-          <div class="custom-option" data-value="Italy"><span class="option-flag">🇮🇹</span><span class="option-text">Italy</span></div>
+          <!-- يتم توليد جميع دول العالم والأعلام تلقائياً من JS -->
         </div>
       </div>
     </div>
@@ -251,6 +251,12 @@
   </div>
 
   <script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css"
+/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
   <script src="register.js"></script>
 </body>
 </html>

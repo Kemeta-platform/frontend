@@ -4,6 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordInput = document.getElementById('passwordInput');
   const loginForm = document.getElementById('loginForm');
 
+  const savedEmail = localStorage.getItem('loginEmail');
+const savedPassword = localStorage.getItem('loginPassword');
+
+if (savedEmail) {
+  const emailInput = loginForm.querySelector('input[type="email"]');
+  if (emailInput) emailInput.value = savedEmail;
+}
+
+if (savedPassword && passwordInput) {
+  passwordInput.value = savedPassword;
+}
+
   // 2. إظهار / إخفاء كلمة المرور (متوافق تماماً مع FontAwesome)
   if (toggleBtn && passwordInput) {
     toggleBtn.addEventListener('click', (e) => {
@@ -37,11 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = emailInput ? emailInput.value.trim() : '';
       const password = passwordInput ? passwordInput.value.trim() : '';
 
+
+
       // تحقق بسيط
       if (!email || !password) {
         alert('Please fill in all required fields.');
         return;
       }
+      localStorage.setItem('loginEmail', email);
+localStorage.setItem('loginPassword', password);
 
       // رسالة نجاح وتوجيه إلى الداشبورد (أو الصفحة الرئيسية)
       alert(`Welcome back! Successfully logged in as: ${email}`);

@@ -1,5 +1,6 @@
 @import url("./global.css");
 @import url("./components/navbar.css");
+@import url("./components/glass.css");
 @import url("./media.css");
 
 /* ==================================================
@@ -17,6 +18,13 @@ body {
 body.is-loading {
   overflow: hidden;
   height: 100vh;
+}
+/* إخفاء الـ Splash فوراً إذا كانت ظهرت من قبل */
+html.no-splash .splash {
+  display: none !important;
+}
+html.no-splash body {
+  overflow: auto !important;
 }
 
 .splash {
@@ -120,52 +128,6 @@ header {
   max-width: 640px;
   text-align: center;
   color: var(--color-text);
-}
-
-/* البادج الصغيرة فوق العنوان */
-.hero__badge {
-  position: relative;
-  isolation: isolate;
-  font-family: "F37 Moon Demi";
-  width: fit-content;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 0.4rem 1.1rem;
-  border-radius: var(--general-radius);
-  font-size: 14px;
-  color: var(--Light-Text);
-  border: 1px solid var(--Light-Text);
-}
-
-/* Liquid Glass surface */
-.hero__badge::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: inherit;
-  /* box-shadow:
-    inset 0 0 6px -3px rgba(255, 255, 255, 0.7); */
-  background-color: var(--Card-Background);
-  pointer-events: none;
-}
-
-/* Refraction + Blur */
-.hero__badge::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  filter: url(#glass-distortion);
-  -webkit-filter: url(#glass-distortion);
-  isolation: isolate;
-  pointer-events: none;
 }
 
 /* Content above glass */
@@ -562,7 +524,6 @@ header {
 .stat-card h3 {
   font-size: 20px;
   font-family: "F37 Moon Bold";
-
   line-height: 1;
 }
 
@@ -767,7 +728,7 @@ header {
 .why-kemeta-card-description {
   color: var(--Dark-Text);
 
-  font-family: "F37 Moon Regular";
+  font-family: "F37 Moon light";
 
   font-size: 16px;
 
@@ -935,7 +896,7 @@ header {
   justify-content: space-around;
   gap: 5px;
   flex-shrink: 0;
-  border-radius: 45px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.16);
   border: none;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
@@ -971,7 +932,7 @@ header {
   content: "";
   position: absolute;
   inset: 2px;
-  border-radius: 43px;
+  border-radius: inherit;
   box-shadow:
     inset 0 0 12px rgba(87, 87, 87, 0.2),
     inset 0 0 5px rgba(224, 218, 218, 0.15);
@@ -1274,6 +1235,10 @@ header {
   color: #fff;
   font-size: 16px;
   margin-right: 5px;
+}
+.footer-contact .contact-container a{
+  color: #fff;
+
 }
 
 /* ==================================================

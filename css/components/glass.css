@@ -1,0 +1,64 @@
+/* ==================================================
+   REUSABLE COMPONENT: GLASS BADGE (من مواصفات فيجما)
+================================================== */
+.glass-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: var(--general-radius);
+  
+  font-family: "F37 Moon Bold", sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--Primary-Text);
+  
+  /* خلفية فيجما Card-Background */
+  background: var(--Card-Background, rgba(255, 255, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  
+  /* تأثير الزجاج */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  
+  user-select: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* ==================================================
+   HERO BADGE (الحجم الأصغر الخاص بالهيرو)
+================================================== */
+.hero__badge {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--general-radius);
+  
+  font-family: "F37 Moon Regular";
+  font-size: 14px; /* حجم أصغر */
+  color: var(--Light-Text);
+  
+  background: var(--Card-Background, rgba(255, 255, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ==================================================
+   توسيط هيدر الـ Features
+================================================== */
+.first-card {
+  gap: var(--general-gap);
+  flex-direction: column;
+  align-items: center; /* حل مشكلة توسيط البلات فورم */
+  text-align: center;
+}

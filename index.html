@@ -3,10 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <title>Kemeta - Discover Egypt</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/main.css"/>
+      <link rel="stylesheet" href="css/dark-theme.css"/> <!-- ملف الدارك مود -->
     <link rel="icon" href="assets/images/logos/SVG/logo (2).svg">
+     <script>
+       try {
+      const savedTheme = localStorage.getItem("kemeta_theme");
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+      if (sessionStorage.getItem("kemeta_splash_shown")) {
+        document.documentElement.classList.add("no-splash");
+      }
+    } catch(e) {}
+  </script>
   </head>
 
   <body class="is-loading">
@@ -56,33 +69,43 @@
       <!-- Navbar -->
       <nav class="navbar">
         <!-- Logo -->
-        <div class="navbar__left">
-          <!-- Desktop Logos -->
-          <img
-            src="./assets/images/logos/SVG/Logo.svg"
-            alt="Kemeta"
-            class="navbar-logo navbar-logo-light"
-          />
+   
+<div class="navbar__left">
+  <img
+    src="./assets/images/logos/SVG/Logo.svg"
+    alt="Kemeta"
+    class="navbar-logo navbar-logo-light"
+  />
 
-          <img
-            src="./assets/images/logos/SVG/Logo (1).svg"
-            alt="Kemeta"
-            class="navbar-logo navbar-logo-dark"
-          />
+  <img
+    src="./assets/images/logos/SVG/Logo (1).svg"
+    alt="Kemeta"
+    class="navbar-logo navbar-logo-dark"
+  />
 
-          <!-- Mobile Logos -->
-          <img
-            src="./assets/images/logos/SVG/logo (2).svg"
-            alt="Kemeta"
-            class="navbar-logo-mobile navbar-logo-mobile-light"
-          />
+  <img
+    src="./assets/images/logos/SVG/Logo (4).svg" 
+    alt="Kemeta"
+    class="navbar-logo navbar-logo-dark-scroll"
+  />
 
-          <img
-            src="./assets/images/logos/SVG/Vector.svg"
-            alt="Kemeta"
-            class="navbar-logo-mobile navbar-logo-mobile-dark"
-          />
-        </div>
+  <!-- لوجوهات الموبايل -->
+  <img
+    src="./assets/images/logos/SVG/logo (2).svg"
+    alt="Kemeta"
+    class="navbar-logo-mobile navbar-logo-mobile-light"
+  />
+  <img
+    src="./assets/images/logos/SVG/Vector.svg"
+    alt="Kemeta"
+    class="navbar-logo-mobile navbar-logo-mobile-dark"
+  />
+  <img
+    src="./assets/images/logos/SVG/Logo (5).svg"
+    alt="Kemeta"
+    class="navbar-logo-mobile navbar-logo-mobile-dark-scroll"
+  />
+</div>
 
         <!-- Links -->
         <ul class="navbar__center d-flex gap-4">
@@ -104,18 +127,15 @@
         </ul>
 
 
- <div class="navbar__right">
+<div class="navbar__right">
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
     <i class="fas fa-sun"></i>
+  </button>
 
-    <!-- زر تسجيل الدخول -->
-    <a href="./login/index.html" class="btn btn-outline text-decoration-none">
-        Log In
-    </a>
-
-    <!-- زر إنشاء حساب جديد -->
-    <a href="./register/index.html" class="btn btn-sign text-decoration-none">
-        Sign Up
-    </a>
+  <!-- زر تسجيل الدخول -->
+  <a href="./login/index.html" class="btn btn-outline text-decoration-none">Log In</a>
+  <!-- زر إنشاء حساب جديد -->
+  <a href="./register/index.html" class="btn btn-sign text-decoration-none">Sign Up</a>
 </div>
 
         <!-- Navbar menu (Responsiveness) -->
@@ -135,7 +155,12 @@
         <!-- Header -->
         <div class="mobile-menu-header">
           <a href="#" class="mobile-logo">
-            <img src="./assets/images/logos/SVG/Vector.svg" alt="Kemeta" />
+            <img src="./assets/images/logos/SVG/Vector.svg" class="logo-light" alt="Kemeta" />
+             <img
+    src="./assets/images/logos/SVG/Logo (5).svg"
+    alt="Kemeta" 
+    class="logo-dark"
+  />
           </a>
 
           <button
@@ -150,23 +175,23 @@
     <!-- Links -->
     <nav class="mobile-nav">
 
-        <a href="#" class="mobile-nav-link">
+        <a href="#home" class="mobile-nav-link">
             Home
         </a>
 
-        <a href="#" class="mobile-nav-link">
+        <a href="#features" class="mobile-nav-link">
             Features
         </a>
 
-        <a href="#" class="mobile-nav-link">
+        <a href="#about" class="mobile-nav-link">
             About Us
         </a>
 
-        <a href="#" class="mobile-nav-link">
+        <a href="#why-kemeta" class="mobile-nav-link">
             Why Kemeta
         </a>
 
-        <a href="#" class="mobile-nav-link">
+        <a href="#how-it-works" class="mobile-nav-link">
             How It Works
         </a>
 
@@ -181,7 +206,7 @@
             Log In
         </a>
 
-        <button class="mobile-settings" type="button">
+        <button class="mobile-settings" id="mobile-theme-toggle" type="button">
             <i class="fas fa-cog"></i>
         </button>
     </div>
@@ -199,14 +224,10 @@
       <section class="hero" id="home">
         <div class="hero__overlay"></div>
         <div class="hero__content">
-          <div class="hero__badge">
-            <img
-              src="./assets/images/icons/Icon (1).svg"
-              alt="Kemeta Logo"
-              class="hero__badge-logo"
-            />
-            <span>Powered by GPT-4 AI</span>
-          </div>
+<div class="hero__badge">
+  <img src="./assets/images/icons/Icon (1).svg" alt="Kemeta Logo" class="hero__badge-logo" />
+  <span>Powered by GPT-4 AI</span>
+</div>
 
           <h1 class="hero__title">
             Discover Egypt
@@ -234,7 +255,7 @@
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="first-card col-lg-7 d-flex">
-            <span class="features-badge"> Platform Features </span>
+  <span class="glass-badge">Platform Features</span>
             <h2 class="features-title">Features Built Around You</h2>
             <p class="features-description">
               Everything you need to plan, customize, and experience Egypt
@@ -324,8 +345,7 @@
             <div class="col-6 col-lg-12">
               <div class="about-content">
                 <!-- Small Button -->
-                <p href="#" class="about-label mb-4">About Kemeta</p>
-
+<span class="glass-badge mb-4">About Kemeta</span>
                 <!-- Heading -->
                 <h2 class="about-title mb-4">
                   Reimagining how the world
@@ -383,7 +403,7 @@
       <div class="container why-kemeta-container">
         <!-- Section Header -->
         <div class="why-kemeta-header">
-          <span class="why-kemeta-badge"> Why Kemeta </span>
+  <span class="glass-badge">Why Kemeta</span>
           <h2 class="why-kemeta-title">What Make Us Different</h2>
           <p class="why-kemeta-description">
             From personalized planning to real-time safety, every detail is
@@ -443,8 +463,9 @@
       <div class="how-it-works-sticky">
         <!-- Left ثابت -->
         <div class="how-it-works-content">
-          <span class="section-badge"> How It Works </span>
-          <div class="content-title">Simple Steps, Unforgettable Journey</div>
+  <span class="glass-badge mb-4">How It Works</span>
+            <div class="content-title">Simple Steps, Unforgettable Journey</div>
+
           <p>
             From personalized planning to real-time safety, every detail is
             designed around one goal: a better travel experience.
@@ -507,7 +528,7 @@
     <!-- Begin Your Story Section -->
     <section class="begin-story-section">
       <div class="begin-story-container">
-        <span class="story-badge"> Begin Your Story </span>
+<span class="glass-badge mb-3">Begin Your Story</span>
         <h2>Your Egypt Story Starts Here</h2>
         <p>
           From the pyramids of Giza to the streets of Alexandria, let AI craft a
@@ -618,6 +639,7 @@
     </footer>
 
     <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./js/main.js"></script>
+    <script  src="./js/main.js"></script>
+     <script src="./js/theme.js"></script>
   </body>
 </html>
