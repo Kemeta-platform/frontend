@@ -239,3 +239,40 @@ if (savedDarkMode === "true") {
         icon.classList.add("fa-moon");
     }
 }
+
+ function initSmartScrollReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // متابعة اتجاه السكرول (نازل ولا طالع)
+    let isScrollingDown = true;
+    window.addEventListener('scroll', () => {
+      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      isScrollingDown = currentScrollTop > lastScrollTop;
+      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    }, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // 1. لو نازلة لتحت والعنصر ظهر -> شغّل الأنيميشن
+        if (entry.isIntersecting && isScrollingDown) {
+          entry.target.classList.add('is-visible');
+        } 
+        // 2. لو طلعتي فوق خالص لحد ما العنصر نزل تحت الشاشة تماماً -> صفّره في صمت عشان يجهز للنزول الجاي
+        else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -30px 0px"
+    });
+
+    reveals.forEach((el) => observer.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSmartScrollReveal);
+  } else {
+    initSmartScrollReveal();
+  }

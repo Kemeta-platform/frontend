@@ -223,10 +223,7 @@
   box-shadow: 0 6px 10px rgba(198, 152, 85, 0.3);
 }
 
-[data-theme="dark"] .about-content span,[data-theme="dark"] .how-it-works-content span {
-  color: rgba(255, 255, 255, 1) !important;
- 
-}
+
 [data-theme="dark"] .stat-card {
   background:rgba(95, 95, 95, 0.2);
     border: 1px solid rgba(0. 0, 0, 0.2);

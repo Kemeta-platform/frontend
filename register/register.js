@@ -220,9 +220,10 @@ function saveRegisterData() {
   const avatarInput = document.getElementById('avatarInput');
   const avatarContainer = document.getElementById('avatarPreviewContainer');
 
-  // توليد القوائم في الـ DOM
-  populateLanguages();
-  populateNationalities();
+populateLanguages();
+populateNationalities();
+
+setupCustomDropdowns();
   document.getElementById('firstName').value = userData.firstName;
 document.getElementById('lastName').value = userData.lastName;
 document.getElementById('email').value = userData.email;
@@ -523,8 +524,6 @@ function showCropper() {
     goToStep(4);
   });
 
-  // تشغيل القوائم المنسدلة
-  setupCustomDropdowns();
 });
 
 // ==========================================
@@ -548,26 +547,21 @@ function populateLanguages() {
     .join('');
 }
 
-// توليد جميع الدول بصور الأعلام
 function populateNationalities() {
   const nationalityList = document.getElementById('nationalityList');
+
   if (!nationalityList) return;
 
-  nationalityList.innerHTML = worldCountries
-    .map(
-      (c) => `
-      <div class="custom-option" data-value="${c.name}">
-        <img 
-          src="https://flagcdn.com/w40/${c.code}.png" 
-          alt="${c.name}" 
-          class="country-flag-img" 
-          loading="lazy" 
-        />
-        <span class="option-text">${c.name}</span>
-      </div>
-    `
-    )
-    .join('');
+  nationalityList.innerHTML = worldCountries.map(country => `
+    <div class="custom-option" data-value="${country.name}">
+      <img
+        src="https://flagcdn.com/w40/${country.code}.png"
+        alt="${country.name}"
+        class="country-flag-img"
+      >
+      <span class="option-text">${country.name}</span>
+    </div>
+  `).join('');
 }
 
 // ==========================================
@@ -684,53 +678,71 @@ function setupPasswordValidation() {
   confirmInput?.addEventListener('input', checkPasswordsMatch);
 }
 
-// ==========================================
-// إعداد القوائم والبحث المباشر (Languages & Nationalities)
-// ==========================================
+
 function setupCustomDropdowns() {
   const wrappers = document.querySelectorAll('.custom-select-wrapper');
 
   wrappers.forEach(wrapper => {
-    const input = wrapper.querySelector('.custom-select-trigger input');
+    const input = wrapper.querySelector('input');
+    const dropdown = wrapper.querySelector('.custom-dropdown-menu');
 
-    wrapper.querySelector('.custom-select-trigger')?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      wrappers.forEach(w => { if (w !== wrapper) w.classList.remove('active'); });
-      wrapper.classList.toggle('active');
-      if (wrapper.classList.contains('active')) {
-        input.focus();
-      }
+    if (!input || !dropdown) return;
+
+    // فتح القائمة عند الضغط على الـ input
+    input.addEventListener('focus', () => {
+      wrapper.classList.add('active');
+      filterOptions('');
     });
 
-    wrapper.addEventListener('click', (e) => {
+    // البحث أثناء الكتابة
+    input.addEventListener('input', () => {
+      const searchText = input.value.toLowerCase().trim();
+
+      wrapper.classList.add('active');
+
+      filterOptions(searchText);
+    });
+
+    // اختيار عنصر من القائمة
+    dropdown.addEventListener('click', (e) => {
       const option = e.target.closest('.custom-option');
-      if (option) {
-        e.stopPropagation();
-        input.value = option.getAttribute('data-value');
-        wrapper.classList.remove('active');
-      }
+
+      if (!option) return;
+
+      input.value = option.dataset.value;
+      wrapper.classList.remove('active');
     });
 
-    // فلترة البحث المباشر للغة أو الجنسية
-    if (input) {
-      input.addEventListener('input', () => {
-        const filter = input.value.toLowerCase();
-        wrapper.classList.add('active');
+    function filterOptions(searchText) {
+      const options = dropdown.querySelectorAll('.custom-option');
 
-        const options = wrapper.querySelectorAll('.custom-option');
-        options.forEach(opt => {
-          const text = opt.querySelector('.option-text').textContent.toLowerCase();
-          if (text.includes(filter)) {
-            opt.style.display = 'flex';
-          } else {
-            opt.style.display = 'none';
-          }
-        });
+      options.forEach(option => {
+        const textElement = option.querySelector('.option-text');
+
+        if (!textElement) return;
+
+        const optionText = textElement.textContent
+          .toLowerCase()
+          .trim();
+
+        if (
+          searchText === '' ||
+          optionText.startsWith(searchText)
+        ) {
+          option.style.display = 'flex';
+        } else {
+          option.style.display = 'none';
+        }
       });
     }
   });
 
-  document.addEventListener('click', () => {
-    wrappers.forEach(w => w.classList.remove('active'));
+  // قفل القوائم عند الضغط خارجها
+  document.addEventListener('click', (e) => {
+    wrappers.forEach(wrapper => {
+      if (!wrapper.contains(e.target)) {
+        wrapper.classList.remove('active');
+      }
+    });
   });
 }

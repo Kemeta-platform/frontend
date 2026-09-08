@@ -62,3 +62,6 @@
   align-items: center; /* حل مشكلة توسيط البلات فورم */
   text-align: center;
 }
+.about-content span ,.how-it-works-content span {
+  color: var(--Light-Text);
+}

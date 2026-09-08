@@ -71,7 +71,7 @@
   --general-radius:999px;
   --border-size:1px;
   --general-gap:24px;
-  --transition-fast: 0.2s ease-out;
+  --transition-fast: 7s ease-out;
   --Primary-Text:#C69855;
   --Dark-Text:#2E2E2D;
   --cards-gap:20px;
@@ -152,3 +152,4 @@ body,
 .theme-toggle-btn:active i {
   transform: rotate(180deg) scale(0.85);
 }
+

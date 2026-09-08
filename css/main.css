@@ -2,6 +2,7 @@
 @import url("./components/navbar.css");
 @import url("./components/glass.css");
 @import url("./media.css");
+@import url("./components/animation.css");
 
 /* ==================================================
    KEMETA SPLASH SCREEN
@@ -103,8 +104,6 @@ header {
   overflow: hidden;
   height: calc(100vh - 30px);
   width: calc(100vw - 30px);
-  background: url("../../assets/images/Great Pyramid.jpg") center/cover
-    no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -290,14 +289,11 @@ header {
   line-height: 1.7;
 }
 
-/* 
-   Feature Cards
- */
-
 .feature-card {
   position: relative;
   z-index: 10;
   height: 100%;
+  min-height: 176px;
   padding: 20px 18px;
   border-radius: var(--card-radius);
   background: linear-gradient(
@@ -315,11 +311,6 @@ header {
   --webkit-backdrop-filter: blur(1px);
   display: flex;
   gap: var(--card-gap);
-  
-}
-
-.feature-card {
-  min-height: 176px;
 }
 
 /* 
@@ -355,18 +346,6 @@ header {
 }
 
 /* 
-   Hover
- */
-
-.feature-card:hover {
-  transform: translateY(-4px);
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-
-  background: rgba(255, 255, 255, 0.8);
-}
-
-/* 
    About Us Section
  */
 
@@ -380,16 +359,9 @@ header {
 
 .about-section {
   position: relative;
-
   width: calc(100% - 30px);
   height: 94dvh;
-
   padding: 0 65px;
-
-  background-image: url("../../assets/images/4fd41c14f753038c6293ff833b5d0f6e98950fb3.jpg");
-  background-size: cover;
-  background-position: center;
-
   border-radius: var(--Containder-radius);
   overflow: hidden;
 }
@@ -976,7 +948,6 @@ header {
 .step-card .img {
   width: 50%;
   height: 40vh;
-  /* flex-shrink: 0; */
   overflow: hidden;
   border-radius: 45px;
 }
@@ -985,6 +956,10 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.step-card:hover .img img {
+  transform: scale(1.08);
 }
 
 /* ==================================================
@@ -1107,7 +1082,7 @@ header {
   padding: var(--section-padding) 65px 0px;
   background: var(--light-container-background);
   border-radius: var(--Containder-radius);
-  color: var(--Light-Text);
+  color: var(--Background-Color);
 }
 
 /* Main Footer Container */
@@ -1141,7 +1116,7 @@ header {
 
 .footer-container .footer-brand p {
   max-width: 500px;
-  color: var(--Light-Text);
+  color: var(--Background-Color);
 
   font-size: 16px;
 }
@@ -1232,12 +1207,12 @@ header {
 
 .footer-contact .contact-container i {
   width: 14px;
-  color: #fff;
+  color: var(--Background-Color);
   font-size: 16px;
   margin-right: 5px;
 }
 .footer-contact .contact-container a{
-  color: #fff;
+  color: var(--Background-Color);
 
 }
 

@@ -275,7 +275,7 @@ background: radial-gradient(
 
 /* 4. تنسيق عناصر الدول والأعلام داخل القائمة */
 .custom-option {
-  display: flex !important;
+  display: flex ;
   align-items: center !important;
   gap: 10px !important;
   padding: 7px 14px !important;
