@@ -2,11 +2,11 @@
    Hero Responsive
 ========================== */
 
-@media (max-width: 925px) {
+@media (max-width: 1035px) {
  
   .hero {
-
-    margin: 0;
+min-height:100vh ;
+margin-top: 10px !important;
     border-radius: 20px !important;
     background-position: center center;
     background-size: cover;
@@ -104,18 +104,66 @@
   .hero__btn-main i {
     font-size: 10px;
   }
+  .how-it-works-sticky{
+    display: flex !important;
+    flex-direction: column ;
+    padding: 100px 0px !important;
+    text-align: center;
+  }
+  .how-it-works-content p,.how-it-works-content .content-title{
+    width: 100% !important;
+
+  }
+  .how-it-works-content p{
+    font-size: 20px !important;
+  }
+ .steps-wrapper{
+    padding: 0px!   ;
+    width: 70% !important;
+  }
+ .steps-track{
+    padding: 100px 0px !important;
+    overflow: hidden !important;
+ }
+  .step-card .img{
+    height: 30vh !important;
+  }
+  .begin-story-section {
+        width: 100% !important;
+        min-height: 100% !important;
+        padding:50px 5px !important;
+    }
+
+    .begin-story-container {
+        width:100% !important;
+        gap: 10px;
+    }
+
+    .begin-story-container h2 {
+        font-size: 24px !important;
+        line-height: 1.2;
+    }
+
+    .begin-story-container p {
+        max-width: 340px;
+        font-size: 16px !important;
+        line-height: 1.7;
+    }
+
+    .story-btn {
+        min-width: 140px;
+        padding: 11px 20px;
+        font-size: 20px !important;
+    }
 }
 
-/* ==========================
-  feature Responsive
-========================== */
 
 
 @media (max-width: 991.98px) {
 
     .platform-features .container {
         width: 100%;
-        padding: 45px;
+        padding: 45px 40px !important;
 display: flex;
 justify-content: center;
 align-items: center;   
@@ -130,40 +178,33 @@ align-items: center;
       .features-description {
         font-size: 16px;
     }
-    .feature-card{
-        width: 70vw;
-        
-    }
+
 
 }
-
-
-@media (max-width: 767.98px) {
-
-  
-
-    .feature-card-large,
-    .feature-card:not(.feature-card-large) {
-        min-height: auto;
-    }
-}
-/* 
-      about 
- */
 
 @media (max-width: 768px) {
+      .hero__actions .btn{
+        width: 250px !important;
+        font-size: 20px;
+    }
 
+
+    .hero__badge {
+        font-size: 13px;
+    }
     .about-section {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: center !important;
+        justify-content: center !important;
         height: auto;
-        padding: 45px 20px;
     }
 
     .about-section .container-fluid {
-        width: 100%;
-        padding: 0;
+        width: 100% !important;
+                display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+
     }
 
   .about-section .row {
@@ -175,9 +216,9 @@ margin: auto;
 
 
   .about-content {
-        width: 75vw;
+        width: 80vw;
         text-align: center;
-        margin-left: -12vw;
+        /* margin-left: -12vw; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -193,7 +234,7 @@ margin: auto;
         width:350px;
         max-width: 100%;
 
-        font-size: 32px;
+        font-size: 22px !important;
         line-height: 1.15;
     }
 
@@ -203,7 +244,7 @@ margin: auto;
 
         margin: 0 auto 20px;
 
-        font-size: 16px;
+        font-size: 15px !important;
         line-height: 1.5;
     }
 
@@ -240,29 +281,20 @@ margin: auto;
     font-size: 12px;
     font-family: "F37 Moon light";
 }
-}
-
-/* ==========================
-   Why Kemeta Responsive
-========================== */
-
-@media (max-width: 768px) {
 
     .why-kemeta-section {
         width: 100% ;
+        
     }
 
     .why-kemeta-section .why-kemeta-container {
         width: 100%;
-        padding: 45px 20px;
-
+        padding: 45px 40px !important;
         gap: 30px;
     }
 
 
-    /* ==========================
-       Header
-    ========================== */
+
 
     .why-kemeta-header {
         gap: 15px;
@@ -327,92 +359,20 @@ flex-direction: column;
         line-height: 1.5;
     }
 
-}
 
-@media (max-width: 440px) {
 
-    .why-kemeta-section {
-        width: 100%;
+      .glass-badge {
+        padding: 8px 15px !important;
+        font-size: 24px !important;
+    }
+    .how-it-works-content .glass-badge{
+        width: 120% !important;
+       padding: 8px 0px !important;
+      font-size: 24px !important;
+      display: flex !important;
+
     }
 
-    .why-kemeta-section .why-kemeta-container {
-        width: 100%;
-        padding: 35px 5px;
-    }
-
-
-    /* ==========================
-       Header
-    ========================== */
-
-    .why-kemeta-header {
-        gap: 12px;
-    }
-
-    .why-kemeta-badge {
-        font-size: 16px;
-        padding: 7px 14px;
-    }
-
-    .why-kemeta-title {
-        font-size: 23px;
-        line-height: 1.3;
-    }
-
-    .why-kemeta-description {
-        width: 100%;
-        max-width: 100%;
-
-        font-size: 13px;
-        line-height: 1.6;
-    }
-
-
-    /* ==========================
-       Cards
-    ========================== */
-
-    .why-kemeta-cards {
-        width: 80vw !important;
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center ;
-        justify-content: center;
-        gap: 12px;
-margin-left: -60px;
-        padding: 10px !important;
-    }
-
-
-    .why-kemeta-card {
-        width: 100% !important;
-        height: 40vw !important;
-
-        min-height: 145px;
-        height: auto;
-     border-radius: var(--card-radius);
-    }
-
-
-    .why-kemeta-card-title {
-        font-size: 16px;
-        line-height: 1.4;
-    }
-
-
-    .why-kemeta-card-description {
-        font-size: 12px;
-        line-height: 1.5;
-    }
-
-}
-
-/* =========================================
-   Mobile Media Query (Max-width: 768px)
-========================================= */
-@media (max-width: 768px) {
     /* 1. ترتيب الأقسام بشكل عمودي */
     .how-it-works-sticky {
         display: flex;
@@ -428,35 +388,33 @@ margin-left: -60px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
         justify-content: center;
         box-sizing: border-box;
-          padding: 45px 30px;
+        padding: 30px 15px;
 
     }
 
-.how-it-works-content .section-badge{
-     width: 36vw  !important;
-}
+
     .how-it-works-content .content-title {
-        width: 70vw !important;
         text-align: center;
-        margin: 0 auto 15px; 
+             width: 85vw !important;
+        margin-bottom: 0px !important;
+        font-size: 20px !important;
     }
 
   .how-it-works-content p {
     width: 100%;
-        margin-bottom: 30px !important;
         text-align: center; 
         box-sizing: border-box; 
-        padding:0px 30px ;
         font-size: 20px !important;
+        padding: 0 80px;
+        margin-bottom: 0px !important;
+        font-size: 16px !important;
+font-family: "F37 Moon light" !important;
+        line-height: 1.5;
     }
 
-    /* =========================================
-       ضبط حاوية الكروت لعرض متناسق
-    ========================================= */
-   
+    
 
     
       .steps-wrapper {
@@ -486,8 +444,7 @@ margin-left: -60px;
     .step-card {
         width: 100% !important;
 
-        height: 155px;
-        min-height: 155px;
+        min-height: 300px !important;
 
         margin: 0 !important;
         padding: 0 !important;
@@ -595,43 +552,106 @@ margin: auto;
 
         color: var(--Light-Text);
     }
+        .footer-container {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        gap: 48px;
+    }
 
 }
 
 @media (max-width: 440px) {
-
-    .how-it-works-sticky {
-        height: 120vh !important;
-        gap: 5px;
-        padding: 20px !important;
+  
+    .hero__actions .btn{
+        width: 250px;
+        font-size: 20px;
     }
-
-    .how-it-works-content {
-        padding: 30px 15px;
-    }
-
-    .how-it-works-content .section-badge {
-        width: 100% !important;
-        padding: 8px 10px;
-        font-size: 16px;
-    }
-
-    .how-it-works-content .content-title {
-        width: 85vw !important;
-        margin-bottom: 10px;
-        font-size: 26px;
-    }
-
-    .how-it-works-content p {
+        .why-kemeta-section {
         width: 100%;
-        padding: 0 80px;
-        margin-bottom: 20px !important;
-        font-size: 16px !important;
+    }
+  
+
+    .why-kemeta-section .why-kemeta-container {
+        width: 100%;
+        padding: 35px 10px !important;
+    }
+
+
+    /* ==========================
+       Header
+    ========================== */
+
+    .why-kemeta-header {
+        gap: 12px;
+    }
+
+    .why-kemeta-badge {
+        font-size: 16px;
+        padding: 7px 14px;
+    }
+
+    .why-kemeta-title {
+        font-size: 25px !important;
+        line-height: 1.3;
+    }
+
+    .why-kemeta-description {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 15px !important;
+        line-height: 1.6;
+    }
+
+
+    /* ==========================
+       Cards
+    ========================== */
+
+    .why-kemeta-cards {
+        width: 100% !important;
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center !important ;
+        justify-content: center !important;
+        gap: 19px;
+        padding: 10px 15px !important;
+    }
+
+
+    .why-kemeta-card {
+        width:320px !important;
+        height: 43vw !important;
+
+        min-height: 145px;
+        height: auto;
+     border-radius: var(--card-radius);
+    }
+
+
+    .why-kemeta-card-title {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+
+    .why-kemeta-card-description {
+        font-size: 12px;
         line-height: 1.5;
     }
 
+    .how-it-works-sticky {
+        height: 95vh !important;
+        gap: 5px !important;
+        padding: 20px 0px !important;
+    }
+
+  
     .steps-wrapper {
-        width: 100% !important;
+        width: 85% !important;
     }
 
     .steps-track {
@@ -669,37 +689,36 @@ margin: auto;
     }
 }
 @media (max-width: 480px) {
+      .how-it-works-content p{
+        width: 86vw !important;
+        padding: 0px !important;
+    }
      .begin-story-section {
         width: 100% !important;
-        min-height: 100%;
-        padding:0px 5px !important;
+        min-height: 100% !important;
+        padding:50px 5px !important;
     }
 
     .begin-story-container {
         width:100% !important;
-        gap: 16px;
-    }
-
-    .story-badge {
-        font-size: 11px;
-        /* padding: 7px 14px; */
+        gap: 10px;
     }
 
     .begin-story-container h2 {
-        font-size: 28px;
+        font-size: 24px !important;
         line-height: 1.2;
     }
 
     .begin-story-container p {
         max-width: 340px;
-        font-size: 13px;
+        font-size: 16px !important;
         line-height: 1.7;
     }
 
     .story-btn {
         min-width: 140px;
         padding: 11px 20px;
-        font-size: 13px;
+        font-size: 20px !important;
     }
 .kemeta-footer{
           padding: 48px 30px 0 !important;
@@ -708,7 +727,7 @@ margin: auto;
 }
     .footer-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: column !important;
         justify-content: center;
         gap: 48px;
     }

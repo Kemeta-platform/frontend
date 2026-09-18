@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kemeta - Discover Egypt</title>
   
+    <script>
+    (function() {
+      const savedTheme = localStorage.getItem("kemeta_theme");
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../css/global.css">
@@ -61,7 +70,7 @@
       <i class="fa-solid fa-angle-left"></i> Back
     </a>
 
-    
+    <div class="step-content">
           <div class="form-header">
             <h2>Log In</h2>
             <p>Good to see you again. Let's get you back in.</p>
@@ -85,18 +94,18 @@
 
           <!-- Form Fields -->
           <form id="loginForm">
-            <div class="mb-3">
+    <div class="mb-3">
   <label class="form-label" for="emailInput">Email</label>
   <input 
     type="email" 
     id="emailInput"
     class="form-control-custom" 
-    placeholder="e.g. osamagharba@gmail.com" 
+    placeholder="e.g. AhmedMohamed@gmail.com" 
     required
   >
 </div>
 
-<div class="mb-2">
+<div class="mb-2 w-auto">
   <label class="form-label" for="passwordInput">Password</label>
   <div class="custom-input-group">
     <input 
@@ -119,13 +128,15 @@
           <div class="signup-text">
             Don't have an account? <a href="../register/index.html">Sign up</a>
           </div>
-        </div>
       </div>
-
+    </div>
     </div>
   </div>
+   </div>
+
 
   <script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="login.js"></script>
+<script src="../js/theme.js"></script>
 </body>
 </html>

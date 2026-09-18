@@ -112,7 +112,7 @@ background-size: 500px 500px;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -153,3 +153,32 @@ body,
   transform: rotate(180deg) scale(0.85);
 }
 
+
+body, h1, h2, h3, h4, h5, h6, p, span, div, section, label {
+  cursor: default;
+}
+
+a, 
+button, 
+.btn, 
+[role="button"], 
+.theme-toggle-btn,
+.mobile-menu-close,
+.mobile-settings {
+  cursor: pointer !important;
+}
+
+input, 
+textarea {
+  cursor: text !important;
+}
+
+body {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+input, textarea {
+  user-select: auto;
+  -webkit-user-select: auto;
+}

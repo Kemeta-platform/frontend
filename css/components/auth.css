@@ -163,12 +163,13 @@ body {
   font-size: 26px;
   font-family: "F37 Moon Bold", 'Poppins', sans-serif;
   color: var(--text-dark);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .form-header p {
   color: var(--text-dark);
-  font-size: 14.5px;
+  font-size: 15px;
+  font-family:"F37 Moon light" ;
 }
 
 /* زر جوجل */
@@ -238,7 +239,6 @@ margin-left: 50px;
   position: relative;
 }
 
-/* الحقول العادية */
 .form-control-custom {
   width: 100%;
   background: transparent;
@@ -251,7 +251,6 @@ margin-left: 50px;
   transition: all 0.25s ease;
 }
 
-/* تأثير الـ Focus المطابق للصورة تماماً */
 .form-control-custom:focus,
 .custom-select-wrapper.active .custom-select-trigger {
   border-color: var(--primary-teal);
@@ -261,6 +260,7 @@ margin-left: 50px;
 
 .form-control-custom::placeholder {
   color: rgba(74, 74, 74, 1);
+  font-size: 12px;
 }
 
 .btn-toggle-password {
@@ -321,13 +321,15 @@ margin-left: 50px;
   text-align: center;
   margin-top: 18px;
   font-size: 0.92rem;
+    font-family:"F37 Moon light" ;
   color: #444;
 }
 
 .signup-text a {
   color: var(--primary-teal);
-  font-weight: 700;
+  font-family:"F37 Moon bold" !important ;
   text-decoration: none;
+  margin-left: 3px;
 }
 
 .signup-text a:hover {
@@ -345,10 +347,7 @@ input::-webkit-credentials-auto-fill-button {
   display: none !important;
   pointer-events: none !important;
 }
-/* ================= الشاشات الصغيرة Responsive ================= */
-/* ========================================================
-   زر الرجوع الخاص بالموبايل (يظهر في الموبايل فقط)
-   ======================================================== */
+
 .btn-back-mobile {
   display: none;
   align-items: center;
@@ -370,6 +369,64 @@ input::-webkit-credentials-auto-fill-button {
   color: var(--primary-teal);
 }
 
+[data-theme="dark"] body {
+  background-color: rgba(46, 46, 45, 1) !important;
+  color: #ffffff !important;
+}
+
+ [data-theme="dark"] .teal-panel {
+  background: radial-gradient(
+    circle at 50% 100%,
+    #0A0805 0%,
+    #1C140A 25%,
+    #2E1F10 50%,
+    #543C20 75%,
+    #7A592F 100%
+  );}
+
+
+
+[data-theme="dark"] .form-header h2 { color: #f5efe6; }
+[data-theme="dark"] .form-header p,
+[data-theme="dark"] .form-label,
+[data-theme="dark"] .signup-text { color:rgba(255, 255, 255, 1) !important; }
+
+[data-theme="dark"] .form-control-custom {
+  border: 1px solid rgba(198, 152, 85, 1);
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .divider span{
+  color: rgba(217, 217, 217, 1);
+}
+
+[data-theme="dark"] .btn-google {
+  border: 1px solid rgba(198, 152, 85, 1);
+  color: rgba(198, 152, 85, 1);
+}
+
+[data-theme="dark"] .divider::before{
+    border-bottom: 1.5px solid rgba(198, 152, 85, 1);
+
+}
+
+[data-theme="dark"] .divider::after{
+    border-bottom: 1.5px solid rgba(198, 152, 85, 1);
+
+}
+
+
+[data-theme="dark"] .signup-text a,
+[data-theme="dark"] .btn-toggle-password {
+  color: rgba(198, 152, 85, 1) !important;}
+
+  [data-theme="dark"] .form-control-custom::placeholder,[data-theme="dark"] .forgot-link{
+    color: rgba(217, 217, 217, 1);
+  }
+
+ [data-theme="dark"] .btn-submit{
+  background-color:rgba(198, 152, 85, 1) ;
+ }
 /* ========================================================
    RESPONSIVE DESIGN (MOBILE & TABLETS)
    ======================================================== */
@@ -409,6 +466,7 @@ margin-bottom: 50px !important;
   .form-panel {
     width: 100%;
     max-width: 100%;
+   
 
   }
   .step-content{
@@ -463,5 +521,49 @@ margin-bottom: 50px !important;
   
   .otp-container {
     gap: 6px;
+  }
+}
+
+[data-theme="dark"] {
+  @media (max-width: 991.98px) {
+    .btn-back-mobile {
+      color: rgba(198, 152, 85, 1) !important; 
+    }
+    .divider::before{
+  content: '';
+  width:27vw;
+margin-right: 20px;
+
+}
+
+.divider::after {
+  content: '';
+width: 27vw;
+margin-left: 20px;
+
+}
+  }
+  .form-header{
+    margin:5px;
+  }
+}
+@media (max-height: 670px){
+  .right-card,
+  .form-panel {
+    width: 100%;   
+height: 60vh;
+  }
+  .step-content{
+    height: 30vh !important;
+    margin-top: 130px !important;
+ display: flex ;
+ flex-direction: column;
+ align-items: center;
+ gap: 0;
+ justify-content: center;
+  }
+  #step-1{
+        margin-top: 180px !important;
+
   }
 }

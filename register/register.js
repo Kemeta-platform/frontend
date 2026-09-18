@@ -18,134 +18,28 @@ function togglePass(inputId, btn) {
 // ==========================================
 const worldLanguages = [
   { name: "English", code: "EN" },
-  { name: "Arabic (العربية)", code: "AR" },
-  { name: "French (Français)", code: "FR" },
-  { name: "German (Deutsch)", code: "DE" },
-  { name: "Spanish (Español)", code: "ES" },
-  { name: "Italian (Italiano)", code: "IT" },
-  { name: "Russian (Русский)", code: "RU" },
-  { name: "Chinese (中文)", code: "ZH" },
-  { name: "Japanese (日本語)", code: "JA" },
-  { name: "Korean (한국어)", code: "KO" },
-  { name: "Portuguese (Português)", code: "PT" },
-  { name: "Turkish (Türkçe)", code: "TR" },
-  { name: "Dutch (Nederlands)", code: "NL" },
-  { name: "Swedish (Svenska)", code: "SV" },
-  { name: "Norwegian (Norsk)", code: "NO" },
-  { name: "Danish (Dansk)", code: "DA" },
-  { name: "Finnish (Suomi)", code: "FI" },
-  { name: "Greek (Ελληνικά)", code: "EL" },
-  { name: "Polish (Polski)", code: "PL" },
-  { name: "Czech (Čeština)", code: "CS" },
-  { name: "Hungarian (Magyar)", code: "HU" },
-  { name: "Romanian (Română)", code: "RO" },
-  { name: "Hindi (हिन्दी)", code: "HI" },
-  { name: "Bengali (বাংলা)", code: "BN" },
-  { name: "Urdu (اردو)", code: "UR" },
-  { name: "Persian (فارسی)", code: "FA" },
-  { name: "Indonesian (Bahasa Indonesia)", code: "ID" },
-  { name: "Malay (Bahasa Melayu)", code: "MS" },
-  { name: "Thai (ไทย)", code: "TH" },
-  { name: "Vietnamese (Tiếng Việt)", code: "VI" },
-  { name: "Ukrainian (Українська)", code: "UK" },
-  { name: "Hebrew (עברית)", code: "HE" },
-  { name: "Swahili (Kiswahili)", code: "SW" },
-  { name: "Tagalog (Filipino)", code: "TL" }
+  { name: "العربية (Arabic)", code: "AR" },
+  { name: "Français (French)", code: "FR" },
+  { name: "Deutsch (German)", code: "DE" },
+  { name: "Español (Spanish)", code: "ES" },
+  { name: "Italiano (Italian)", code: "IT" },
+  { name: "Русский (Russian)", code: "RU" },
+  { name: "中文 (Chinese)", code: "ZH" }
 ];
 
 // ==========================================
 // 2. قائمة دول العالم الشاملة مع كود العلم (Flags)
 // ==========================================
 const worldCountries = [
-  { name: "Egypt", code: "eg" },
-  { name: "Saudi Arabia", code: "sa" },
-  { name: "United Arab Emirates", code: "ae" },
-  { name: "United States", code: "us" },
+    { name: "United States", code: "us" },
   { name: "United Kingdom", code: "gb" },
+  { name: "Canada", code: "ca" },
   { name: "Germany", code: "de" },
   { name: "France", code: "fr" },
-  { name: "Italy", code: "it" },
-  { name: "Spain", code: "es" },
-  { name: "Canada", code: "ca" },
-  { name: "Australia", code: "au" },
-  { name: "Kuwait", code: "kw" },
-  { name: "Qatar", code: "qa" },
-  { name: "Bahrain", code: "bh" },
-  { name: "Oman", code: "om" },
-  { name: "Jordan", code: "jo" },
-  { name: "Lebanon", code: "lb" },
-  { name: "Morocco", code: "ma" },
-  { name: "Algeria", code: "dz" },
-  { name: "Tunisia", code: "tn" },
-  { name: "Afghanistan", code: "af" },
-  { name: "Albania", code: "al" },
-  { name: "Andorra", code: "ad" },
-  { name: "Angola", code: "ao" },
-  { name: "Argentina", code: "ar" },
-  { name: "Armenia", code: "am" },
-  { name: "Austria", code: "at" },
-  { name: "Azerbaijan", code: "az" },
-  { name: "Bahamas", code: "bs" },
-  { name: "Bangladesh", code: "bd" },
-  { name: "Belgium", code: "be" },
-  { name: "Bolivia", code: "bo" },
-  { name: "Bosnia and Herzegovina", code: "ba" },
-  { name: "Brazil", code: "br" },
-  { name: "Bulgaria", code: "bg" },
-  { name: "Chile", code: "cl" },
-  { name: "China", code: "cn" },
-  { name: "Colombia", code: "co" },
-  { name: "Croatia", code: "hr" },
-  { name: "Cyprus", code: "cy" },
-  { name: "Czech Republic", code: "cz" },
-  { name: "Denmark", code: "dk" },
-  { name: "Ecuador", code: "ec" },
-  { name: "Estonia", code: "ee" },
-  { name: "Finland", code: "fi" },
-  { name: "Georgia", code: "ge" },
-  { name: "Greece", code: "gr" },
-  { name: "Hungary", code: "hu" },
-  { name: "Iceland", code: "is" },
-  { name: "India", code: "in" },
-  { name: "Indonesia", code: "id" },
-  { name: "Iraq", code: "iq" },
-  { name: "Ireland", code: "ie" },
-  { name: "Japan", code: "jp" },
-  { name: "Kazakhstan", code: "kz" },
-  { name: "Kenya", code: "ke" },
-  { name: "Luxembourg", code: "lu" },
-  { name: "Malaysia", code: "my" },
-  { name: "Maldives", code: "mv" },
-  { name: "Mexico", code: "mx" },
-  { name: "Monaco", code: "mc" },
-  { name: "Netherlands", code: "nl" },
-  { name: "New Zealand", code: "nz" },
-  { name: "Nigeria", code: "ng" },
-  { name: "Norway", code: "no" },
-  { name: "Pakistan", code: "pk" },
-  { name: "Palestine", code: "ps" },
-  { name: "Peru", code: "pe" },
-  { name: "Philippines", code: "ph" },
-  { name: "Poland", code: "pl" },
-  { name: "Portugal", code: "pt" },
-  { name: "Romania", code: "ro" },
-  { name: "Russia", code: "ru" },
-  { name: "Serbia", code: "rs" },
-  { name: "Singapore", code: "sg" },
-  { name: "Slovakia", code: "sk" },
-  { name: "Slovenia", code: "si" },
-  { name: "South Africa", code: "za" },
-  { name: "South Korea", code: "kr" },
-  { name: "Sweden", code: "se" },
-  { name: "Switzerland", code: "ch" },
-  { name: "Thailand", code: "th" },
-  { name: "Turkey", code: "tr" },
-  { name: "Ukraine", code: "ua" },
-  { name: "Uruguay", code: "uy" },
-  { name: "Uzbekistan", code: "uz" },
-  { name: "Venezuela", code: "ve" },
-  { name: "Vietnam", code: "vn" },
-  { name: "Yemen", code: "ye" }
+  { name: "Saudi Arabia", code: "sa" },
+  { name: "United Arab Emirates", code: "ae" },
+  { name: "Egypt", code: "eg" },
+  { name: "Other", code: "un" }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -228,7 +122,6 @@ setupCustomDropdowns();
 document.getElementById('lastName').value = userData.lastName;
 document.getElementById('email').value = userData.email;
 
-  // إعداد فحص قوة كلمة المرور أثناء الكتابة
   setupPasswordValidation();
 
   // ================= 1. التنقل بين الخطوات =================
@@ -274,7 +167,6 @@ document.getElementById('email').value = userData.email;
     }
   }
 
-  // ================= 2. زر الرجوع =================
 function handleBackAction(e) {
   e.preventDefault();
   if (currentStep === 4 || currentStep === 1) {
@@ -287,19 +179,16 @@ function handleBackAction(e) {
   globalBackBtn?.addEventListener('click', handleBackAction);
   mobileBackBtn?.addEventListener('click', handleBackAction);
 
-  // ================= 3. خطوة 1: التحقق وإنشاء الحساب =================
   formStep1?.addEventListener('submit', (e) => {
     e.preventDefault();
     const p1 = document.getElementById('password').value;
     const p2 = document.getElementById('confirmPassword').value;
 
-    // فحص تطابق كلمتي المرور
     if (p1 !== p2) {
       alert('Passwords do not match! Please check again.');
       return;
     }
 
-    // التحقق من معايير أمان كلمة المرور
     const validation = validatePassword(p1);
     if (!validation.isValid) {
       alert(`Weak Password:\n• ${validation.errors.join('\n• ')}`);
@@ -323,7 +212,6 @@ localStorage.setItem('userData', JSON.stringify(userData));
     if (otpInputs.length > 0) otpInputs[0].focus();
   });
 
-  // ================= 4. خطوة 2: كود OTP =================
   otpInputs.forEach((input, index) => {
     input.addEventListener('input', () => {
       if (input.value.length === 1 && index < otpInputs.length - 1) {
@@ -355,12 +243,12 @@ localStorage.setItem('userData', JSON.stringify(userData));
     goToStep(1);
   });
 
-  function startOtpTimer() {
+function startOtpTimer() {
     if (otpInterval) clearInterval(otpInterval);
-    let timeLeft = 45;
+    let timeLeft = 60; // تم تعديلها إلى 60 ثانية
 
     if (resendBtn) {
-      resendBtn.innerHTML = 'Resend in <span id="timer">00:45</span>';
+      resendBtn.innerHTML = 'Resend in <span id="timer">01:00</span>';
       resendBtn.style.pointerEvents = 'none';
       resendBtn.style.opacity = '0.7';
     }
@@ -395,32 +283,29 @@ let imageY = 0;
 
 avatarInput?.addEventListener('change', function () {
   const file = this.files[0];
-
   if (!file) return;
 
-  const reader = new FileReader();
+  // فحص النوع والحجم حسب الـ SRS
+  const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+  if (!validTypes.includes(file.type) || file.size > 5 * 1024 * 1024) {
+    alert('Unsupported file type. Please upload a JPG or PNG image under 5 MB.');
+    this.value = '';
+    return;
+  }
 
+  const reader = new FileReader();
   reader.onload = (e) => {
     selectedImage = new Image();
-
     selectedImage.onload = () => {
-      imageScale = Math.max(
-        300 / selectedImage.width,
-        300 / selectedImage.height
-      );
-
+      imageScale = Math.max(300 / selectedImage.width, 300 / selectedImage.height);
       imageX = 0;
       imageY = 0;
-
       showCropper();
     };
-
     selectedImage.src = e.target.result;
   };
-
   reader.readAsDataURL(file);
 });
-
 
 function showCropper() {
   avatarContainer.innerHTML = `
@@ -519,12 +404,36 @@ function showCropper() {
 
 
 
-  formStep3?.addEventListener('submit', (e) => {
+formStep3?.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    const langVal = document.getElementById('languageInput')?.value.trim();
+    const countryVal = document.getElementById('nationalityInput')?.value.trim();
+
+    if (!langVal || !countryVal) {
+      alert('This field is required.');
+      return;
+    }
+
+    const isValidLanguage = worldLanguages.some(l => l.name === langVal);
+    if (!isValidLanguage) {
+      alert('Please select a supported language.');
+      return;
+    }
+
+    const isValidCountry = worldCountries.some(c => c.name.toLowerCase() === countryVal.toLowerCase());
+    if (!isValidCountry) {
+      alert('Please select a valid country.');
+      return;
+    }
+
+    userData.preferredLanguage = langVal;
+    userData.country = countryVal;
+    localStorage.setItem('userData', JSON.stringify(userData));
+
     goToStep(4);
   });
-
-});
+  });
 
 // ==========================================
 // دوال توليد البيانات (Languages & Countries)
@@ -564,17 +473,16 @@ function populateNationalities() {
   `).join('');
 }
 
-// ==========================================
-// دوال الفحص والـ Password Validation التفاعلي
-// ==========================================
+
 function validatePassword(pass) {
   return {
-    isLengthValid: pass.length >= 8,
+    isLengthValid: pass.length >= 8 && pass.length <= 64,
     isUpperValid: /[A-Z]/.test(pass),
+    isLowerValid: /[a-z]/.test(pass), // فحص الحرف الصغير
     isNumValid: /[0-9]/.test(pass),
     isSpecialValid: /[!@#$%^&*(),.?":{}|<>]/.test(pass),
     get isValid() {
-      return this.isLengthValid && this.isUpperValid && this.isNumValid && this.isSpecialValid;
+      return this.isLengthValid && this.isUpperValid && this.isLowerValid && this.isNumValid && this.isSpecialValid;
     }
   };
 }
@@ -685,28 +593,49 @@ function setupCustomDropdowns() {
   wrappers.forEach(wrapper => {
     const input = wrapper.querySelector('input');
     const dropdown = wrapper.querySelector('.custom-dropdown-menu');
+    const trigger = wrapper.querySelector('.custom-select-trigger');
 
-    if (!input || !dropdown) return;
+    if (!input || !dropdown || !trigger) return;
 
-    // فتح القائمة عند الضغط على الـ input
+    // 1. تشغيل السهم: فتح / إغلاق الدروب داون عند الضغط على السهم أو الحاوية
+    trigger.addEventListener('click', (e) => {
+      // إذا لم يكن النقر على خانة الكتابة نفسها (يعني تم النقر على السهم أو طرف البوكس)
+      if (e.target !== input) {
+        e.stopPropagation();
+
+        // إغلاق أي قائمة أخرى مفتوحة
+        wrappers.forEach(w => {
+          if (w !== wrapper) w.classList.remove('active');
+        });
+
+        // تبديل حالة الفتح والإغلاق
+        const isOpen = wrapper.classList.toggle('active');
+        if (isOpen) {
+          input.focus();
+          filterOptions('');
+        }
+      }
+    });
+
+    // 2. فتح القائمة عند الضغط داخل حقل الكتابة
     input.addEventListener('focus', () => {
+      wrappers.forEach(w => {
+        if (w !== wrapper) w.classList.remove('active');
+      });
       wrapper.classList.add('active');
       filterOptions('');
     });
 
-    // البحث أثناء الكتابة
+    // 3. البحث أثناء الكتابة
     input.addEventListener('input', () => {
       const searchText = input.value.toLowerCase().trim();
-
       wrapper.classList.add('active');
-
       filterOptions(searchText);
     });
 
-    // اختيار عنصر من القائمة
+    // 4. اختيار عنصر من القائمة
     dropdown.addEventListener('click', (e) => {
       const option = e.target.closest('.custom-option');
-
       if (!option) return;
 
       input.value = option.dataset.value;
@@ -715,20 +644,12 @@ function setupCustomDropdowns() {
 
     function filterOptions(searchText) {
       const options = dropdown.querySelectorAll('.custom-option');
-
       options.forEach(option => {
         const textElement = option.querySelector('.option-text');
-
         if (!textElement) return;
 
-        const optionText = textElement.textContent
-          .toLowerCase()
-          .trim();
-
-        if (
-          searchText === '' ||
-          optionText.startsWith(searchText)
-        ) {
+        const optionText = textElement.textContent.toLowerCase().trim();
+        if (searchText === '' || optionText.startsWith(searchText)) {
           option.style.display = 'flex';
         } else {
           option.style.display = 'none';

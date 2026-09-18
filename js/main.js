@@ -17,11 +17,11 @@
     // تجاهل الخطأ في حالة القيود الأمنية لـ file://
   }
 
-  if (splashAlreadyShown) {
-    splash.style.display = "none";
-    document.body.classList.remove("is-loading");
-    return;
-  }
+  // if (splashAlreadyShown) {
+  //   splash.style.display = "none";
+  //   document.body.classList.remove("is-loading");
+  //   return;
+  // }
 
   const DRAW_DURATION = 1400;
   const FILL_DURATION = 400;
@@ -140,28 +140,57 @@ function recalculatePinnedSection() {
 
   maxMove = Math.max(0, lastCardCenter - wrapperCenter);
   
-  // زيادة الارتفاع الكلي ليعطي مسافة كافية للسكرول ليكون أتقل
   howItWorks.style.height = `${sticky.clientHeight + (maxMove * SCROLL_DISTANCE_MULTIPLIER)}px`;
+}
+
+function updateActiveCards() {
+  if (!wrapper || !track) return;
+  const wrapperCenter = wrapper.getBoundingClientRect().top + wrapper.clientHeight / 2;
+  const cards = track.querySelectorAll(".step-card");
+
+  let closestCard = null;
+  let minDistance = Infinity;
+
+  cards.forEach((card) => {
+    const cardRect = card.getBoundingClientRect();
+    const cardCenter = cardRect.top + cardRect.height / 2;
+    const distance = Math.abs(wrapperCenter - cardCenter);
+
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestCard = card;
+    }
+  });
+
+  cards.forEach((card) => {
+    if (card === closestCard) {
+      card.classList.add("is-active");
+    } else {
+      card.classList.remove("is-active");
+    }
+  });
 }
 
 function animateSmoothCards() {
   if (!track) return;
 
-  // تطبيق الثقل (Damping & Heavy Inertia)
   currentMove += (targetMove - currentMove) * LERP_FACTOR;
   track.style.transform = `translate3d(0, -${currentMove}px, 0)`;
+
+  // تحديث الكارد النشط فورياً مع حركة السكرول
+  updateActiveCards();
 
   if (Math.abs(targetMove - currentMove) > 0.05) {
     animFrameId = requestAnimationFrame(animateSmoothCards);
   } else {
     currentMove = targetMove;
     track.style.transform = `translate3d(0, -${currentMove}px, 0)`;
+    updateActiveCards();
     animFrameId = null;
   }
 }
-
 function onScrollHandler() {
-  // Scrolled navbar state
+  // 1. ستايل النافبار مع السكرول
   if (window.scrollY > 0) {
     navbar?.classList.add("navbar--scrolled");
   } else {
@@ -170,20 +199,19 @@ function onScrollHandler() {
 
   if (!howItWorks || !navbar) return;
 
-  const sectionTop = howItWorks.getBoundingClientRect().top + window.scrollY;
+  const navHeight = navbar.offsetHeight || 70;
+  const rect = howItWorks.getBoundingClientRect();
+
+  const isInsideSection = rect.top <= navHeight && rect.bottom >= (window.innerHeight * 0.3);
+
+  // إخفاء أو إظهار النافبار
+  navbar.classList.toggle("navbar--hidden", isInsideSection);
+
+  // 3. حساب حركة الكروت (Inertia Scroll)
+  const sectionTop = rect.top + window.scrollY;
   const totalScrollDistance = maxMove * SCROLL_DISTANCE_MULTIPLIER;
-  const sectionBottom = sectionTop + howItWorks.offsetHeight;
-  const hideBuffer = 180;
-
-  // إخفاء وإظهار الـ Navbar في التوقيت المناسب
-  const shouldHideNav =
-    window.scrollY >= sectionTop - hideBuffer &&
-    window.scrollY <= sectionBottom - hideBuffer;
-
-  navbar.classList.toggle("navbar--hidden", shouldHideNav);
-
-  // حساب موضع الكروت مع معامل الثقل
   const scrollInside = window.scrollY - sectionTop;
+
   if (totalScrollDistance > 0) {
     const progress = Math.min(Math.max(scrollInside / totalScrollDistance, 0), 1);
     targetMove = progress * maxMove;

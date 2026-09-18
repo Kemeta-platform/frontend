@@ -60,3 +60,12 @@
   font-size: 12px;
   color: var(--text-dark);
 }
+
+
+@media (max-width:960px) {
+
+.step-content #loginForm {
+width: 78vw !important;
+
+}
+}

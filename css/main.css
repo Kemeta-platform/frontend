@@ -95,6 +95,18 @@ header {
   align-items: center;
   justify-content: center;
 }
+  @keyframes smoothFloat {
+  0% {
+    transform: translateY(0px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  100%{
+      transform: translateY(-4px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.073);
+  }
+
+}
 
 /* الكارد الكبير اللي واخد الشاشة بحواف دايرة */
 .hero {
@@ -208,7 +220,8 @@ header {
   background: var(--Secondry-text);
   color: var(--Background-Color);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-  transform: translateY(-3px);
+    animation: smoothFloat .3s ease-in-out forwards;
+
 }
 
 .hero__btn-main i {
@@ -230,7 +243,7 @@ header {
 .hero__btn-secondary:hover {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
   color: var(--Background-Color);
-  transform: translateY(-3px);
+    animation: smoothFloat .3s ease-in-out forwards;
 }
 
 .platform-features {
@@ -763,31 +776,6 @@ header {
   position: relative;
 }
 
-.how-it-works-content .section-badge {
-  display: inline-flex;
-  align-items: center;
-
-  padding: 10px 20px;
-
-  border-radius: var(--general-radius);
-
-  color: var(--Light-Text);
-
-  background: var(--Card-Background);
-
-  border: 1px solid rgba(255, 255, 255, 0.2);
-
-  box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.35),
-    0 5px 15px rgba(0, 0, 0, 0.08);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  margin-bottom: 25px;
-  font-size: 24px;
-  font-family: "F37 Moon Bold";
-}
 
 .how-it-works-content .content-title {
   font-family: "F37 Moon Bold";
@@ -873,6 +861,20 @@ header {
   border: none;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   filter: none;
+   opacity: 0.35;
+  transform: scale(0.96); 
+  filter: blur(1px); 
+  
+  transition: 
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s ease !important;
+}
+
+.step-card.is-active {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  filter: blur(0) !important;
 }
 
 /* Glass edge */

@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kemeta - Get Started</title>
 
+    <script>
+    (function() {
+      const savedTheme = localStorage.getItem("kemeta_theme");
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../css/global.css">
@@ -147,7 +156,7 @@
           <div class="step-content d-none" id="step-2">
             <div class="form-header">
               <h2 class="pb-2">Verify Your Account</h2>
-              <p class="fw-bold mb-1">Enter the 6-digit code we sent to</p>
+              <p class="fw-light mb-1">Enter the 6-digit code we sent to</p>
               <p  id="displayEmail">osamagharba@gmail.com</p>
             </div>
 
@@ -167,7 +176,7 @@
 
             <button type="button" class="btn-submit" id="btnVerify">Verify</button>
 
-            <div class="signup-text fw-bold">
+            <div class="signup-text fw-light">
               Wrong email? <a href="#" id="btnGoBackEmail">Go back</a>
             </div>
           </div>
@@ -183,16 +192,17 @@
   <!-- Avatar Picture -->
   <div class="text-center mb-4">
     <div class="avatar-wrapper">
-      <div class="avatar-placeholder" id="avatarPreviewContainer">
-        <img src="../assets/images/img.svg" alt="">
-      </div>
-      <label for="avatarInput" class="camera-btn" title="Upload profile picture">
-        <i class="fa-solid fa-camera"></i>
-      </label>
-      <input type="file" id="avatarInput" accept="image/*" class="d-none">
+ <div class="avatar-placeholder" id="avatarPreviewContainer">
+      <img src="../assets/images/Vector (2).svg" class="default-avatar avatar-light" alt="Default Avatar">
+      <img src="../assets/images/Vector (1).svg" class="default-avatar avatar-dark" alt="Default Avatar">
     </div>
-    <div class="avatar-label mt-2">Profile picture <span class="text-muted">(optional)</span></div>
+    
+    <label for="avatarInput" class="camera-btn" title="Upload profile picture">
+      <i class="fa-solid fa-camera"></i>
+    </label>
+    <input type="file" id="avatarInput" accept="image/*" class="d-none">
   </div>
+  <div class="avatar-label mt-2">Profile picture <span class="text-muted">(optional)</span></div>  </div>
 
   <form id="formStep3">
     <!-- 1. Preferred Language Custom Dropdown -->
@@ -252,5 +262,6 @@
 
   <script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="register.js"></script>
+<script src="../js/theme.js"></script>
 </body>
 </html>

@@ -154,7 +154,19 @@
   font-family: inherit;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
+ transform: translateY(0px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+ transition: transform 0.5s ease 0.2s, 
+              box-shadow 0.5s ease 0.2s;
+}
+
+
+.navbar .btn:hover {
+  animation: smoothFloat .5s ease-in-out forwards;
+}
+
+.navbar .btn:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* Sign Up */
@@ -170,6 +182,7 @@
   color: #ffffff;
 }
 
+
 /* Log In */
 .navbar .btn-outline {
   background-color: transparent;
@@ -181,10 +194,9 @@
   border-color: var(--Secondry-text, #082e33);
   color: var(--Secondry-text, #082e33);
 }
-
-.navbar .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.navbar .btn-outline:hover{
+    background-color: var(--Background-Color);
+color:#3f434d;
 }
 
 /* Menu Toggle Button (Mobile) */
@@ -368,6 +380,23 @@
 .logo-dark {
   display: none;
 }
+/* ضبط النافبار الأساسي ليكون جاهزاً للحركة الناعمة */
+.navbar {
+  transition: 
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.35s ease !important;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* عند الإخفاء: يرتفع لفوق بنعومة + يبهت + تأثير بلور خفيف وشيك */
+.navbar.navbar--hidden {
+  transform: translateY(-120%) scale(0.96); /* يرتفع ويصغر لمسة بسيطة */
+  opacity: 0;
+  filter: blur(6px); /* ضبابية خفيفة تعطي نعومة خرافية */
+  pointer-events: none; /* لمنع الضغط عليه وهو مخفي */
+}
 
 
 /* ==================================================
@@ -390,6 +419,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .navbar-logo-light{
+    display: none;
+  }
+  .navbar-logo-mobile-light{
+    display: block !important ;
+  }
+  .navbar--scrolled .navbar-logo-mobile-light, .navbar--scrolled .navbar-logo-dark{
+    display: none !important;
+  }
+  .navbar--scrolled .navbar-logo-mobile-dark{
+    display: block !important;
   }
 
   /* إخفاء لوجو الديسكتوب في الموبايل */
