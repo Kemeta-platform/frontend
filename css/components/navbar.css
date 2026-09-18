@@ -234,7 +234,6 @@ color:#3f434d;
   left: 15px;
   right: 15px;
   height:700px !important;
-  /* max-height: 85vh; */
   padding: 15px;
   background: rgba(255, 255, 255, 0.805);
   backdrop-filter: blur(25px);
@@ -380,7 +379,6 @@ color:#3f434d;
 .logo-dark {
   display: none;
 }
-/* ضبط النافبار الأساسي ليكون جاهزاً للحركة الناعمة */
 .navbar {
   transition: 
     transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
@@ -390,13 +388,11 @@ color:#3f434d;
   opacity: 1;
 }
 
-/* عند الإخفاء: يرتفع لفوق بنعومة + يبهت + تأثير بلور خفيف وشيك */
 .navbar.navbar--hidden {
-  transform: translateY(-120%) scale(0.96); /* يرتفع ويصغر لمسة بسيطة */
+  transform: translateY(-120%) scale(0.96); 
   opacity: 0;
-  filter: blur(6px); /* ضبابية خفيفة تعطي نعومة خرافية */
-  pointer-events: none; /* لمنع الضغط عليه وهو مخفي */
-}
+  filter: blur(6px); 
+  pointer-events: none;}
 
 
 /* ==================================================
@@ -457,4 +453,11 @@ color:#3f434d;
  [data-theme="dark"] .navbar-logo-mobile-dark-scroll {
     display: block !important;
   }
+}
+
+@media (max-height: 670px) {
+.mobile-menu{
+    height: 95vh !important;
+
+}
 }

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kemeta - Reset Password</title>
+
+  <!-- Theme Detection -->
+  <script>
+    if (localStorage.getItem("kemeta_theme") === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+
+  <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/main.css">
+  
+  <!-- إعادة استخدام الـ CSS المشترك دون أي تكرار -->
+  <link rel="stylesheet" href="../css/components/auth.css">
+  <link rel="stylesheet" href="../register/register.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-wrapper">
+      
+      <!-- Left Teal Card -->
+      <div class="left-card">
+        <div class="teal-panel">
+          <a href="../login/index.html" class="btn-back" id="globalBackBtn">
+            <i class="fa-solid fa-angle-left"></i> Back
+          </a>
+
+          <section class="card-container">
+            <div class="brand-section">
+              <div class="logo-container">
+                <img src="../assets/images/logos/SVG/Logo (3).svg" alt="Kemeta Logo">
+              </div>
+              <h1>Reset Your Password</h1>
+              <p>Follow these steps to get back into your account.</p>
+            </div>
+
+            <!-- Steps Indicators -->
+            <div class="steps-container">
+              <div class="step-item active" id="indicator-1">
+                <div class="step-badge" id="badge-1">1</div>
+                <span>Enter your email</span>
+              </div>
+              <div class="step-item" id="indicator-2">
+                <div class="step-badge" id="badge-2">2</div>
+                <span>Verify your account</span>
+              </div>
+              <div class="step-item" id="indicator-3">
+                <div class="step-badge" id="badge-3">3</div>
+                <span>Reset your password</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Right Form Card -->
+      <div class="right-card">
+        <div class="form-panel">
+            
+          <a href="../login/index.html" class="btn-back-mobile" id="mobileBackBtn">
+            <i class="fa-solid fa-angle-left"></i> Back
+          </a>
+
+          <!-- STEP 1: Enter Email -->
+          <div class="step-content" id="step-1">
+            <div class="form-header">
+              <h2>Forgot Password?</h2>
+              <p>Enter the email linked to your account and we'll send you a verification code.</p>
+            </div>
+
+            <form id="formResetStep1">
+              <div class="mb-3 text-start">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control-custom" id="resetEmail" placeholder="e.g. ahmedmohamed@gmail.com" required>
+              </div>
+
+              <button type="submit" class="btn-submit">Send Code</button>
+            </form>
+
+            <div class="signup-text">
+              Remember your password? <a href="../login/index.html">Log in</a>
+            </div>
+          </div>
+
+          <!-- STEP 2: Verify OTP -->
+          <div class="step-content d-none" id="step-2">
+            <div class="form-header">
+              <h2 class="pb-2">Verify Your Account</h2>
+              <p class="fw-light mb-1">Enter the 6-digit code we sent to</p>
+              <p id="displayEmail" class="fw-bold">osamagharba@gmail.com</p>
+            </div>
+
+            <div class="otp-container mb-4">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+              <input type="text" class="otp-box" maxlength="1" pattern="[0-9]" inputmode="numeric">
+            </div>
+
+            <div class="text-center mb-4">
+              <span class="otd-p">Did not receive the code?</span>
+              <a href="#" class="forgot-link d-inline" id="resendBtn">Resend in <span id="timer">00:45</span></a>
+            </div>
+
+            <button type="button" class="btn-submit" id="btnVerify">Verify</button>
+
+            <div class="signup-text fw-light">
+              Wrong email? <a href="#" id="btnGoBackEmail">Go back</a>
+            </div>
+          </div>
+
+          <!-- STEP 3: Reset Password -->
+          <div class="step-content d-none" id="step-3">
+            <div class="form-header">
+              <h2>Reset Password</h2>
+              <p>Create a new password for your account.</p>
+            </div>
+
+            <form id="formResetStep3">
+              <div class="mb-3 text-start">
+                <label class="form-label">New Password</label>
+                <div class="custom-input-group">
+                  <input type="password" id="newPassword" class="form-control-custom" placeholder="Enter your new password" required>
+                  <button type="button" class="btn-toggle-password" onclick="togglePass('newPassword', this)">
+                    <i class="fa-regular fa-eye-slash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="mb-4 text-start">
+                <label class="form-label">Confirm New Password</label>
+                <div class="custom-input-group">
+                  <input type="password" id="confirmNewPassword" class="form-control-custom" placeholder="Confirm your new password" required>
+                  <button type="button" class="btn-toggle-password" onclick="togglePass('confirmNewPassword', this)">
+                    <i class="fa-regular fa-eye-slash"></i>
+                  </button>
+                </div>
+                <small id="matchError" class="text-danger d-none mt-1" style="font-size: 12px; font-weight: 500;">
+                  Passwords do not match
+                </small>
+              </div>
+
+              <button type="submit" class="btn-submit">Reset Password</button>
+            </form>
+          </div>
+
+          <!-- STEP 4: Success Screen -->
+          <div class="step-content d-none text-center py-4" id="step-4">
+            <div class="success-icon mb-4">
+              <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div class="form-header">
+              <h2>Password Reset Successful</h2>
+              <p>Your password has been changed. You can now log in with your new password.</p>
+            </div>
+
+            <a href="../login/index.html" class="btn-submit text-decoration-none d-block text-center mt-4">
+              Back To Log In
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="reset.js"></script>
+  <script src="../js/theme.js"></script>
+</body>
+</html>
