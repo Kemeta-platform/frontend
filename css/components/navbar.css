@@ -455,7 +455,7 @@ color:#3f434d;
   display: none !important;
 }
 
- [data-theme="dark"] .navbar-logo-mobile-dark-scroll {
+ [data-theme="dark"].navbar--scrolled  .navbar-logo-mobile-dark-scroll {
     display: block !important;
   }
 }
