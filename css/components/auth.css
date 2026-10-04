@@ -434,16 +434,14 @@ input::-webkit-credentials-auto-fill-button {
   
     .btn-back-mobile {
     display: flex;
-margin-bottom: 50px !important;
+margin-bottom: 10vh !important;
    
   }
   
-  /* 1. إخفاء الكارت الشمال تماماً مثل تصميم فيجما */
   .left-card {
     display: none !important;
   }
 
-  /* 2. ضبط الحاوية الخارجية والمسافات */
   .auth-container {
     padding: 10px 0px;
     align-items: flex-start;
@@ -454,14 +452,13 @@ margin-bottom: 50px !important;
   .auth-wrapper {
     flex-direction: column;
     width: 100%;
-    max-width: 900px; /* نفس عرض شاشات الموبايل في التصميم */
+    max-width: 900px;
     margin: 0 !important;
     padding: 30px 45px !important;
     gap: 0;
   }
 
  
-  /* 4. جعل الفورم يملأ الشاشة بنعومة */
   .right-card,
   .form-panel {
     width: 100%;
@@ -492,7 +489,6 @@ margin-bottom: 50px !important;
     font-size: 14px;
   }
 
-  /* 5. ضبط حقول الـ OTP في الموبايلات الصغيرة */
   .otp-container {
     gap: 8px;
     
@@ -506,7 +502,6 @@ margin-bottom: 50px !important;
   }
 }
 
-/* للموبايلات الصغيرة جداً (iPhone SE وغيرها) */
 @media (max-width: 380px) {
     .btn-back-mobile {
     display: inline-flex;
@@ -522,6 +517,19 @@ margin-bottom: 50px !important;
   .otp-container {
     gap: 6px;
   }
+      .divider::before{
+  content: '';
+  width:30vw;
+margin-right: 10px !important;
+
+}
+
+.divider::after {
+  content: '';
+width: 30vw !important;
+margin-left: 10px !important;
+
+}
 }
 
 [data-theme="dark"] {
@@ -529,17 +537,17 @@ margin-bottom: 50px !important;
     .btn-back-mobile {
       color: rgba(198, 152, 85, 1) !important; 
     }
-    .divider::before{
+       .divider::before{
   content: '';
-  width:27vw;
-margin-right: 20px;
+  width:30vw;
+margin-right: 10px !important;
 
 }
 
 .divider::after {
   content: '';
-width: 27vw;
-margin-left: 20px;
+width: 30vw !important;
+margin-left: 10px !important;
 
 }
   }

@@ -343,6 +343,10 @@ color:#3f434d;
   background: transparent;
   color: #155765;
   cursor: pointer;
+    display: flex;          
+  align-items: center;      
+  justify-content: center;  
+  padding: 0;  
 }
 .dark-mode {
     background-color: rgba(74, 74, 74, 0.5);
@@ -446,10 +450,11 @@ color:#3f434d;
     display: none !important;
   }
 
-  /* عند الاسكرول بالموبايل */
-  [data-theme="dark"] .navbar--scrolled [data-theme="dark"] .navbar-logo-mobile-light,  [data-theme="dark"] .navbar--scrolled [data-theme="dark"] .navbar-logo-mobile-dark {
-    display: none !important;
-  }
+ [data-theme="dark"] .navbar--scrolled .navbar-logo-light,
+[data-theme="dark"] .navbar--scrolled .navbar-logo-dark {
+  display: none !important;
+}
+
  [data-theme="dark"] .navbar-logo-mobile-dark-scroll {
     display: block !important;
   }
